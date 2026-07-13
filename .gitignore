@@ -1,0 +1,21 @@
+
+
+#Ignore vscode AI rules
+_Remove
+_archive
+.mypy_cache
+.remember
+.venv
+manuscript
+docs/superpowers
+PROJECT_FULL_OVERVIEW.md
+DEPOSIT_PACKAGE.md
+upload_parquet_to_zenodo.sh
+.env
+# Python bytecode caches
+__pycache__/
+*.pyc
+prereg
+# national observatory transient downloads
+obs/data/raw/
+docs/port_externalities_phase0
