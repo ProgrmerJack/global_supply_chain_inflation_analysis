@@ -1,0 +1,117 @@
+port_complex_id,port_complex_name,coast,component_port_codes,geometry_version,source_vintage,operational_rule
+aberdeen_hoquiam_wa,"Aberdeen-Hoquiam, Wa",Pacific,3003,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+alameda_ca,"Alameda, Ca",Pacific,2813,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+albany_ny,"Albany, Ny",Atlantic,1002,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+alexandria_va,"Alexandria, Va",Atlantic,5402,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+anacortes_wa,"Anacortes, Wa",Pacific,3010,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+annapolis_md,"Annapolis, Md",Atlantic,1301,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+astoria_or,"Astoria, Or",Pacific,2901,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+baltimore_md,"Baltimore, Md",Atlantic,1303,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+bangor_me,"Bangor, Me",Atlantic,0102,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+baton_rouge_la,"Baton Rouge, La",Gulf,2004,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+beaufort_morehead_city_nc,"Beaufort-Morehead City, Nc",Atlantic,1511,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+beaumont_tx,"Beaumont, Tx",Gulf,2104,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+bellingham_wa,"Bellingham, Wa",Pacific,3005,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+blaine_wa,"Blaine, Wa",Pacific,3004,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+boca_grande_fl,"Boca Grande, Fl",Gulf,1807,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+boston_ma,"Boston, Ma",Atlantic,0401,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+bridgeport_ct,"Bridgeport, Ct",Atlantic,0410,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+brownsville_tx,"Brownsville, Tx",Gulf,2301,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+brunswick_ga,"Brunswick, Ga",Atlantic,1701,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+calais_me,"Calais, Me",Atlantic,0115,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+cambridge_md,"Cambridge, Md",Atlantic,1302,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+camden_nj,"Camden, Nj",Atlantic,1107,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+carquinez_strait_ca,"Carquinez Strait, Ca",Pacific,2830,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+charleston_sc,"Charleston, Sc",Atlantic,1601,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+chester_pa,"Chester, Pa",Atlantic,1102,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+coos_bay_or,"Coos Bay, Or",Pacific,2903,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+corpus_christi_tx,"Corpus Christi, Tx",Gulf,5312,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+crisfield_md,"Crisfield, Md",Atlantic,1304,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+destrehan_la,"Destrehan, La",Gulf,2009,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+eastport_me,"Eastport, Me",Atlantic,0103,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+el_segundo_ca,"El Segundo, Ca",Pacific,2711,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+eureka_ca,"Eureka, Ca",Pacific,2802,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+everett_wa,"Everett, Wa",Pacific,3006,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+fall_river_ma,"Fall River, Ma",Atlantic,0407,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+fernandina_fl,"Fernandina, Fl",Atlantic,1805,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+fort_pierce_fl,"Fort Pierce, Fl",Atlantic,5205,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+freeport_tx,"Freeport, Tx",Gulf,5311,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+galveston_tx,"Galveston, Tx",Gulf,5310,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+georgetown_sc,"Georgetown, Sc",Atlantic,1602,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+gloucester_ma,"Gloucester, Ma",Atlantic,0404,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+gramercy_la,"Gramercy, La",Gulf,2010,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+greenville_ms,"Greenville, Ms",Gulf,2011,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+gulfport_ms,"Gulfport, Ms",Gulf,1902,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+hartford_ct,"Hartford, Ct",Atlantic,0411,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+hopewell_va,"Hopewell, Va",Atlantic,1408,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+houston_tx,"Houston, Tx",Gulf,5301,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+jacksonville_fl,"Jacksonville, Fl",Atlantic,1803,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+kalama_wa,"Kalama, Wa",Pacific,2909,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+key_west_fl,"Key West, Fl",Gulf,5202,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+lake_charles_la,"Lake Charles, La",Gulf,2017,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+longview_wa,"Longview, Wa",Pacific,2905,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+martinez_ca,"Martinez, Ca",Pacific,2820,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+mellville_ri,"Mellville, Ri",Atlantic,0503,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+miami_fl,"Miami, Fl",Atlantic,5201,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+mobile_al,"Mobile, Al",Gulf,1901,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+monterey_ca,"Monterey, Ca",Pacific,2805,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+morgan_city_la,"Morgan City, La",Gulf,2001,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+morro_bay_ca,"Morro Bay, Ca",Pacific,2719,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+new_bedford_ma,"New Bedford, Ma",Atlantic,0405,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+new_haven_ct,"New Haven, Ct",Atlantic,0412,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+new_london_ct,"New London, Ct",Atlantic,0413,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+new_orleans_la,"New Orleans, La",Gulf,2002,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+new_york_new_jersey,Port of New York and New Jersey,Atlantic,1001;1003,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,official_shared_port_authority
+newport_or,"Newport, Or",Pacific,2902,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+newport_ri,"Newport, Ri",Atlantic,0501,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+norfolk_newport_news_va,"Norfolk-Newport News, Va",Atlantic,1401,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+oakland_ca,"Oakland, Ca",Pacific,2811,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+olympia_wa,"Olympia, Wa",Pacific,3026,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+orange_tx,"Orange, Tx",Gulf,2103,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+panama_city_fl,"Panama City, Fl",Gulf,1818,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+pascagoula_ms,"Pascagoula, Ms",Gulf,1903,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+paulsboro_nj,"Paulsboro, Nj",Atlantic,1105,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+pensacola_fl,"Pensacola, Fl",Gulf,1819,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+perth_amboy_nj,"Perth Amboy, Nj",Atlantic,1004,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+philadelphia_pa,"Philadelphia, Pa",Atlantic,1101,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+plymouth_ma,"Plymouth, Ma",Atlantic,0406,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+port_angeles_wa,"Port Angeles, Wa",Pacific,3007,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+port_arthur_tx,"Port Arthur, Tx",Gulf,2101,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+port_canaveral_fl,"Port Canaveral, Fl",Atlantic,1816,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+port_everglades_fl,"Port Everglades, Fl",Atlantic,5203,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+port_hueneme_ca,"Port Hueneme, Ca",Pacific,2713,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+port_lavaca_tx,"Port Lavaca, Tx",Gulf,5313,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+port_manatee_fl,"Port Manatee, Fl",Gulf,1821,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+port_san_luis_ca,"Port San Luis, Ca",Pacific,2707,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+port_sulphur_la,"Port Sulphur, La",Gulf,2005,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+port_townsend_wa,"Port Townsend, Wa",Pacific,3008,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+portland_me,"Portland, Me",Atlantic,0101,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+portland_or,"Portland, Or",Pacific,2904,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+portsmouth_nh,"Portsmouth, Nh",Atlantic,0131,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+providence_ri,"Providence, Ri",Atlantic,0502,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+redwood_city_ca,"Redwood City, Ca",Pacific,2821,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+richmond_ca,"Richmond, Ca",Pacific,2812,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+richmond_petersburg_va,"Richmond-Petersburg, Va",Atlantic,1404,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+sabine_tx,"Sabine, Tx",Gulf,2102,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+salem_ma,"Salem, Ma",Atlantic,0408,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+san_diego_ca,"San Diego, Ca",Pacific,2501,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+san_francisco_ca,"San Francisco, Ca",Pacific,2809,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+san_joaquin_river_ca,"San Joaquin River, Ca",Pacific,2828,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+san_pablo_bay_ca,"San Pablo Bay, Ca",Pacific,2829,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+san_pedro_bay,San Pedro Bay (Los Angeles/Long Beach),Pacific,2704;2709,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,shared_harbour_approach
+savannah_ga,"Savannah, Ga",Atlantic,1703,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+searsport_me,"Searsport, Me",Atlantic,0152,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+seattle_wa,"Seattle, Wa",Pacific,3001,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+selby_ca,"Selby, Ca",Pacific,2827,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+st_petersburg_fl,"St. Petersburg, Fl",Gulf,1814,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+stockton_ca,"Stockton, Ca",Pacific,2810,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+tacoma_wa,"Tacoma, Wa",Pacific,3002,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+tampa_fl,"Tampa, Fl",Gulf,1801,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+texas_city_tx,"Texas City, Tx",Gulf,5306,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+vancouver_wa,"Vancouver, Wa",Pacific,2908,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+ventura_ca,"Ventura, Ca",Pacific,2712,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+vicksburg_ms,"Vicksburg, Ms",Gulf,2015,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+washington_dc,"Washington, Dc",Atlantic,5401,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+west_palm_beach_fl,"West Palm Beach, Fl",Atlantic,5204,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+wilmington_de,"Wilmington, De",Atlantic,1103,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port
+wilmington_nc,"Wilmington, Nc",Atlantic,1501,crosswalk-v1-2026-07-13,Census Port-HS 2017-2019; UN/LOCODE 2025-1; USACE Port/PSA metadata accessed 2026-07-13,single_census_customs_port

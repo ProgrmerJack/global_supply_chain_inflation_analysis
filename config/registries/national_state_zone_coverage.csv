@@ -1,0 +1,16 @@
+port_complex_id,official_anchorage_available,berth_candidate_available,approach_channel_available,state_geometry_status
+san_pedro_bay,1,1,1,ready
+new_york_new_jersey,1,1,1,ready
+savannah_ga,0,1,1,ready
+norfolk_newport_news_va,1,1,1,ready
+charleston_sc,1,1,1,ready
+houston_tx,1,1,1,ready
+baltimore_md,1,1,1,ready
+miami_fl,1,1,1,ready
+philadelphia_pa,1,1,1,ready
+port_everglades_fl,1,1,1,ready
+jacksonville_fl,1,1,1,ready
+new_orleans_la,1,1,1,ready
+mobile_al,0,1,1,ready
+boston_ma,1,1,1,ready
+wilmington_nc,0,1,1,ready
