@@ -1,0 +1,49 @@
+{
+  "artifacts": {
+    "coverage": {
+      "path": "national_state_zone_coverage.csv",
+      "sha256": "14ab6e9b0e90085bc17807d824b802e702d4a3f4c2a7b1c40badd85909b576db"
+    },
+    "state_zones": {
+      "path": "national_state_zones.geojson",
+      "sha256": "d3d8fa8f30c42d03656f37a759d70a6fea93f3c383a31db3f715f19caf2d7985"
+    }
+  },
+  "derived_at_utc": "2026-07-15T09:48:30.038158Z",
+  "eligible_port_complex_ids": [
+    "san_pedro_bay",
+    "new_york_new_jersey",
+    "savannah_ga",
+    "norfolk_newport_news_va",
+    "charleston_sc",
+    "houston_tx",
+    "baltimore_md",
+    "miami_fl",
+    "philadelphia_pa",
+    "port_everglades_fl",
+    "jacksonville_fl",
+    "new_orleans_la",
+    "mobile_al",
+    "boston_ma",
+    "wilmington_nc"
+  ],
+  "excluded_by_port_area_assignment": [
+    "oakland_ca",
+    "san_francisco_ca",
+    "seattle_wa",
+    "tacoma_wa"
+  ],
+  "schema_version": "national-state-zones-v1",
+  "source_feature_counts": {
+    "charted_berth_point": 732,
+    "land_exclusion": 5415,
+    "maintained_channel": 1919,
+    "navigation_facility_dock": 1986,
+    "official_anchorage": 215
+  },
+  "source_snapshot": {
+    "path": "national_state_zone_sources.geojson",
+    "sha256": "f9729ec4e027e1f190c3f093a01f85a61cb7519f57f709a4bb2d95cf0a368720"
+  },
+  "zone_export_precision_grid_degrees": 1e-07
+}

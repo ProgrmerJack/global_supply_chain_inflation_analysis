@@ -1,0 +1,115 @@
+{
+  "study_id": "baltimore_infrastructure_shock_v1",
+  "timezone": "America/New_York",
+  "treatment_timestamp_local": "2024-03-26T01:29:10-04:00",
+  "bridge_structure_number": "300000BCZ472010",
+  "bridge_geometry": "data/external/baltimore_key_bridge/mdot_francis_scott_key_bridge.geojson",
+  "bridge_geometry_sha256": "0f052c1bb17fd69d543fda9762c18b014ca29a4bbed5dc1e7b0cb5b912963813",
+  "baltimore_complex": "baltimore_md",
+  "phases": [
+    {"id": "pre", "start": "2023-12-26", "end": "2024-03-25"},
+    {"id": "full_obstruction_1", "start": "2024-03-26", "end": "2024-04-24"},
+    {"id": "limited_access_1", "start": "2024-04-25", "end": "2024-04-28"},
+    {"id": "full_obstruction_2", "start": "2024-04-29", "end": "2024-05-13"},
+    {"id": "night_access", "start": "2024-05-14", "end": "2024-05-19"},
+    {"id": "deep_draft_reopened", "start": "2024-05-20", "end": "2024-06-09"},
+    {"id": "full_channel_restored", "start": "2024-06-10", "end": "2024-07-09"}
+  ],
+  "design_years": [2019, 2022, 2023],
+  "event_year": 2024,
+  "external_replication_year": 2025,
+  "excluded_years": {"2020": "pandemic disruption", "2021": "pandemic and supply-chain disruption"},
+  "vessel_populations": {
+    "primary_freight": {"ais_type_min": 70, "ais_type_max": 89},
+    "cargo_sensitivity": {"ais_type_min": 70, "ais_type_max": 79},
+    "tanker_sensitivity": {"ais_type_min": 80, "ais_type_max": 89}
+  },
+  "receiver_candidates": [
+    "new_york_new_jersey",
+    "savannah_ga",
+    "norfolk_newport_news_va",
+    "charleston_sc",
+    "miami_fl",
+    "philadelphia_pa",
+    "port_everglades_fl",
+    "jacksonville_fl"
+  ],
+  "nonreceiver_placebos": [
+    "san_pedro_bay",
+    "houston_tx",
+    "new_orleans_la",
+    "boston_ma",
+    "mobile_al",
+    "wilmington_nc"
+  ],
+  "retained_census_complexes": [
+    "san_pedro_bay", "new_york_new_jersey", "savannah_ga", "norfolk_newport_news_va",
+    "charleston_sc", "houston_tx", "baltimore_md", "miami_fl", "philadelphia_pa",
+    "port_everglades_fl", "jacksonville_fl", "new_orleans_la", "mobile_al", "boston_ma",
+    "wilmington_nc"
+  ],
+  "v1_unavailable_placebos": ["tacoma_wa", "oakland_ca", "seattle_wa"],
+  "network": {
+    "weight_years": [2019, 2022, 2023],
+    "contact_gap_hours": 24,
+    "transition_max_days": 60,
+    "minimum_transitions_for_positive_weight": 10,
+    "linked_fleet_start": "2023-01-01",
+    "linked_fleet_end": "2024-03-25",
+    "weight_rule": "normalized counts of bidirectional consecutive freight-vessel contact episodes between Baltimore and each candidate receiver within 60 days",
+    "comparison_rule": "freight MMSIs contacting a candidate receiver but never Baltimore during the linked-fleet window"
+  },
+  "measurement": {
+    "aggregate_calendar": "local_day_and_tuesday_anchored_week",
+    "track_segment_max_minutes": 30,
+    "presence_interval_cap_minutes": 30,
+    "bridge_uncertainty_buffer_m": 250,
+    "bridge_side_classifier": "projected_endpoint_chord_epsg26918",
+    "berth_geometry": "config/national_state_zones.geojson",
+    "berth_geometry_sha256": "d3d8fa8f30c42d03656f37a759d70a6fea93f3c383a31db3f715f19caf2d7985",
+    "frozen_inland_side_sign": -1,
+    "inland_side_rule": "side of the official bridge line containing a strict majority of representative points from the frozen Baltimore berth geometry",
+    "primary_units": [
+      "bridge_gate_crossing_episodes",
+      "unique_freight_vessels",
+      "observed_freight_presence_hours",
+      "port_contact_episodes_per_100_fixed_fleet_mmsi"
+    ]
+  },
+  "operational_gate": {
+    "minimum_daily_coverage": 0.95,
+    "full_obstruction_crossing_ratio_max": 0.10,
+    "deep_draft_reopened_crossing_ratio_min": 0.50,
+    "full_restored_crossing_ratio_min": 0.75,
+    "weekly_crossing_contact_spearman_min": 0.70,
+    "receiver_randomization_p_max": 0.05,
+    "minimum_positive_top_four_receivers": 2,
+    "leave_one_receiver_out_sign_must_be_positive": true
+  },
+  "pollution_gate": {
+    "primary_pollutant": "NO2",
+    "secondary_pollutant": "PM2.5",
+    "monitor_radii_km": [20, 30],
+    "primary_radius_km": 30,
+    "minimum_2023_hourly_completeness": 0.75,
+    "minimum_monitors": 4,
+    "one_sided_combined_p_max": 0.05,
+    "future_activity_relative_magnitude_max": 0.50,
+    "upwind_relative_magnitude_max": 0.50,
+    "exclude_calm_wind_below_ms": 1.0,
+    "hms_smoke_primary_rule": "exclude_medium_and_heavy_smoke"
+  },
+  "equity_gate": {
+    "primary_geography": "ACS_2023_5year_block_group",
+    "income_contrast": "bottom_vs_top_population_weighted_income_quartile",
+    "race_ethnicity_contrast": "people_of_color_population_share_gradient",
+    "primary_condition": "incremental_burden_ratio_bottom_to_top_income_quartile_ci_lower_gt_1"
+  },
+  "protected_roots": [
+    "data/interim/baltimore_shock",
+    "data/holdout/baltimore_shock",
+    "results/confirmatory/baltimore_shock"
+  ],
+  "random_seed": 20260728,
+  "randomization_draws": 10000
+}

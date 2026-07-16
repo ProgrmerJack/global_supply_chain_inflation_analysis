@@ -1,0 +1,48 @@
+port_complex_schema:
+  required_columns:
+    - port_complex_id
+    - port_complex_name
+    - coast
+    - component_port_codes
+    - ranking_value_2017_2019
+    - cumulative_share
+    - inclusion_status
+    - inclusion_reason
+    - geometry_version
+    - source_vintage
+  allowed_coasts: [Pacific, Atlantic, Gulf]
+  allowed_status: [included, excluded_coverage, excluded_outside_universe, excluded_by_selection_rule]
+  constraints:
+    ranking_value_nonnegative: true
+    cumulative_share_range: [0.0, 1.0]
+    outcome_columns_prohibited:
+      - dwell
+      - waiting_hours
+      - emissions
+      - pollution
+      - cpi
+      - treatment_effect
+
+port_complex_crosswalk_schema:
+  required_columns:
+    - port_complex_id
+    - port_complex_name
+    - coast
+    - component_port_codes
+    - geometry_version
+    - source_vintage
+    - operational_rule
+  allowed_coasts: [Pacific, Atlantic, Gulf]
+  allowed_operational_rules:
+    - single_census_customs_port
+    - shared_harbour_approach
+    - official_shared_port_authority
+  constraints:
+    component_port_codes_are_unique: true
+    outcome_columns_prohibited:
+      - dwell
+      - waiting_hours
+      - emissions
+      - pollution
+      - cpi
+      - treatment_effect

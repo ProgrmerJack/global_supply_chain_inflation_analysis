@@ -1,0 +1,79 @@
+gates:
+  G1:
+    name: AIS validity
+    pass:
+      official_activity_correlation_min: 0.80
+      passing_port_fraction_min: 0.80
+      blind_state_macro_f1_min: 0.85
+      national_port_count_min: 12
+    failure: Restrict states or ports; prohibit national claim if fewer than 12 complexes remain.
+  G2:
+    name: Offshore reconciliation
+    pass:
+      accounted_fraction_min: 0.80
+      relocation_interval_excludes_zero: true
+    failure: Remove redistribution language; report near-port monitoring limitation only.
+  G3:
+    name: Emissions validation
+    pass:
+      co2_mape_max: 0.20
+      nox_pm_mape_max: 0.30
+      heldout_port_year_fraction_min: 0.75
+      cross_port_spearman_min: 0.70
+    failure: Demote absolute emissions to scenarios; retain activity ratios.
+  G4:
+    name: Atmospheric validation
+    pass:
+      independent_port_regions_min: 2
+      correct_sign: true
+      no_anticipatory_effect: true
+      placebo_fdr_q_max: 0.05
+    failure: Report modelled exposure only; no observed air-quality claim.
+  G5:
+    name: Health robustness
+    pass:
+      stable_direction_across_models: true
+      geographic_definitions_min: 3
+      concentration_response_sets_min: 2
+    failure: Remove mortality and central dollar headline; retain emissions/exposure.
+  G6:
+    name: Legacy CPI survival
+    pass:
+      same_sign_both_episodes: true
+      no_meaningful_leads: true
+      simultaneous_interval_excludes_zero: true
+      attenuation_after_product_controls_max: 0.50
+    failure: Remove aggregate LP from abstract/main text; archive as exploratory SI.
+  G7:
+    name: Product-price confirmation
+    pass:
+      replication_rule: both_episodes_or_development_plus_holdout
+      no_pretrend: true
+      shock_level_interval_excludes_zero: true
+    failure: Economic layer becomes descriptive.
+  G8:
+    name: Policy mechanism
+    pass:
+      independent_interventions_min: 2
+      direction_consistent: true
+    failure: Report event-specific findings only.
+  G9:
+    name: Generality
+    pass:
+      port_regions_min: 3
+      coasts_min: 2
+    failure: Restrict scope to regional case study.
+  G10:
+    name: Equity
+    pass:
+      stable_direction_across_geographies: true
+      stable_direction_across_models: true
+      geographic_definitions_min: 3
+    failure: Demote equity claims; retain separately supported emissions, exposure, and health results.
+
+journal_decision:
+  nature_sustainability_requires: [G1, G2, G3, G4, G5, G7, G8, G9, G10, policy_frontier]
+  nature_communications_requires:
+    mandatory: [G1, G3]
+    at_least_two_of: [G2, G4, G7, G8]
+  failure: Choose a more appropriate specialist journal or redesign.

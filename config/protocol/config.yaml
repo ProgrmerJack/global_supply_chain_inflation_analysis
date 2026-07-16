@@ -1,0 +1,17 @@
+project:
+  name: linked-data-nature-tier
+  seed: 1337
+
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  outputs: outputs
+
+index:
+  name: P_SSTI_toy
+  window_days: 30
+
+model:
+  type: local_projection_toy
+  horizons: [0, 1, 2, 3, 4, 5, 6]

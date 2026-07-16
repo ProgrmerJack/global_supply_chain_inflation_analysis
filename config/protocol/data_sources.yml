@@ -1,0 +1,64 @@
+metadata:
+  novelty_cutoff: '2026-06-30'
+  source_verification_date: '2026-07-12'
+
+sources:
+  noaa_ais:
+    name: NOAA Marine Cadastre AIS
+    role: fine-resolution terrestrial vessel trajectories
+    url: https://marinecadastre.gov/ais/
+    access: public
+    raw_immutable: true
+  global_fishing_watch:
+    name: Global Fishing Watch API v3
+    role: offshore cargo-vessel presence, events, and SAR sensitivity
+    url: https://globalfishingwatch.org/our-apis/documentation
+    access: public non-commercial API
+    limitation: aggregated presence is not a raw-trajectory substitute
+  census_trade:
+    name: US Census International Trade API
+    role: monthly vessel imports by port and HS code, 2010-present
+    url: https://www.census.gov/data/developers/data-sets/international-trade.html
+    access: public API
+  bls:
+    name: US Bureau of Labor Statistics
+    role: item and sector CPI
+    url: https://www.bls.gov/developers/
+    access: public API/download
+  epa_port_guidance:
+    name: EPA Port Emissions Inventory Guidance
+    role: ocean-going-vessel factors and operating-mode methods
+    url: https://www.epa.gov/state-and-local-transportation/port-emissions-inventory-guidance
+    access: public
+  epa_aqs:
+    name: EPA AQS API
+    role: monitor-level ambient pollution and metadata
+    url: https://aqs.epa.gov/aqsweb/documents/data_api.html
+    access: public API
+  inmap:
+    name: InMAP
+    role: reduced-complexity source-receptor and exposure modelling
+    url: https://inmap.run/
+    access: open source
+  benmap:
+    name: BenMAP-CE
+    role: health-impact and valuation sensitivity
+    url: https://www.epa.gov/benmap
+    access: open source/public
+  acs:
+    name: American Community Survey
+    role: national demographic and socioeconomic distributions
+    url: https://www.census.gov/programs-surveys/acs/data.html
+    access: public API/download
+  calenviroscreen:
+    name: CalEnviroScreen 5.0
+    role: California environmental-justice deep dive
+    url: https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-50
+    access: public
+    release_date: '2026-07-01'
+    note: early-Q3 update captured after the Q2 novelty cutoff
+  carb_at_berth:
+    name: CARB Ocean-Going Vessels At Berth Regulation
+    role: policy timing, visit reporting, and compliance phases
+    url: https://ww2.arb.ca.gov/our-work/programs/ocean-going-vessels-berth-regulation
+    access: public
