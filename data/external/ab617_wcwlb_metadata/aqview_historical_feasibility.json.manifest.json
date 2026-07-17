@@ -1,0 +1,40 @@
+{
+  "source_owner": "California Air Resources Board",
+  "source_url": "https://aqview.arb.ca.gov/continuous-monitoring-data",
+  "retrieved_at_utc": "2026-07-23T10:00:43.746805+00:00",
+  "source_query_response_hashes": {
+    "communities": {
+      "bytes": 1099,
+      "sha256": "ef83f332cd6fd5597330c5a830deed917ba7312f55cb87bbce1dd61215dc8b7e"
+    },
+    "parameters": {
+      "bytes": 264,
+      "sha256": "f5cdc0143d8332f38ecc55e57282ff4467f50d42e18edc1465f3e013a109cf75"
+    },
+    "inventory": {
+      "bytes": 176171,
+      "sha256": "bdc19dea072eefd7be4501573f3967e59378bcc4e0c5e03930b1fb433e613862"
+    },
+    "Nitrogen Dioxide (NO2)": {
+      "dates_bytes": 85,
+      "dates_sha256": "3692b3a77b1169e90a30787cc78c352e33f88963b53c4878fee392730451738a",
+      "counts_bytes": 55,
+      "counts_sha256": "1a5ece5ab3e732c360175b72d6bed8706d23594112b2b126d066f78056291e7e"
+    },
+    "Black Carbon (BC)": {
+      "dates_bytes": 85,
+      "dates_sha256": "3692b3a77b1169e90a30787cc78c352e33f88963b53c4878fee392730451738a",
+      "counts_bytes": 55,
+      "counts_sha256": "0247c417dd6bf0beadc7603c68d263d1f210c641fdbddc3638547d5c0e13887f"
+    },
+    "PM2.5": {
+      "dates_bytes": 84,
+      "dates_sha256": "990799e4e23614cf9f8e38ebaee4a2eca9d1cb08d212d79458306470edf87311",
+      "counts_bytes": 55,
+      "counts_sha256": "acb311a94f1a9ef46d8c6a8d752dee067ae1ff99fe528b1f4996d1cd18410795"
+    }
+  },
+  "scope": "metadata_only; no concentration outcomes",
+  "bytes": 600,
+  "sha256": "645772fc8857f238a2241f28c5b49ac4d7369f2fc5b80d48ae00332c272df012"
+}

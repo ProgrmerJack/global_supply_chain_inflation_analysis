@@ -1,0 +1,10 @@
+{
+  "source_owner": "U.S. Bureau of Labor Statistics",
+  "source_url": "https://download.bls.gov/pub/time.series/CU/cu.txt",
+  "retrieved_at_utc": "2026-07-23T09:27:29.495665+00:00",
+  "bytes": 14644,
+  "sha256": "1394b7f4210fda3d6dab62437bae5bd3664ed040612dd3df6268bc4e2911a471",
+  "role": "CPI flat-file schema documentation",
+  "scope": "metadata_or_method_only; no trade values or price observations",
+  "retrieval_path": "browser_download_after_direct_origin_rejected_automation"
+}

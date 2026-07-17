@@ -1,0 +1,10 @@
+{
+  "source_owner": "U.S. Census Bureau",
+  "source_url": "https://api.census.gov/data/timeseries/intltrade/imports/porths/examples.json",
+  "retrieved_at_utc": "2026-07-23T09:27:18.628623+00:00",
+  "bytes": 205,
+  "sha256": "65680aff03503002c4bdcada25c25b06556c8a0b4d872db7580b70a35a42d511",
+  "role": "Port-HS API metadata-only example schema",
+  "scope": "metadata_or_method_only; no trade values or price observations",
+  "retrieval_path": "direct_http"
+}

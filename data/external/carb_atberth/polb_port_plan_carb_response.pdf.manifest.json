@@ -1,0 +1,8 @@
+{
+  "source_owner": "California Air Resources Board",
+  "source_url": "https://ww2.arb.ca.gov/sites/default/files/2025-03/POLB%20letter%20of%20completeness.pdf",
+  "retrieved_at_utc": "2026-07-18T14:37:35.820832+00:00",
+  "bytes": 521341,
+  "sha256": "9c4c1bb7e44d7fb5b73dd63447788f1ff89c110c83fea052b7309a154ca71f9b",
+  "scope": "regulation_or_design_metadata_only; no AIS or embedded dashboard outcomes"
+}

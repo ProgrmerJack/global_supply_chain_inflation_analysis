@@ -1,0 +1,17 @@
+{
+  "accepted_row_count": 0,
+  "delivered_file_name": "POLB_POLA_2024_Aerial_35x39.pdf",
+  "delivery_method": "authorized_external_file",
+  "file_size_bytes": 5316089,
+  "first_timestamp": null,
+  "last_timestamp": null,
+  "parser_version": "g1-v2-geometry-source-cache-v1",
+  "port_complex_id": "san_pedro_bay",
+  "raw_row_count": 0,
+  "rejected_row_count": 0,
+  "rejection_counts": "{}",
+  "retrieved_at": "2026-07-24T22:14:01Z",
+  "sha256": "6f5b5a3d984c4aa04427f9f18460198f66e6d5d4822e01e6b0d4527a58053b1a",
+  "source_file": "POLB_POLA_2024_Aerial_35x39.pdf",
+  "source_url": "https://longbeachca.govqa.us/WEBAPP/_rs/RequestEdit.aspx?rid=41087&coid="
+}

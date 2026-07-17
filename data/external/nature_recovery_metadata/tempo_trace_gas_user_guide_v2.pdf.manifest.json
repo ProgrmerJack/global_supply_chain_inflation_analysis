@@ -1,0 +1,9 @@
+{
+  "source_owner": "NASA ASDC",
+  "source_url": "https://asdc.larc.nasa.gov/documents/tempo/guide/TEMPO_Level-2-3_trace_gas_clouds_user_guide_V2.0.pdf",
+  "retrieved_at_utc": "2026-07-23T10:10:51.441273+00:00",
+  "bytes": 780338,
+  "sha256": "f971f16e8006c0b3c41db1891c0a9e724643690eaf0ca4cf760beb2ba33e85d1",
+  "role": "TEMPO quality, version and filtering methodology",
+  "scope": "metadata_or_method_only; protected outcomes unopened"
+}

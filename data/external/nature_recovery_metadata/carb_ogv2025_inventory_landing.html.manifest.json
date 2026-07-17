@@ -1,0 +1,9 @@
+{
+  "source_owner": "California Air Resources Board",
+  "source_url": "https://ww2.arb.ca.gov/resources/documents/final-ogv2025-emissions-inventory-output",
+  "retrieved_at_utc": "2026-07-23T10:10:53.632758+00:00",
+  "bytes": 50011,
+  "sha256": "dbaec6a1afe8bdbc2e7913cfba02b9e2da8cb453b2b93496cc412dadac6dc95a",
+  "role": "Landing metadata for the unopened Final OGV2025 inventory workbook",
+  "scope": "metadata_or_method_only; protected outcomes unopened"
+}

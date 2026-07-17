@@ -1,0 +1,10 @@
+{
+  "source_owner": "U.S. Bureau of Labor Statistics",
+  "source_url": "https://www.bls.gov/cpi/additional-resources/ce-cpi-concordance.xlsx",
+  "retrieved_at_utc": "2026-07-23T09:27:29.496957+00:00",
+  "bytes": 40804,
+  "sha256": "769d578cd7964cbbe24330cc4cac1e068a6fc68f426615d41ae533d8cd13f430",
+  "role": "Current CE-UCC to CPI-ELI concordance",
+  "scope": "metadata_or_method_only; no trade values or price observations",
+  "retrieval_path": "browser_download_after_direct_origin_rejected_automation"
+}

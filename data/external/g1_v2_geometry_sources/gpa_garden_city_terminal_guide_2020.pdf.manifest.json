@@ -1,0 +1,15 @@
+{
+  "accepted_row_count": 0,
+  "file_size_bytes": 2820438,
+  "first_timestamp": null,
+  "last_timestamp": null,
+  "parser_version": "g1-v2-geometry-source-cache-v1",
+  "port_complex_id": "savannah_ga",
+  "raw_row_count": 0,
+  "rejected_row_count": 0,
+  "rejection_counts": "{}",
+  "retrieved_at": "2026-07-15T14:32:40.137082Z",
+  "sha256": "4d58e7ba1397ab3b88b1b65d1d2f1f8120daddf79be40d7ddee14a5616d19fbe",
+  "source_file": "gpa_garden_city_terminal_guide_2020.pdf",
+  "source_url": "https://gaports.com/wp-content/uploads/2020/01/2020-GPA-GCT-UserGuide-SCREEN-Jan2020-v2.pdf"
+}

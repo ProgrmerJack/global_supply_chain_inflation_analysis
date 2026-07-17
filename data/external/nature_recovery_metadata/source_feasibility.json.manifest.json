@@ -1,0 +1,9 @@
+{
+  "source_owner": "derived from the four official metadata artifacts",
+  "source_url": "see source_manifest.csv",
+  "retrieved_at_utc": "2026-07-23T10:10:53.712023+00:00",
+  "bytes": 969,
+  "sha256": "d37a9828655ff24c081245eaf314fb39f49c50b4cd72129556011b1cded29d8e",
+  "role": "outcome-blind recovery-source feasibility summary",
+  "scope": "metadata_only; protected outcomes unopened"
+}

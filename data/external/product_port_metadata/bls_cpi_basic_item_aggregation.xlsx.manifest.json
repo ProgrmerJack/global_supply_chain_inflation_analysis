@@ -1,0 +1,10 @@
+{
+  "source_owner": "U.S. Bureau of Labor Statistics",
+  "source_url": "https://www.bls.gov/cpi/additional-resources/cpi-basic-item-aggregation.xlsx",
+  "retrieved_at_utc": "2026-07-23T09:27:29.498931+00:00",
+  "bytes": 20592,
+  "sha256": "4670c627fe9c9fceaba1e18bcbdead4e179ac5815252f658d1e32a870b246d1d",
+  "role": "CPI basic-item aggregation metadata",
+  "scope": "metadata_or_method_only; no trade values or price observations",
+  "retrieval_path": "browser_download_after_direct_origin_rejected_automation"
+}

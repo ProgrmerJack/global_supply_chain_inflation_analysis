@@ -1,0 +1,9 @@
+{
+  "source_owner": "U.S. Census Bureau",
+  "source_url": "https://api.census.gov/data/timeseries/intltrade/imports/porths/variables.json",
+  "retrieved_at_utc": "2026-07-23T09:18:37.219087+00:00",
+  "bytes": 5520,
+  "sha256": "b99a8e9f226ee02ac1fa2f2901cf8036e483772988cc7ded5f9e9c8f1e6f633a",
+  "role": "Port-HS API variable schema",
+  "scope": "metadata_or_method_only; no trade values or price observations"
+}

@@ -1,0 +1,9 @@
+{
+  "source_owner": "NASA Earthdata / ASDC",
+  "source_url": "https://gis.earthdata.nasa.gov/image/rest/services/C2930763263-LARC_CLOUD/TEMPO_NO2_L3_V03_HOURLY_TROPOSPHERIC_VERTICAL_COLUMN/ImageServer?f=pjson",
+  "retrieved_at_utc": "2026-07-23T10:10:49.178215+00:00",
+  "bytes": 4411,
+  "sha256": "4e120ccd652c92758108b2dca6a39a47e23d73161162b37ff5f810ab2fa14d81",
+  "role": "TEMPO V03 hourly Level-3 NO2 service definition and availability metadata",
+  "scope": "metadata_or_method_only; protected outcomes unopened"
+}

@@ -1,0 +1,10 @@
+{
+  "source_owner": "U.S. Bureau of Labor Statistics",
+  "source_url": "https://download.bls.gov/pub/time.series/CU/cu.series",
+  "retrieved_at_utc": "2026-07-23T09:27:29.485449+00:00",
+  "bytes": 1339447,
+  "sha256": "6ad9eaa7bff399fb57b249d70fbc1249119abd2eabd1ee4a3f058c7ccab69ff3",
+  "role": "CPI series metadata without observations",
+  "scope": "metadata_or_method_only; no trade values or price observations",
+  "retrieval_path": "browser_download_after_direct_origin_rejected_automation"
+}

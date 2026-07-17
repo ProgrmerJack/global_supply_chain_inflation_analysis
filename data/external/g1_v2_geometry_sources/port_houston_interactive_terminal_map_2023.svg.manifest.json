@@ -1,0 +1,15 @@
+{
+  "accepted_row_count": 0,
+  "file_size_bytes": 292375,
+  "first_timestamp": null,
+  "last_timestamp": null,
+  "parser_version": "g1-v2-geometry-source-cache-v1",
+  "port_complex_id": "houston_tx",
+  "raw_row_count": 0,
+  "rejected_row_count": 0,
+  "rejection_counts": "{}",
+  "retrieved_at": "2026-07-15T14:32:40.137082Z",
+  "sha256": "9e30898aedb294850d1d9ae57a6ad62da0a48df9cd5d9e704d4596959778c9f0",
+  "source_file": "port_houston_interactive_terminal_map_2023.svg",
+  "source_url": "https://porthouston.com/wp-content/uploads/2023/09/PHOU_InteractiveMap_Terminals.svg"
+}

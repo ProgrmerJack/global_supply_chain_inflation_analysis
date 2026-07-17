@@ -1,0 +1,10 @@
+{
+  "source_owner": "U.S. Census Bureau",
+  "source_url": "https://api.census.gov/data/timeseries/intltrade/imports/porths/geography.json",
+  "retrieved_at_utc": "2026-07-23T09:27:19.452616+00:00",
+  "bytes": 60,
+  "sha256": "f5dead3c2050af64b7b3aec3709c7d95556c004aec073fceb18b4c93816f0b49",
+  "role": "Port-HS API geographic predicate metadata",
+  "scope": "metadata_or_method_only; no trade values or price observations",
+  "retrieval_path": "direct_http"
+}

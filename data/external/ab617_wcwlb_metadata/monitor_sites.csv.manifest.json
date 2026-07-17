@@ -1,0 +1,10 @@
+{
+  "source_owner": "South Coast AQMD",
+  "source_url": "http://xappprod.aqmd.gov/AB617CommunityAirMonitoring/Home/Index/WCWLB",
+  "retrieved_at_utc": "2026-07-18T06:37:01.983322+00:00",
+  "source_response_bytes": 23708,
+  "source_response_sha256": "ca3432cd2b256a503991590f8b246820617dc514268fea9efeabb83de700d40c",
+  "scope": "metadata_only; live wind and concentration fields excluded",
+  "bytes": 2284,
+  "sha256": "fdb4e6b9a576f3597a35861b9c0173915c4fefd3e9b77318760879e3c3c37d1c"
+}

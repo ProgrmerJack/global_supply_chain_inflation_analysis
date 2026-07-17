@@ -1,0 +1,10 @@
+{
+  "source_owner": "U.S. Bureau of Labor Statistics",
+  "source_url": "https://www.bls.gov/cpi/additional-resources/cpi-item-aggregation-trees.xlsx",
+  "retrieved_at_utc": "2026-07-23T09:27:29.497987+00:00",
+  "bytes": 1125187,
+  "sha256": "6c6cb66e7bbc5da72991ace316d9601e3b702e7a5fea34556a8941d880e83185",
+  "role": "CPI item hierarchy metadata",
+  "scope": "metadata_or_method_only; no trade values or price observations",
+  "retrieval_path": "browser_download_after_direct_origin_rejected_automation"
+}

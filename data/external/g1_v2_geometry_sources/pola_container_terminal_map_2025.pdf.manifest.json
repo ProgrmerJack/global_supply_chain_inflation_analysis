@@ -1,0 +1,15 @@
+{
+  "accepted_row_count": 0,
+  "file_size_bytes": 2772744,
+  "first_timestamp": null,
+  "last_timestamp": null,
+  "parser_version": "g1-v2-geometry-source-cache-v1",
+  "port_complex_id": "san_pedro_bay",
+  "raw_row_count": 0,
+  "rejected_row_count": 0,
+  "rejection_counts": "{}",
+  "retrieved_at": "2026-07-15T14:32:40.137082Z",
+  "sha256": "b19154b2ae717623c792f19b83f114e07b8c774c694f285c48f7e9a907833ae0",
+  "source_file": "pola_container_terminal_map_2025.pdf",
+  "source_url": "https://kentico.portoflosangeles.org/getmedia/b1277c2b-c88c-4c1e-aedb-113706d28543/2025-pola-container-terminals-map"
+}
