@@ -1,0 +1,27 @@
+{
+  "study": "San Pedro Bay queue-boundary spatial reanalysis",
+  "status": "COMPLETE_COMPONENT_FAILURE",
+  "completed_at_utc": "2026-07-28T09:32:05.9305011Z",
+  "evidence_status": "post_outcome_known_public_data_reanalysis",
+  "freeze_receipt_sha256": "1a9a5c30eeac0203e66affb1f187107b59a03ecfe8b53d0d57c78ae2a3e19621",
+  "executed_analysis_sha256": "d03ac4d179a88bd35457df4b71d8a328bc1bbdfdd1bb364f603893c12855e5c3",
+  "decision": {
+    "component_status": "fail",
+    "queue_reform_causal_claim_authorized": false,
+    "physical_redistribution_accounting_supported": true,
+    "individual_waiting_claim_authorized": false,
+    "emissions_or_exposure_claim_authorized": false
+  },
+  "output_sha256": {
+    "daily_physical_panel.parquet": "267ea993285e8abc90e85bf886ac1d0905070c762c6e8638004f05321fd49082",
+    "data_quality.json": "a2aade7cc5da3c1b69011598fb7abd319fdcf05ea00efb957db2b3b0d10bca9c",
+    "date_placebos.csv": "fb907658b5a871eeb326becf498d3980af0e1c1a2c4fcef72071570f1c64c8ef",
+    "decision.json": "376565233ba7d75147f618add94bcedf3e0bd4b92ca54b8a9079874099401a8c",
+    "fixed_placebos.csv": "d242841a38fed36428587534643ae26bfa3f9f9404c0ad50a37c1be461dc37bc",
+    "report.md": "e7d8ab84a9ba61d0aa5ab6bd24344eb273e94a773cfdc82526ca1b4f98b38233",
+    "rotated_sectors.csv": "3948a87748c621d506585a2652583ae604d45a7430d80c55fd5bcdfb6b15d40a",
+    "sensitivities.csv": "4cc866f433e26dbe5778107d8d99790ca6d9bcbbed3827f5a9ea649210a4570c",
+    "weekly_physical_panel.csv": "9143db994f70787a2f962a480925d5521bf1f2acba103952019d921a99711af4",
+    "weekly_speed_composition.csv": "4b625930f85eced3fe9d494ba786d8d4c01f3cac0519c06860c75f39595f9393"
+  }
+}

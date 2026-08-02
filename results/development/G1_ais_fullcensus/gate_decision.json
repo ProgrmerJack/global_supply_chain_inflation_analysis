@@ -1,0 +1,180 @@
+{
+  "gate": "G1",
+  "name": "national AIS validity (revised architecture)",
+  "evidence_status": "development",
+  "status": "development",
+  "rule": "G1 (revised, component-separated): (A) ingestion integrity; (B) activity vs an OPERATIONALLY MATCHED official series (vessel calls/TEU, NOT import value); (C) motion moving-vs-stationary macro-F1>=0.80; (D) berth-vs-anchor is a diagnostic, not a pass/fail gate; scope>=12 complexes. Import-value activity correlation and navigation-status berth/anchor F1 are DIAGNOSTIC only.",
+  "components": {
+    "ingestion_integrity": {
+      "status": "pass",
+      "days_ok": 4018,
+      "days_error": 0,
+      "days_missing": 0,
+      "days_unknown": 0,
+      "days_total": 4018,
+      "attempt_rows": 4117,
+      "retried_days": 99,
+      "error_attempts": 11,
+      "superseded_error_attempts": 11,
+      "note": "all dated ingestion records have a successful retained result"
+    },
+    "activity_correlation": {
+      "comparator": "import_value",
+      "operationally_matched": false,
+      "status": "diagnostic",
+      "port_fraction_ge_min": 0.13333333333333333,
+      "median_r": 0.6132053369253792,
+      "n_ports": 15,
+      "per_port_correlations": {
+        "baltimore_md": 0.7589538860753587,
+        "boston_ma": 0.5113346338986279,
+        "charleston_sc": 0.48848146667242104,
+        "houston_tx": 0.7711356059423375,
+        "jacksonville_fl": 0.2496041497545419,
+        "miami_fl": 0.295252007494553,
+        "mobile_al": 0.8111029070097099,
+        "new_orleans_la": 0.5374273218365985,
+        "new_york_new_jersey": 0.7959559783471758,
+        "norfolk_newport_news_va": 0.7718840350077241,
+        "philadelphia_pa": 0.8028534951228316,
+        "port_everglades_fl": 0.5514834174898151,
+        "san_pedro_bay": 0.6222508833653368,
+        "savannah_ga": 0.6132053369253792,
+        "wilmington_nc": 0.6114048881675622
+      },
+      "note": "import value is price/mix/inflation-laden, not a vessel-activity comparator; use container-vessel calls or TEU throughput for a confirmatory activity gate \u2014 this correlation is DIAGNOSTIC only"
+    },
+    "motion_state": {
+      "macro_f1": 0.7288887505928576,
+      "threshold": 0.8,
+      "status": "fail",
+      "reference": "AIS navigation status (noisy auxiliary)",
+      "n_scored": 480768
+    },
+    "berth_anchor_state": {
+      "status": "diagnostic",
+      "macro_f1_confident": 0.9895978427549311,
+      "unresolved_stationary_share": 0.6085402040047249,
+      "note": "berth polygons incomplete + navigation status noisy; not a pass/fail gate"
+    },
+    "national_scope": {
+      "validated_complexes": 15,
+      "min": 12,
+      "status": "pass"
+    }
+  },
+  "reproducibility": {
+    "inputs": {
+      "panel": {
+        "path": "data\\processed\\national_activity_month.csv",
+        "sha256": "caea15609a43ba7fb63f07b26889de2f3fe4602d499a5941b6e1562bdc80aefe"
+      },
+      "official_activity": {
+        "path": "data\\processed\\official_port_activity.csv",
+        "sha256": "10c32fde850979f5516d4f0ec9ded1d70ee468d81edddbeb051ec8d508394f52"
+      },
+      "blind_labels": {
+        "path": "data\\processed\\blind_state_labels.csv",
+        "sha256": "82adea8426ee300310d02ae89b4a3aa8d940448a1cbdbf9087ee957de8614220"
+      }
+    },
+    "measure": "cargo_vessels",
+    "comparator": "import_value",
+    "notes": "evidence=development",
+    "python": "3.14.0",
+    "frozen_at_utc": "2026-07-15T11:22:43.463681Z"
+  },
+  "validation_report": [
+    {
+      "port_complex_id": "baltimore_md",
+      "paired_months": 132,
+      "correlation": 0.7589538860753587,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "boston_ma",
+      "paired_months": 132,
+      "correlation": 0.5113346338986279,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "charleston_sc",
+      "paired_months": 132,
+      "correlation": 0.48848146667242104,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "houston_tx",
+      "paired_months": 132,
+      "correlation": 0.7711356059423375,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "jacksonville_fl",
+      "paired_months": 132,
+      "correlation": 0.2496041497545419,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "miami_fl",
+      "paired_months": 132,
+      "correlation": 0.295252007494553,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "mobile_al",
+      "paired_months": 132,
+      "correlation": 0.8111029070097099,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "new_orleans_la",
+      "paired_months": 132,
+      "correlation": 0.5374273218365985,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "new_york_new_jersey",
+      "paired_months": 132,
+      "correlation": 0.7959559783471758,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "norfolk_newport_news_va",
+      "paired_months": 132,
+      "correlation": 0.7718840350077241,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "philadelphia_pa",
+      "paired_months": 132,
+      "correlation": 0.8028534951228316,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "port_everglades_fl",
+      "paired_months": 132,
+      "correlation": 0.5514834174898151,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "san_pedro_bay",
+      "paired_months": 132,
+      "correlation": 0.6222508833653368,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "savannah_ga",
+      "paired_months": 132,
+      "correlation": 0.6132053369253792,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "wilmington_nc",
+      "paired_months": 132,
+      "correlation": 0.6114048881675622,
+      "status": "validated"
+    }
+  ],
+  "generated_at_utc": "2026-07-15T11:22:43.472508Z"
+}

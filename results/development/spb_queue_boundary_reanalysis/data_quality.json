@@ -1,0 +1,16 @@
+{
+  "all_hashes_valid": true,
+  "artifact_count": 35,
+  "manifest_sha256": "f01ed4c026ecd66dde7fc762db247bf7104bf2d40b4e1aa5f86aabca222a41d0",
+  "presence_hours": 4292599.0,
+  "row_count": 1310199,
+  "smoke_test_date_excluded": "2021-12-01",
+  "support_days": 1820,
+  "unsupported_year_end_dates_excluded": [
+    "2019-12-31",
+    "2020-12-31",
+    "2021-12-31",
+    "2022-12-31",
+    "2023-12-31"
+  ]
+}

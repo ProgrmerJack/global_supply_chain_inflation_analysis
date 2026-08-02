@@ -1,0 +1,10 @@
+{
+  "created_at_utc": "2026-07-23T09:39:37.273330+00:00",
+  "outputs_sha256": {
+    "README.md": "282bba077f0983f8b0f32ceaaeab81c60abea90732df8810605fb3a6be91b942",
+    "claim_evidence_matrix.csv": "4137ab063ec5584f6557710700e68b6202889f27d266d9e2b927b8cbc0b66f2a",
+    "decision.json": "6509ea8cadba5cf643762d80c69a51a9c6f28694a2c395015d474f74add1234d",
+    "gate_table.csv": "90aadf6380dc15ebb8ad54313b2581d5f6c056fb7b35df2348fdca6110421e04"
+  },
+  "status": "FINAL_GATE_CLAIM_AUDIT_FROZEN"
+}

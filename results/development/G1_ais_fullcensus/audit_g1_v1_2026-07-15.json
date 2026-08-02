@@ -1,0 +1,55 @@
+{
+  "audit_version": "g1-v1-audit-2026-07-15",
+  "audit_target": "gate_decision_ves_wgt_mo.json",
+  "audit_target_sha256": "775046fb60e628bdd3e430d96595247137638a33487081cd7aaed00333ced822",
+  "historical_record_modified": false,
+  "g1_v1_status": "closed_failed_development_validation",
+  "g1_v1_decision": "fail",
+  "evidence_status": "development",
+  "activity_pair": {
+    "ais_measure": "freight vessel call starts, AIS vessel types 70-89",
+    "official_measure": "imports-only vessel shipping weight, Census VES_WGT_MO",
+    "registered_classification": "operationally_matched",
+    "realised_construct_match": "partial",
+    "interpretation": "failed proxy relationship; not proof of AIS invalidity",
+    "pearson_r_min": 0.8,
+    "required_port_fraction": 0.8,
+    "ports_scored": 15,
+    "paired_months_per_port": 120,
+    "median_r": 0.3200241092239818,
+    "ports_at_or_above_r_080": 0,
+    "ports_at_or_above_r_060": 4,
+    "ports_with_negative_r": 5
+  },
+  "motion_pair": {
+    "classifier_output": "moving versus stationary",
+    "reference": "AIS navigation status",
+    "reference_quality": "noisy auxiliary, not independent gold standard",
+    "registered_result": 0.7288887505928576,
+    "decision": "fail"
+  },
+  "berth_anchor": {
+    "conditional_macro_f1": 0.9895978427549311,
+    "resolved_coverage": 0.3914597959952761,
+    "unresolved_stationary_share": 0.6085402040047249,
+    "decision_role": "diagnostic only"
+  },
+  "thresholds_documented": {
+    "config_gates_yml": 0.85,
+    "runtime_g1_implementation": 0.8,
+    "registered_decision_tree_stop": 0.75,
+    "historical_decision_affected": false
+  },
+  "what_the_result_does_not_establish": [
+    "It does not establish that the raw NOAA AIS archive is invalid.",
+    "It does not establish a partial G1 pass.",
+    "It does not authorize alternative-metric, threshold, port-selection, or relabelling searches on the inspected G1-v1 outcomes."
+  ],
+  "downstream_status": "blocked_pending_separately_preregistered_g1_v2",
+  "g1_v2_prerequisites": [
+    "A port-specific independent operational-comparator registry fixed before values are inspected.",
+    "Independent episode- or call-hour-level state labels with blinded annotation, adjudication, uncertainty labels and untouched validation evidence.",
+    "One canonical threshold configuration source referenced by protocol, code and generated reports.",
+    "A separately timestamped G1-v2 protocol with frozen population, measures, missing-data rules and pass/fail consequences."
+  ]
+}

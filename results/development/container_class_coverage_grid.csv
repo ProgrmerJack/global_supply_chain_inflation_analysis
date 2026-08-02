@@ -1,0 +1,12 @@
+complex_id,ratio_L0,ratio_L150,ratio_L200,ratio_L250,within20pct_L200
+baltimore_md,3.644,3.372,1.971,0.987,False
+charleston_sc,1.243,1.177,0.961,0.802,True
+houston_tx,2.179,1.765,0.979,0.675,True
+jacksonville_fl,2.409,2.138,1.245,0.364,False
+miami_fl,1.892,0.74,0.443,0.432,False
+new_york_new_jersey,1.291,1.183,0.912,0.723,True
+norfolk_newport_news_va,1.386,1.314,1.035,0.821,True
+philadelphia_pa,2.159,1.906,0.866,0.318,True
+port_everglades_fl,1.856,0.658,0.259,0.157,False
+san_pedro_bay,1.466,1.336,1.037,0.779,True
+savannah_ga,1.21,1.144,0.865,0.719,True

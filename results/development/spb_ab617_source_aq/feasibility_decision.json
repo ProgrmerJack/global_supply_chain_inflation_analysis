@@ -1,0 +1,23 @@
+{
+  "study": "WCWLB AB 617 source-oriented air-quality design",
+  "registration": "https://osf.io/j6utx/",
+  "decision": "FAIL_FEASIBILITY",
+  "reason": "official endpoint supplied no observations inside the frozen 2020-2024 window",
+  "declared_series": 84,
+  "chart_responses_with_values": 77,
+  "no_data_responses": 4,
+  "retrieved_value_rows": 1392,
+  "retrieved_first_utc": "2026-07-16T07:00:00+00:00",
+  "retrieved_last_utc": "2026-07-23T06:00:00+00:00",
+  "registered_window": "2020-01-01 through 2024-12-31",
+  "in_window_observations": 0,
+  "eligible_series": 0,
+  "eligible_primary_sites": 0,
+  "required_primary_sites": 3,
+  "concurrent_primary_site_hours": 0,
+  "required_concurrent_primary_site_hours": 20000,
+  "source_model_estimated": false,
+  "bounded_null_claim": false,
+  "ns_g4_passed": false,
+  "availability_screen_sha256": "af94aadfa09f2d63ac7242cf865b81c56719ea0b41e25e5c05ad2ebd7252e3af"
+}

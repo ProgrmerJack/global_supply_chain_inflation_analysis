@@ -1,0 +1,194 @@
+{
+  "broad_absolute_changes": {
+    "far_150_300nm": {
+      "block_weeks": 8,
+      "ci_high": 159.02056944729108,
+      "ci_low": 17.177790872446522,
+      "draws": 10000,
+      "estimate": 106.50345016055202
+    },
+    "near_0_50nm": {
+      "block_weeks": 8,
+      "ci_high": -339.99112864658065,
+      "ci_low": -907.2349473935917,
+      "draws": 10000,
+      "estimate": -652.753638040582
+    },
+    "total_0_300nm": {
+      "block_weeks": 8,
+      "ci_high": -211.91507993441274,
+      "ci_low": -813.0879517660725,
+      "draws": 10000,
+      "estimate": -525.7726993236317
+    }
+  },
+  "claim_boundary": "At most low-speed cargo-presence redistribution around a radial policy-boundary proxy; not individual waiting, container-only activity, legal compliance, emissions, exposure, or mass balance.",
+  "component_status": "fail",
+  "conditions": {
+    "date_randomization_rank": false,
+    "near_decline_and_far_increase": true,
+    "no_equally_large_same_signed_fixed_placebo": false,
+    "positive_low_speed_outer_share_effect": false,
+    "positive_speed_specific_boundary_effect": true,
+    "source_and_support_valid": true
+  },
+  "coverage": {
+    "all_hashes_valid": true,
+    "artifact_count": 35,
+    "manifest_sha256": "f01ed4c026ecd66dde7fc762db247bf7104bf2d40b4e1aa5f86aabca222a41d0",
+    "presence_hours": 4292599.0,
+    "row_count": 1310199,
+    "smoke_test_date_excluded": "2021-12-01",
+    "support_days": 1820,
+    "unsupported_year_end_dates_excluded": [
+      "2019-12-31",
+      "2020-12-31",
+      "2021-12-31",
+      "2022-12-31",
+      "2023-12-31"
+    ]
+  },
+  "date_randomization": {
+    "candidate_count": 27,
+    "two_sided_rank_p_value": 0.2857142857142857
+  },
+  "emissions_or_exposure_claim_authorized": false,
+  "evidence_status": "post_outcome_known_public_data_reanalysis",
+  "individual_waiting_claim_authorized": false,
+  "primary_ddd": {
+    "ci_high": 1.1872958946407173,
+    "ci_low": 0.053791424890876516,
+    "estimate": 0.620543659765797,
+    "event": "2021-11-16",
+    "n_mature_weeks": 41,
+    "n_pre_weeks": 51,
+    "outcome": "ddd_west",
+    "p_value": 0.031873974255314824,
+    "standard_error": 0.2891646169753066,
+    "window_weeks": 52
+  },
+  "primary_low_speed_outer_share": {
+    "ci_high": null,
+    "ci_low": null,
+    "estimable": false,
+    "estimate": null,
+    "event": "2021-11-16",
+    "n_mature_weeks": 38,
+    "n_pre_weeks": 40,
+    "outcome": "low_outer_share_west",
+    "p_value": null,
+    "reason": "level-shift model requires at least 39 complete weeks in each phase",
+    "standard_error": null,
+    "window_weeks": 52
+  },
+  "queue_reform_causal_claim_authorized": false,
+  "run_once_at_utc": "2026-07-28T09:30:55.517475+00:00",
+  "sensitivity_summary": [
+    {
+      "block_weeks": null,
+      "ci_high": 4.544169524035319,
+      "ci_low": -6.07622376369108,
+      "draws": null,
+      "estimate": -0.7660271198278802,
+      "event": "2021-11-16",
+      "n_mature_weeks": 15.0,
+      "n_pre_weeks": 26.0,
+      "outcome": "ddd_west",
+      "p_value": 0.7773789567263211,
+      "sensitivity": "ddd_26_week",
+      "standard_error": 2.709333786615139,
+      "window_weeks": 26.0
+    },
+    {
+      "block_weeks": null,
+      "ci_high": 0.3897210897316993,
+      "ci_low": -0.11824124823733895,
+      "draws": null,
+      "estimate": 0.13573992074718016,
+      "event": "2021-11-16",
+      "n_mature_weeks": 66.0,
+      "n_pre_weeks": 77.0,
+      "outcome": "ddd_west",
+      "p_value": 0.29486888440668324,
+      "sensitivity": "ddd_78_week",
+      "standard_error": 0.1295846102213562,
+      "window_weeks": 78.0
+    },
+    {
+      "block_weeks": null,
+      "ci_high": 1.4313164974141501,
+      "ci_low": 0.04577095001228393,
+      "draws": null,
+      "estimate": 0.738543723713217,
+      "event": "2021-11-16",
+      "n_mature_weeks": 41.0,
+      "n_pre_weeks": 51.0,
+      "outcome": "ddd4_west",
+      "p_value": 0.03666658171658374,
+      "sensitivity": "low_under_4_knots",
+      "standard_error": 0.35346199173323406,
+      "window_weeks": 52.0
+    },
+    {
+      "block_weeks": 4.0,
+      "ci_high": -406.22277959964487,
+      "ci_low": -884.0651192184191,
+      "draws": 10000.0,
+      "estimate": -652.753638040582,
+      "event": null,
+      "n_mature_weeks": null,
+      "n_pre_weeks": null,
+      "outcome": "low_0-50nm",
+      "p_value": null,
+      "sensitivity": "block_4_weeks",
+      "standard_error": null,
+      "window_weeks": null
+    },
+    {
+      "block_weeks": 4.0,
+      "ci_high": 155.2750170800027,
+      "ci_low": 35.12914190066267,
+      "draws": 10000.0,
+      "estimate": 106.50345016055202,
+      "event": null,
+      "n_mature_weeks": null,
+      "n_pre_weeks": null,
+      "outcome": "low_150-300nm",
+      "p_value": null,
+      "sensitivity": "block_4_weeks",
+      "standard_error": null,
+      "window_weeks": null
+    },
+    {
+      "block_weeks": 12.0,
+      "ci_high": -322.8723884675822,
+      "ci_low": -878.1511631481861,
+      "draws": 10000.0,
+      "estimate": -652.753638040582,
+      "event": null,
+      "n_mature_weeks": null,
+      "n_pre_weeks": null,
+      "outcome": "low_0-50nm",
+      "p_value": null,
+      "sensitivity": "block_12_weeks",
+      "standard_error": null,
+      "window_weeks": null
+    },
+    {
+      "block_weeks": 12.0,
+      "ci_high": 157.25735977317754,
+      "ci_low": 11.537198537951772,
+      "draws": 10000.0,
+      "estimate": 106.50345016055202,
+      "event": null,
+      "n_mature_weeks": null,
+      "n_pre_weeks": null,
+      "outcome": "low_150-300nm",
+      "p_value": null,
+      "sensitivity": "block_12_weeks",
+      "standard_error": null,
+      "window_weeks": null
+    }
+  ],
+  "study": "San Pedro Bay queue-boundary spatial reanalysis"
+}

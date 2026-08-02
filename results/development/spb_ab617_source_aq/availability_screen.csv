@@ -1,0 +1,85 @@
+site_id,parameter_id,duration_id,parameter_name,average_name,unit,pollutant_family,first_utc,last_utc,active_span_days,observations,active_span_expected_hours,active_span_coverage,minimum_month_observations,median_interval_hours,hourly_or_finer,eligible
+5,27,10,Wind Direction,Previous Hour,COMPASS DEG,OTHER,,,,0,0.0,0.0,0,,False,False
+5,28,10,Wind Speed,Previous Hour,MPH,OTHER,,,,0,0.0,0.0,0,,False,False
+5,34,10,Black Carbon,Previous Hour,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+5,34,11,Black Carbon,Previous 24 Hours,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+5,38,10,Hydrogen Sulfide,Previous Hour,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+5,38,11,Hydrogen Sulfide,Previous 24 Hours,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+6,27,10,Wind Direction,Previous Hour,COMPASS DEG,OTHER,,,,0,0.0,0.0,0,,False,False
+6,28,10,Wind Speed,Previous Hour,MPH,OTHER,,,,0,0.0,0.0,0,,False,False
+6,34,10,Black Carbon,Previous Hour,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+6,34,11,Black Carbon,Previous 24 Hours,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+6,36,10,Ultrafine Particles,,,PM2.5,,,,0,0.0,0.0,0,,False,False
+6,36,11,Ultrafine Particles,,,PM2.5,,,,0,0.0,0.0,0,,False,False
+6,38,10,Hydrogen Sulfide,Previous Hour,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+6,38,11,Hydrogen Sulfide,Previous 24 Hours,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+8,27,10,Wind Direction,Previous Hour,COMPASS DEG,OTHER,,,,0,0.0,0.0,0,,False,False
+8,28,10,Wind Speed,Previous Hour,MPH,OTHER,,,,0,0.0,0.0,0,,False,False
+8,34,10,Black Carbon,Previous Hour,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+8,34,11,Black Carbon,Previous 24 Hours,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+8,45,10,Sulfur Dioxide,Previous Hour,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+8,45,11,Sulfur Dioxide,Previous 24 Hours,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+9,27,10,Wind Direction,Previous Hour,COMPASS DEG,OTHER,,,,0,0.0,0.0,0,,False,False
+9,28,10,Wind Speed,Previous Hour,MPH,OTHER,,,,0,0.0,0.0,0,,False,False
+9,34,10,Black Carbon,Previous Hour,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+9,34,11,Black Carbon,Previous 24 Hours,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+9,38,10,Hydrogen Sulfide,Previous Hour,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+9,38,11,Hydrogen Sulfide,Previous 24 Hours,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+10,27,10,Wind Direction,Previous Hour,COMPASS DEG,OTHER,,,,0,0.0,0.0,0,,False,False
+10,28,10,Wind Speed,Previous Hour,MPH,OTHER,,,,0,0.0,0.0,0,,False,False
+10,34,10,Black Carbon,Previous Hour,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+10,34,11,Black Carbon,Previous 24 Hours,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+10,38,10,Hydrogen Sulfide,Previous Hour,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+10,38,11,Hydrogen Sulfide,Previous 24 Hours,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+13,27,10,Wind Direction,Previous Hour,COMPASS DEG,OTHER,,,,0,0.0,0.0,0,,False,False
+13,28,10,Wind Speed,Previous Hour,MPH,OTHER,,,,0,0.0,0.0,0,,False,False
+13,34,10,Black Carbon,Previous Hour,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+13,34,11,Black Carbon,Previous 24 Hours,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+13,38,10,Hydrogen Sulfide,Previous Hour,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+13,38,11,Hydrogen Sulfide,Previous 24 Hours,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+14,27,10,Wind Direction,Previous Hour,COMPASS DEG,OTHER,,,,0,0.0,0.0,0,,False,False
+14,28,10,Wind Speed,Previous Hour,MPH,OTHER,,,,0,0.0,0.0,0,,False,False
+14,34,10,Black Carbon,Previous Hour,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+14,34,11,Black Carbon,Previous 24 Hours,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+14,38,10,Hydrogen Sulfide,Previous Hour,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+14,38,11,Hydrogen Sulfide,Previous 24 Hours,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+22,101,10,Arsenic,Previous Hour,ng/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,103,10,Cadmium,Previous Hour,ng/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,104,10,Total Chromium,Previous Hour,ng/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,105,10,Copper,Previous Hour,ng/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,106,10,Manganese,Previous Hour,ng/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,107,10,Nickel,Previous Hour,ng/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,108,10,Lead,Previous Hour,ng/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,109,10,Selenium,Previous Hour,ng/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,110,10,Titanium,Previous Hour,ng/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,111,10,Vanadium,Previous Hour,ng/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,133,10,PM Smaller than 10 µm,Previous Hour,μg/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,133,11,PM Smaller than 10 µm,Previous 24 Hours,μg/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,134,10,PM Smaller than 2.5 µm,Previous Hour,μg/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,134,11,PM Smaller than 2.5 µm,Previous 24 Hours,μg/m³,OTHER,,,,0,0.0,0.0,0,,False,False
+22,151,10,Particulate Black Carbon,Previous Hour,μg/m3,BC,,,,0,0.0,0.0,0,,False,False
+22,151,11,Particulate Black Carbon,Previous 24 Hours,μg/m3,BC,,,,0,0.0,0.0,0,,False,False
+22,152,10,Particulate Organic Carbon,Previous Hour,μg/m3,OTHER,,,,0,0.0,0.0,0,,False,False
+22,152,11,Particulate Organic Carbon,Previous 24 Hours,μg/m3,OTHER,,,,0,0.0,0.0,0,,False,False
+22,153,10,Total Carbon,Previous Hour,μg/m3,OTHER,,,,0,0.0,0.0,0,,False,False
+22,153,11,Total Carbon,Previous 24 Hours,μg/m3,OTHER,,,,0,0.0,0.0,0,,False,False
+22,154,10,Carbon Dioxide,Previous Hour,ppm,OTHER,,,,0,0.0,0.0,0,,False,False
+22,154,11,Carbon Dioxide,Previous 24 Hours,ppm,OTHER,,,,0,0.0,0.0,0,,False,False
+22,27,10,Wind Direction,Previous Hour,COMPASS DEG,OTHER,,,,0,0.0,0.0,0,,False,False
+22,28,10,Wind Speed,Previous Hour,MPH,OTHER,,,,0,0.0,0.0,0,,False,False
+22,38,10,Hydrogen Sulfide,Previous Hour,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+22,38,11,Hydrogen Sulfide,Previous 24 Hours,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+52,27,10,Wind Direction,Previous Hour,COMPASS DEG,OTHER,,,,0,0.0,0.0,0,,False,False
+52,28,10,Wind Speed,Previous Hour,MPH,OTHER,,,,0,0.0,0.0,0,,False,False
+52,62,10,Nitric Oxide,Previous Hour,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+52,62,11,Nitric Oxide,Previous 24 Hours,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+52,63,10,Nitrogen Dioxide,Previous Hour,ppb,NO2,,,,0,0.0,0.0,0,,False,False
+52,63,11,Nitrogen Dioxide,Previous 24 Hours,ppb,NO2,,,,0,0.0,0.0,0,,False,False
+52,64,10,Oxides of Nitrogen,Previous Hour,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+52,64,11,Oxides of Nitrogen,Previous 24 Hours,ppb,OTHER,,,,0,0.0,0.0,0,,False,False
+52,91,10,Black Carbon,Previous Hour,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+52,91,11,Black Carbon,Previous 24 Hours,μg/m³,BC,,,,0,0.0,0.0,0,,False,False
+52,93,10,Ultrafine Particles,Previous Hour,counts/cm³,PM2.5,,,,0,0.0,0.0,0,,False,False
+52,93,11,Ultrafine Particles,Previous 24 Hours,counts/cm³,PM2.5,,,,0,0.0,0.0,0,,False,False
+52,96,10,PM Smaller than 2.5 µm,,,OTHER,,,,0,0.0,0.0,0,,False,False
+52,96,11,PM Smaller than 2.5 µm,,,OTHER,,,,0,0.0,0.0,0,,False,False

@@ -1,0 +1,27 @@
+{
+  "status": "DESCRIPTIVE_OFFICIAL_FREIGHT_BOUNDARY_COMPLETE",
+  "reports": 14,
+  "port_years": 14,
+  "source_categories": [
+    "ocean_going_vessels",
+    "harbor_craft",
+    "cargo_handling_equipment",
+    "locomotives",
+    "heavy_duty_vehicles"
+  ],
+  "pollutants": [
+    "PM10",
+    "PM2.5",
+    "DPM",
+    "NOx",
+    "SOx",
+    "CO",
+    "HC",
+    "CO2e"
+  ],
+  "published_total_checks": 112,
+  "published_total_checks_passed": 112,
+  "policy_attribution": false,
+  "ais_model_validation": false,
+  "overrides_failed_ns_g3": false
+}

@@ -1,0 +1,23 @@
+{
+  "status": "DEVELOPMENT_EXTRACTION_COMPLETE_HOLDOUT_UNOPENED",
+  "reports": 12,
+  "years": [
+    2019,
+    2024
+  ],
+  "ports": [
+    "POLA",
+    "POLB"
+  ],
+  "published_total_checks": 112,
+  "published_total_checks_passed": 112,
+  "crosswalk_detail_rows": 362,
+  "matched_freight_detail_rows": 336,
+  "incomplete_freight_detail_rows": 0,
+  "freight_detail_rows_without_reported_activity": 1,
+  "class_control_joint_cells_published": false,
+  "class_emissions_identifiable": false,
+  "identifiability_reason": "reports publish port-wide shore-power/CAECS margins, not class-by-control cells",
+  "protected_2018_values_opened": false,
+  "protected_gate_fired": false
+}

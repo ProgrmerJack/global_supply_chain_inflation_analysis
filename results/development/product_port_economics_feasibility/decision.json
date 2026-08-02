@@ -1,0 +1,117 @@
+{
+  "bls_schema": {
+    "national_unadjusted_monthly_item_series_covering_2014_2015": 242,
+    "note": "BLS supplies UCC-to-ELI semantics; the direct competitor separately supplies HS4-to-item.",
+    "official_bls_concordance_is_hs_bridge": false,
+    "official_concordance_columns": {
+      "2020": [
+        "UCC",
+        "ELI",
+        "UCC name",
+        "ELI title"
+      ],
+      "current": [
+        "UCC",
+        "ELI",
+        "UCC Title",
+        "ELI Title",
+        "CE SOURCE"
+      ]
+    },
+    "passed": true,
+    "published_item_codes": 400,
+    "series_schema_missing": []
+  },
+  "census_schema": {
+    "commodity_label": "2-, 4-, 6-, or 10-character Import Harmonized Code",
+    "level_label": "4-character aggregation levels for commodity code.  HS2=2-digit HS totals.  HS4=4-digit HS totals. HS6=6-digit HS totals.",
+    "missing_variables": [],
+    "passed": true,
+    "required_variables": [
+      "CNT_VAL_MO",
+      "CNT_WGT_MO",
+      "COMM_LVL",
+      "I_COMMODITY",
+      "PORT",
+      "VES_VAL_MO",
+      "VES_WGT_MO"
+    ]
+  },
+  "claim_boundary": "This is a feasibility/novelty failure, not evidence that port delays cannot affect prices. The old aggregate CPI result remains retired.",
+  "decision": "Close the economics layer before outcome acquisition. Public schemas and a deposited HS4-item bridge exist, but no eligible port-delay/policy-shock input passed its frozen gate and no executable policy-specific differentiator remains beyond the direct 2026 competitor.",
+  "economics_model_authorized": false,
+  "fatal_conditions_passed": false,
+  "gates": {
+    "executable_novelty_beyond_jiao_2026": false,
+    "legacy_temporal_and_inference_stability": false,
+    "metadata_integrity": true,
+    "price_schema": true,
+    "semantic_bridge_discovered": true,
+    "trade_schema": true,
+    "validated_port_shock": false
+  },
+  "legacy_kill_test": {
+    "holdout_failed": true,
+    "passed": false,
+    "same_direction_failed": true,
+    "sha256": "6994e00a9f6c219add7e66ce2f00242909adf6b4262a8434d6d42cfba8c10463",
+    "simultaneous_inference_failed": true
+  },
+  "metadata_cache": {
+    "artifact_count": 11,
+    "manifest_sha256": "6cb2c0a0d1fa46093f3b2852ea28c734e0296771999845b60c76ae2d26b9c41f",
+    "passed": true,
+    "problems": []
+  },
+  "metadata_preparation_passed": true,
+  "ns_g9_passed": false,
+  "protected_outcome_acquisition_authorized": false,
+  "protected_outcomes_opened": false,
+  "protocol": {
+    "path": "prereg/amendments/2026-07-23_product_port_feasibility_screen.md",
+    "sha256": "831c15c5297ac8f58ce08012740bbc80d2c04177c1675517a1e4c1dab5ae173e",
+    "status": "outcome_blind_methodological_audit_not_preregistration"
+  },
+  "run_at_utc": "2026-07-23T09:34:44.868805+00:00",
+  "semantic_bridge": {
+    "artifact": "hs4_item_concord_clean.dta",
+    "folder_url": "https://www.openicpsr.org/openicpsr/project/247679/version/V1/view?path=%2Fopenicpsr%2F247679%2Ffcr%3Aversions%2FV1%2Freplication%2Fdata%2Fconcordance&type=folder",
+    "listed_size": "12.1 KB",
+    "locally_opened": false,
+    "project_doi": "https://doi.org/10.3886/E247679V1",
+    "project_url": "https://www.openicpsr.org/openicpsr/project/247679/version/V1/view",
+    "published_version": "V1 (2026-05-29)",
+    "reason_not_opened": "The bridge is not needed unless the fatal shock and novelty conditions pass; price, shock and intermediate outcome folders remain unopened.",
+    "source": "AEA Data and Code Repository at openICPSR",
+    "status": "publicly_listed_standard_terms_access"
+  },
+  "status": "fail",
+  "study": "Phase-7 outcome-blind product-port economics feasibility and novelty screen",
+  "upstream_decisions": {
+    "inputs": {
+      "atberth_intervention": {
+        "passed": false,
+        "sha256": "15e1628971bce65b0fcfbbdb35954e86b42d0a6cf7fd52fa0ee92fff3d29c041",
+        "status": "fail"
+      },
+      "labour_spatial_replication": {
+        "passed": false,
+        "sha256": "2164b9b73db2156ef3f8a7cecc738a88aeb2cad5ff92fb91cc8a1136bdd53709",
+        "status": "fail"
+      },
+      "national_operational_measurement": {
+        "activity_status": "fail",
+        "motion_status": "fail",
+        "passed": false,
+        "sha256": "775046fb60e628bdd3e430d96595247137638a33487081cd7aaed00333ced822"
+      },
+      "spb_direct_measurement": {
+        "passed": false,
+        "sha256": "df9f68a62c7ccec6c6fd5d55e87a0c659f681a88bd465f0e16cd2d06263902a3",
+        "status": "component_failure"
+      }
+    },
+    "policy_specific_effect_authorized": false,
+    "validated_port_shock_passed": false
+  }
+}

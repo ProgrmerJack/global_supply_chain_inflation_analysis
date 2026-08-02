@@ -1,0 +1,159 @@
+{
+  "study": "Nature-route failure re-audit",
+  "status": "CURRENT_PACKAGE_NOT_SUBMISSION_READY_BUT_GLOBAL_FAILURE_VERDICT_SUPERSEDED",
+  "old_frozen_audit_preserved": true,
+  "current_nature_sustainability_ready": false,
+  "nature_route_scientifically_dead": false,
+  "central_finding": "The current package is not Nature Sustainability-ready, but the 0/10 'all gates failed' summary conflated genuine registered failures with an acquisition bug, a construct mismatch, upstream blocking, and a gate-mapping error.",
+  "atberth_construct_checks": {
+    "official_unit_is_sea_arrival": true,
+    "ais_unit_uses_in_port_gap_segmentation": true,
+    "primary_geometry_omits_frozen_terminal_points": true
+  },
+  "independent_reproduction": {
+    "g1_exact": true,
+    "g1_observations": 113,
+    "g1_low_pearson": 0.9061817151929419,
+    "g1_low_spearman": 0.9030028699593302,
+    "g1_best_lags": {
+      "pearson": 7,
+      "spearman": 4
+    },
+    "g1_annual_calls_exact": true,
+    "emissions_arithmetic_exact": true,
+    "emissions_stationary_hours_error_pct": 11.726487686967356,
+    "emissions_berth_share_error_pp": -10.915922272946442,
+    "replication_exact": true,
+    "replication_primary_disruption_beta": 0.6549986734967441,
+    "replication_approach_disruption_beta": -0.49923051792000595,
+    "replication_disruption_minus_recovery": 0.5410601967926112
+  },
+  "economics_feasibility_status": "Close the economics layer before outcome acquisition. Public schemas and a deposited HS4-item bridge exist, but no eligible port-delay/policy-shock input passed its frozen gate and no executable policy-specific differentiator remains beyond the direct 2026 competitor.",
+  "g1_exact_registered_status": "component_failure",
+  "gates": [
+    {
+      "gate": "NS-G1",
+      "original_summary": "failed",
+      "reaudit_class": "REGISTERED_CONSTRUCT_FAILURE_CONFIRMED",
+      "bug_status": "no numerical bug found",
+      "correct_interpretation": "The frozen GFW/BTS timing rule and mismatched annual cargo-versus-container-call check failed and the numerical result reproduces exactly. The timing rule selects the peak cross-correlation of autocorrelated level series, so it is a brittle construct-validity test rather than evidence of a coding error. This closes that registered queue proxy; it does not invalidate directly observed speed, time, or physical presence."
+    },
+    {
+      "gate": "NS-G2",
+      "original_summary": "failed/not passed",
+      "reaudit_class": "UPSTREAM_BLOCKED_NOT_INDEPENDENTLY_FIRED",
+      "bug_status": "programme-status overreach",
+      "correct_interpretation": "The operational relocation extension was not admissibly fired after NS-G1. Cargo-presence accounting remains descriptive evidence, not a failed causal estimate."
+    },
+    {
+      "gate": "NS-G3",
+      "original_summary": "failed",
+      "reaudit_class": "REGISTERED_FAILURE_CONFIRMED",
+      "bug_status": "no implementation bug found",
+      "correct_interpretation": "The held-out gate genuinely failed: stationary-hours error 11.726%, berth-share error -10.916 percentage points, and class-by-control emissions were not identifiable from published marginal tables."
+    },
+    {
+      "gate": "NS-G4",
+      "original_summary": "failed feasibility",
+      "reaudit_class": "SCIENTIFIC_FAILURE_INVALIDATED_BY_ACQUISITION_BUG",
+      "bug_status": "wrong official access path",
+      "correct_interpretation": "The frozen SCAQMD latest-chart acquisition returned no 2020-2024 values, but CARB AQview independently reports 35,085 hourly NO2 records in that window; the retained site response itself links to a separate HistoricalSearch path. The old retrieval remains closed; historical feasibility requires a new independently frozen acquisition."
+    },
+    {
+      "gate": "NS-G5",
+      "original_summary": "failed/not passed",
+      "reaudit_class": "UPSTREAM_BLOCKED_NOT_FIRED",
+      "bug_status": "incorrectly inherited NS-G4 failure",
+      "correct_interpretation": "Baseline resident/workplace disparity was descriptive. Policy-attributable equity was never estimated because the environmental contrast was unavailable."
+    },
+    {
+      "gate": "NS-G6",
+      "original_summary": "both intervention routes failed",
+      "reaudit_class": "MIXED_REAL_QUEUE_FAILURE_AND_INVALID_ATBERTH_MEASUREMENT",
+      "bug_status": "At-Berth call unit and geometry mismatch",
+      "correct_interpretation": "The queue route genuinely failed its exact registered timing rule. The At-Berth run also correctly failed its frozen algorithm, but that algorithm counted >24-hour gaps inside truncated port tracks against one sea-to-anchorage/berth official arrival and did not use the frozen tanker-terminal points in the primary geometry gate. Its broader infeasibility conclusion is invalid."
+    },
+    {
+      "gate": "NS-G7",
+      "original_summary": "failed",
+      "reaudit_class": "REGISTERED_FAILURE_CONFIRMED",
+      "bug_status": "original index bug corrected before the valid run",
+      "correct_interpretation": "The corrected run genuinely failed approach and placebo specificity despite a 92.5% near-port low-speed increase. It supports disruption-associated accumulation, not the same relocation mechanism."
+    },
+    {
+      "gate": "NS-G8",
+      "original_summary": "failed/not passed",
+      "reaudit_class": "NOT_FIRED_AND_FINAL_AUDIT_MAPPING_BUG",
+      "bug_status": "mapped to economics_model_authorized",
+      "correct_interpretation": "No out-of-sample policy simulator was built or tested. The original final audit used the economics feasibility flag as NS-G8 evidence, which is conceptually wrong."
+    },
+    {
+      "gate": "NS-G9",
+      "original_summary": "failed",
+      "reaudit_class": "OUTCOME_BLIND_FEASIBILITY_CLOSURE_CONFIRMED",
+      "bug_status": "no protected outcome opened",
+      "correct_interpretation": "The optional product-price extension appropriately stopped because no validated policy-specific shock survived and the generic bridge overlaps current deposited work."
+    },
+    {
+      "gate": "NS-G10",
+      "original_summary": "failed/not passed",
+      "reaudit_class": "UPSTREAM_BLOCKED_NOT_FIRED",
+      "bug_status": "logical conjunction summarized as scientific failure",
+      "correct_interpretation": "No integrated model was fired. The gate is unready because upstream mechanisms are unvalidated; there is no independent negative integration result."
+    }
+  ],
+  "input_hashes": {
+    "original_final_audit": {
+      "path": "results/development/final_gate_claim_audit/decision.json",
+      "sha256": "6509ea8cadba5cf643762d80c69a51a9c6f28694a2c395015d474f74add1234d"
+    },
+    "direct_measurement": {
+      "path": "results/deep_case_SPB/NS_G1_direct_measurement_gate.json",
+      "sha256": "df9f68a62c7ccec6c6fd5d55e87a0c659f681a88bd465f0e16cd2d06263902a3"
+    },
+    "direct_measurement_lags": {
+      "path": "results/deep_case_SPB/NS_G1_direct_measurement_lags.csv",
+      "sha256": "8c3d5570043931c0458cc17015d10c1ecd35575bfba97eff4d7ad7b617351701"
+    },
+    "emissions": {
+      "path": "results/confirmatory/spb_emissions_component_validation/one_shot_gate.json",
+      "sha256": "4987762d595c0e48d5d04940946f79ecf2504229c969974202e39359a4061da1"
+    },
+    "ab617_old": {
+      "path": "results/development/spb_ab617_source_aq/feasibility_decision.json",
+      "sha256": "37535bd8aab41d4c66b081b63fdab9f91ebfe8355f00038367327103ab0620da"
+    },
+    "ab617_site9": {
+      "path": "data/external/ab617_wcwlb_observations/raw/site_9.html",
+      "sha256": "4bf09b121867a043b47630b020fe8affb2325ba0c995c9589171930b01fa0e9c"
+    },
+    "aqview_history": {
+      "path": "data/external/ab617_wcwlb_metadata/aqview_historical_feasibility.json",
+      "sha256": "645772fc8857f238a2241f28c5b49ac4d7369f2fc5b80d48ae00332c272df012"
+    },
+    "atberth": {
+      "path": "results/deep_case_SPB/atberth_tanker_blind_gate.json",
+      "sha256": "15e1628971bce65b0fcfbbdb35954e86b42d0a6cf7fd52fa0ee92fff3d29c041"
+    },
+    "replication": {
+      "path": "results/confirmatory/spb_labour_spatial_replication_corrected/decision.json",
+      "sha256": "2164b9b73db2156ef3f8a7cecc738a88aeb2cad5ff92fb91cc8a1136bdd53709"
+    },
+    "replication_daily_panel": {
+      "path": "results/confirmatory/spb_labour_spatial_replication_corrected/daily_physical_panel.csv",
+      "sha256": "134b484a732daa90a77b0240c9efe2f399d92476f6da89db4e462ee4583b9e63"
+    },
+    "economics": {
+      "path": "results/development/product_port_economics_feasibility/decision.json",
+      "sha256": "8d16fbc40f9efbd9b75283cb0041c9698b787d996445037cba000aedfa93053f"
+    },
+    "atberth_source": {
+      "path": "src/analysis/atberth_tanker_event.py",
+      "sha256": "d67195525cd2b1d3bbb0982f3e6cfeefcd52ff326a1068c4dcf0e8d8212d34aa"
+    },
+    "call_segmentation_source": {
+      "path": "src/process_ais/port_call_segmentation.py",
+      "sha256": "f8ed2eb65a9897c2ede8acf20887cec2fdb0c5dea332111c3ca7192e6d30946c"
+    }
+  }
+}

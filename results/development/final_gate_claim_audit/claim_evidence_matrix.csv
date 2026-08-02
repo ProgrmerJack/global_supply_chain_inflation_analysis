@@ -1,0 +1,14 @@
+claim_id,claim,status,evidence,boundary
+C01,Cargo-vessel presence changed across frozen San Pedro Bay distance rings,descriptive_context_only,results/deep_case_SPB/H1_cargo_result.md,"Report absolute vessel-hours and accounting; not waiting, causal policy effect or validation."
+C02,The 2021 queue reform relocated operational waiting,prohibited,results/deep_case_SPB/NS_G1_direct_measurement_gate.json,Timing and annual-call conditions failed; spatial policy branch was not authorized.
+C03,Absolute AIS-derived vessel emissions are validated,prohibited,results/confirmatory/spb_emissions_component_validation/completion_receipt.json,"Held-out stationary-hours, berth-share and identifiability conditions failed."
+C04,Official SPB freight inventories close the five-sector descriptive boundary,supported_descriptive,results/development/spb_freight_boundary/summary.json,112/112 published totals reproduce; no AIS validation or policy attribution.
+C05,Observed air quality responds to the registered freight source,not_estimated,results/development/spb_ab617_source_aq/feasibility_decision.json,No registered-window observations; neither response nor bounded null is supported.
+C06,The intervention changed resident or worker exposure inequality,prohibited,results/development/spb_ab617_source_aq/feasibility_decision.json,Incremental exposure is downstream of failed source and emissions gates.
+C07,The 2025 CARB At-Berth tanker extension caused an SPB effect,not_estimated,results/deep_case_SPB/atberth_tanker_blind_gate.json,Geometry and official call-count gates failed before the effect panel opened.
+C08,The 2014–2015 episode independently replicates the relocation mechanism,prohibited,results/confirmatory/spb_labour_spatial_replication_corrected/decision.json,Only disruption-associated physical accumulation; approach and placebo conditions failed.
+C09,Aggregate congestion has a stable causal consumer-price effect,retired_exploratory,outputs/GATE_G6_cpi.md,"Fails episode stability, simultaneous inference and dominant-episode holdout."
+C10,A new product-port price effect is established,not_estimated,results/development/product_port_economics_feasibility/decision.json,Shock and novelty gates failed before product and price outcomes opened.
+C11,Integrated policies define a validated sustainability Pareto frontier,prohibited,results/development/product_port_economics_feasibility/decision.json,No validated intervention or integrated empirical chain exists.
+C12,Scenario emissions and exposure estimates are observed validation,modelled_only,docs/deep_case_review_dossier.md,Retain explicit modelled/conditional labels; never use as validation or health evidence.
+C13,Route-A computational silver is human validation or Pillar-B passage,prohibited,prereg/pillar_b_route_a_v22_completion_receipt.json,Five exploratory computational-silver episodes remain isolated from training and validation.

@@ -1,0 +1,11 @@
+gate,domain,passed,requirement,consequence
+NS-G1,Measurement,false,A coherent analysed population passes direct external validation,No operational waiting or state-specific claim
+NS-G2,Offshore,false,Operationally validated offshore reconciliation,Descriptive cargo presence only
+NS-G3,Emissions,false,Held-out vessel-year-mode emissions validation,Official boundary accounting and conditional scenarios only
+NS-G4,Air quality,false,Observed source response or appropriately bounded null,No observed source-response or health claim
+NS-G5,Equity,false,Policy-attributable resident and worker exposure distribution,Baseline inequality and modelled scenarios only
+NS-G6,Intervention,false,At least one credible causal policy estimate,No policy-effect claim
+NS-G7,Replication,false,Same mechanism passes an independent episode or gateway,No mechanism generalization
+NS-G8,Policy model,false,Out-of-sample validated integrated counterfactual model,No policy frontier or prescriptive optimum
+NS-G9,Economics,false,Unique product-port result beyond current literature,No price channel
+NS-G10,Integration,false,One validated mechanism links operations through social burden,No coupled sustainability claim

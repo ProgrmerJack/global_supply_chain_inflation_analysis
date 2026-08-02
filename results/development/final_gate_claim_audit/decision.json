@@ -1,0 +1,137 @@
+{
+  "claim_counts": {
+    "descriptive_context_only": 1,
+    "modelled_only": 1,
+    "not_estimated": 3,
+    "prohibited": 6,
+    "retired_exploratory": 1,
+    "supported_descriptive": 1
+  },
+  "gate_count": 10,
+  "gate_table": [
+    {
+      "consequence": "No operational waiting or state-specific claim",
+      "domain": "Measurement",
+      "gate": "NS-G1",
+      "passed": "false",
+      "requirement": "A coherent analysed population passes direct external validation"
+    },
+    {
+      "consequence": "Descriptive cargo presence only",
+      "domain": "Offshore",
+      "gate": "NS-G2",
+      "passed": "false",
+      "requirement": "Operationally validated offshore reconciliation"
+    },
+    {
+      "consequence": "Official boundary accounting and conditional scenarios only",
+      "domain": "Emissions",
+      "gate": "NS-G3",
+      "passed": "false",
+      "requirement": "Held-out vessel-year-mode emissions validation"
+    },
+    {
+      "consequence": "No observed source-response or health claim",
+      "domain": "Air quality",
+      "gate": "NS-G4",
+      "passed": "false",
+      "requirement": "Observed source response or appropriately bounded null"
+    },
+    {
+      "consequence": "Baseline inequality and modelled scenarios only",
+      "domain": "Equity",
+      "gate": "NS-G5",
+      "passed": "false",
+      "requirement": "Policy-attributable resident and worker exposure distribution"
+    },
+    {
+      "consequence": "No policy-effect claim",
+      "domain": "Intervention",
+      "gate": "NS-G6",
+      "passed": "false",
+      "requirement": "At least one credible causal policy estimate"
+    },
+    {
+      "consequence": "No mechanism generalization",
+      "domain": "Replication",
+      "gate": "NS-G7",
+      "passed": "false",
+      "requirement": "Same mechanism passes an independent episode or gateway"
+    },
+    {
+      "consequence": "No policy frontier or prescriptive optimum",
+      "domain": "Policy model",
+      "gate": "NS-G8",
+      "passed": "false",
+      "requirement": "Out-of-sample validated integrated counterfactual model"
+    },
+    {
+      "consequence": "No price channel",
+      "domain": "Economics",
+      "gate": "NS-G9",
+      "passed": "false",
+      "requirement": "Unique product-port result beyond current literature"
+    },
+    {
+      "consequence": "No coupled sustainability claim",
+      "domain": "Integration",
+      "gate": "NS-G10",
+      "passed": "false",
+      "requirement": "One validated mechanism links operations through social burden"
+    }
+  ],
+  "gates_passed": 0,
+  "input_hashes": {
+    "air_quality": {
+      "path": "results/development/spb_ab617_source_aq/feasibility_decision.json",
+      "sha256": "37535bd8aab41d4c66b081b63fdab9f91ebfe8355f00038367327103ab0620da"
+    },
+    "atberth": {
+      "path": "results/deep_case_SPB/atberth_tanker_blind_gate.json",
+      "sha256": "15e1628971bce65b0fcfbbdb35954e86b42d0a6cf7fd52fa0ee92fff3d29c041"
+    },
+    "economics": {
+      "path": "results/development/product_port_economics_feasibility/decision.json",
+      "sha256": "8d16fbc40f9efbd9b75283cb0041c9698b787d996445037cba000aedfa93053f"
+    },
+    "emissions_gate": {
+      "path": "results/confirmatory/spb_emissions_component_validation/completion_receipt.json",
+      "sha256": "f4e3328ba6792bb8222b8ab7a5fb282a73b4af353afa4729ceb85b97f09dff13"
+    },
+    "freight_boundary": {
+      "path": "results/development/spb_freight_boundary/summary.json",
+      "sha256": "88ee5f7bc1c76bfbc918d89707442371e62b417f7330315fbd53c9ce0ef487ce"
+    },
+    "h1_presence": {
+      "path": "results/deep_case_SPB/H1_cargo_result.md",
+      "sha256": "805026ebc116c3f19ff8f0057aa82036adf93ffff761979c62984e6aba06aa4f"
+    },
+    "legacy_cpi": {
+      "path": "outputs/GATE_G6_cpi.md",
+      "sha256": "6994e00a9f6c219add7e66ce2f00242909adf6b4262a8434d6d42cfba8c10463"
+    },
+    "ns_g1": {
+      "path": "results/deep_case_SPB/NS_G1_direct_measurement_gate.json",
+      "sha256": "df9f68a62c7ccec6c6fd5d55e87a0c659f681a88bd465f0e16cd2d06263902a3"
+    },
+    "replication": {
+      "path": "results/confirmatory/spb_labour_spatial_replication_corrected/decision.json",
+      "sha256": "2164b9b73db2156ef3f8a7cecc738a88aeb2cad5ff92fb91cc8a1136bdd53709"
+    },
+    "route_a_silver": {
+      "path": "prereg/pillar_b_route_a_v22_completion_receipt.json",
+      "sha256": "3ac70d8413d723944c18593f762dc58b70f22358484b187c78729fccdd8a39c4"
+    }
+  },
+  "journal": {
+    "current_journal_decision": "stop_current_nature_route",
+    "future_reopening_rule": "Only a genuinely new, independently frozen measurement/intervention design with untouched validation data may reopen the Nature route; closed constructs cannot be retuned.",
+    "manuscript_editing_authorized_for_current_nature_route": false,
+    "nature_communications_fallback_ready": false,
+    "nature_sustainability_submission_ready": false,
+    "reason": "Measurement, both interventions, emissions validation, observed air quality, incremental equity, replication, economics and integration do not pass. Descriptive assets cannot substitute for the plan's non-substitutable foundations."
+  },
+  "manuscript_files_modified_by_audit": false,
+  "run_at_utc": "2026-07-23T09:39:37.267350+00:00",
+  "study": "Final gate and claim audit for the current Nature-route evidence package"
+}

@@ -1,0 +1,146 @@
+{
+  "gate": "G1",
+  "name": "AIS validity",
+  "status": "fail",
+  "rule": "Monthly AIS activity correlates r>=0.80 with official calls/throughput in >=80% of validation ports; blind vessel-state macro-F1>=0.85; >=12 validated complexes for a national claim.",
+  "thresholds": {
+    "official_activity_correlation_min": 0.8,
+    "passing_port_fraction_min": 0.8,
+    "blind_state_macro_f1_min": 0.85,
+    "national_port_count_min": 12
+  },
+  "metrics": {
+    "correlation_port_fraction": 0.13333333333333333,
+    "correlation_gate_passed": false,
+    "blind_state_macro_f1": 0.4521187689165183,
+    "macro_f1_gate_passed": false,
+    "validated_complexes": 15,
+    "national_scope_gate_passed": true,
+    "passed": false
+  },
+  "per_port_correlations": {
+    "baltimore_md": 0.6695505947070947,
+    "boston_ma": 0.41233097062572477,
+    "charleston_sc": 0.6647717984697105,
+    "houston_tx": 0.8725318095307587,
+    "jacksonville_fl": 0.5084848062340088,
+    "miami_fl": 0.5597514172705825,
+    "mobile_al": 0.6722576339302035,
+    "new_orleans_la": 0.6076568748464343,
+    "new_york_new_jersey": 0.9054432349208464,
+    "norfolk_newport_news_va": 0.7983662906300215,
+    "philadelphia_pa": 0.6931601211700379,
+    "port_everglades_fl": 0.5462100532210964,
+    "san_pedro_bay": 0.6772694192381281,
+    "savannah_ga": 0.7603049964646352,
+    "wilmington_nc": 0.41095052567170187
+  },
+  "validation_report": [
+    {
+      "port_complex_id": "baltimore_md",
+      "paired_months": 48,
+      "correlation": 0.6695505947070947,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "boston_ma",
+      "paired_months": 48,
+      "correlation": 0.41233097062572477,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "charleston_sc",
+      "paired_months": 48,
+      "correlation": 0.6647717984697105,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "houston_tx",
+      "paired_months": 48,
+      "correlation": 0.8725318095307587,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "jacksonville_fl",
+      "paired_months": 48,
+      "correlation": 0.5084848062340088,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "miami_fl",
+      "paired_months": 48,
+      "correlation": 0.5597514172705825,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "mobile_al",
+      "paired_months": 48,
+      "correlation": 0.6722576339302035,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "new_orleans_la",
+      "paired_months": 48,
+      "correlation": 0.6076568748464343,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "new_york_new_jersey",
+      "paired_months": 48,
+      "correlation": 0.9054432349208464,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "norfolk_newport_news_va",
+      "paired_months": 48,
+      "correlation": 0.7983662906300215,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "philadelphia_pa",
+      "paired_months": 48,
+      "correlation": 0.6931601211700379,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "port_everglades_fl",
+      "paired_months": 48,
+      "correlation": 0.5462100532210964,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "san_pedro_bay",
+      "paired_months": 48,
+      "correlation": 0.6772694192381281,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "savannah_ga",
+      "paired_months": 48,
+      "correlation": 0.7603049964646352,
+      "status": "validated"
+    },
+    {
+      "port_complex_id": "wilmington_nc",
+      "paired_months": 48,
+      "correlation": 0.41095052567170187,
+      "status": "validated"
+    }
+  ],
+  "code_commit": null,
+  "input_manifest": [
+    {
+      "role": "panel",
+      "path": "docs\\port_externalities_phase0\\data\\processed\\national_activity_month.csv"
+    },
+    {
+      "role": "official_activity",
+      "path": "docs\\port_externalities_phase0\\data\\processed\\official_port_activity.csv"
+    },
+    {
+      "role": "blind_labels",
+      "path": "docs\\port_externalities_phase0\\data\\processed\\blind_state_labels.csv"
+    }
+  ],
+  "generated_at_utc": "2026-07-14T07:24:09.898009Z"
+}
