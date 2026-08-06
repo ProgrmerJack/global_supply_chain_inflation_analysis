@@ -1,0 +1,14 @@
+{
+  "artifact": "Pillar-B annotator packet",
+  "n_episodes": 96,
+  "frozen_at": "2026-07-17",
+  "sha256": "1a2e958de03657d7c7cf48366d51aa17db74319cbc267dab01cda2f0c0e19e78",
+  "labels": "moving|manoeuvre|anchor|berth|uncertain",
+  "sequestered_key": "prediction_key.csv (NOT for annotators)",
+  "regimes": {
+    "pre_reform_normal": 24,
+    "post_reform": 24,
+    "at_berth_era": 24,
+    "2021_peak_congestion": 24
+  }
+}
