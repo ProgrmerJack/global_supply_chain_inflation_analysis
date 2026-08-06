@@ -1,0 +1,3 @@
+group,tracts,population,population_weighted_tract_median_income_usd,hispanic_share_pct,black_share_pct,mean_ces_score_percentile,mean_pm25_ug_m3
+port_adjacent,183,729650,84277.992403,47.891044,11.927225,69.447287,10.880496
+los_angeles_county,2498,9936690,89469.791174,48.684159,7.859690,65.138670,10.394170

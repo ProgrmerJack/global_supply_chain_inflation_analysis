@@ -1,0 +1,65 @@
+{
+  "annual_container_call_check": {
+    "construct_note": "The current AIS product is cargo-class and port-area based, not container-terminal restricted; failure cannot be relabelled as container-call validation.",
+    "median_coverage_ratio": 1.8358017933160444,
+    "pearson_across_four_years": -0.24717861629224175,
+    "status": "fail",
+    "years_tested": 4,
+    "years_within_20pct": 0
+  },
+  "claim_boundary": "A passing GFW/BTS component validates aggregate operational relevance only; it does not validate individual waiting or semantic vessel state.",
+  "decision": {
+    "annual_call_claim_authorized": false,
+    "full_ns_g1_pass": false,
+    "gfw_spatial_policy_branch_authorized": false,
+    "individual_waiting_or_anchor_berth_claim_authorized": false,
+    "status": "component_failure"
+  },
+  "gate": "NS-G1 direct-observable San Pedro Bay components",
+  "gfw_bts_aggregate_operational_relevance": {
+    "best_gfw_shift_observations": {
+      "pearson": 7,
+      "spearman": 4
+    },
+    "bootstrap_95_ci": {
+      "diff_pearson": [
+        0.40740022412507726,
+        0.8118958831874222
+      ],
+      "diff_spearman": [
+        0.2756564790907885,
+        0.7199442001183245
+      ],
+      "low_pearson": [
+        0.8760934986223621,
+        0.9525070092391392
+      ],
+      "low_spearman": [
+        0.7751876768834683,
+        0.9427887432144825
+      ]
+    },
+    "conditions": {
+      "positive_association": true,
+      "stronger_than_movement_control": true,
+      "timing_within_one_observation": false
+    },
+    "conservative_implementation": "Both Pearson and Spearman must satisfy each ambiguous registered association clause.",
+    "estimates": {
+      "low_pearson": 0.9061817151929419,
+      "low_spearman": 0.9030028699593302,
+      "movement_pearson": 0.29478757544805967,
+      "movement_spearman": 0.42314838157129314
+    },
+    "n_bts_observations": 113,
+    "status": "fail"
+  },
+  "official_geometry": {
+    "eligible_complexes": 15,
+    "source_snapshot_sha256": "f9729ec4e027e1f190c3f093a01f85a61cb7519f57f709a4bb2d95cf0a368720",
+    "state_zones_sha256": "d3d8fa8f30c42d03656f37a759d70a6fea93f3c383a31db3f715f19caf2d7985",
+    "status": "pass"
+  },
+  "registration": "https://osf.io/5sc3v/",
+  "run_once_at_utc": "2026-07-18T14:17:58.971614+00:00"
+}
