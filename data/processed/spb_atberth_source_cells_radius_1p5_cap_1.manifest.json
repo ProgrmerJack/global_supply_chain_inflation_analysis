@@ -1,0 +1,16 @@
+{
+  "dataset": "SPB source-cell hourly vessel activity for At-Berth pollution design",
+  "window": "2023-01-01/2025-12-31 UTC",
+  "terminal_radius_km": 1.5,
+  "interval_cap_hours": 1.0,
+  "rows": 1275490,
+  "classes": {
+    "cargo_stationary": 598068.951388889,
+    "offshore_tanker_stationary": 146627.3461111111,
+    "terminal_tanker_moving": 1116.836111111111,
+    "terminal_tanker_stationary": 84777.02861111112
+  },
+  "source_sha256": "83aea0f251b95e8f5fe92e70df58f0e3be9ed27be081446bc0a4e9e0954b9cee",
+  "terminal_config_sha256": "747ec519194c631dd785237a1a0381b4d43f25d8562b409ab7d8c4fe235089db",
+  "vessel_characteristics_sha256": "185c8a8c629bbdeaf61d1b0f9761f9fcff76157128aeac973cc4bb83039cb64c"
+}

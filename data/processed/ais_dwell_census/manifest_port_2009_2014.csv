@@ -1,0 +1,312 @@
+YearMonth,Port,status,seconds
+2010-12,LA_Long_Beach,ok,17
+2011-01,LA_Long_Beach,ok,38
+2010-11,LA_Long_Beach,ok,52
+2010-10,LA_Long_Beach,ok,52
+2011-02,LA_Long_Beach,ok,51
+2011-04,LA_Long_Beach,ok,40
+2012-01,LA_Long_Beach,ok,30
+2011-11,LA_Long_Beach,ok,56
+2011-12,LA_Long_Beach,ok,54
+2011-09,LA_Long_Beach,ok,79
+2012-03,LA_Long_Beach,ok,46
+2012-02,LA_Long_Beach,ok,51
+2012-04,LA_Long_Beach,ok,43
+2012-05,LA_Long_Beach,ok,82
+2012-06,LA_Long_Beach,ok,69
+2012-10,LA_Long_Beach,ok,39
+2012-07,LA_Long_Beach,ok,103
+2012-11,LA_Long_Beach,ok,30
+2012-09,LA_Long_Beach,ok,99
+2012-08,LA_Long_Beach,ok,146
+2013-02,LA_Long_Beach,ok,45
+2013-01,LA_Long_Beach,ok,65
+2012-12,LA_Long_Beach,ok,95
+2013-03,LA_Long_Beach,ok,52
+2013-04,LA_Long_Beach,ok,45
+2013-06,LA_Long_Beach,ok,61
+2013-05,LA_Long_Beach,ok,73
+2013-07,LA_Long_Beach,ok,100
+2013-10,LA_Long_Beach,ok,58
+2013-12,LA_Long_Beach,ok,45
+2013-09,LA_Long_Beach,ok,116
+2014-02,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,10
+2014-01,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,11
+2013-08,LA_Long_Beach,ok,146
+2014-04,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,8
+2014-03,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,8
+2014-05,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2013-11,LA_Long_Beach,ok,100
+2014-08,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,12
+2014-07,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,14
+2014-06,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,14
+2014-09,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-10,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-11,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-12,LA_Long_Beach,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2010-10,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2010-09,Savannah,ok,131
+2011-01,Savannah,ok,198
+2010-11,Savannah,ok,230
+2010-12,Savannah,ok,253
+2011-02,Savannah,ok,169
+2011-03,Savannah,ok,214
+2011-05,Savannah,ok,221
+2011-06,Savannah,ok,192
+2011-04,Savannah,ok,329
+2011-07,Savannah,ok,210
+2011-09,Savannah,ok,192
+2011-08,Savannah,ok,245
+2011-10,Savannah,ok,187
+2012-01,Savannah,ok,210
+2012-02,Savannah,ok,213
+2011-11,Savannah,ok,385
+2011-12,Savannah,ok,369
+2012-03,Savannah,ok,221
+2012-06,Savannah,ok,236
+2012-04,Savannah,ok,368
+2012-05,Savannah,ok,330
+2012-07,Savannah,ok,307
+2012-08,Savannah,ok,273
+2012-10,Savannah,ok,247
+2012-09,Savannah,ok,292
+2012-11,Savannah,ok,251
+2013-01,Savannah,ok,252
+2013-02,Savannah,ok,348
+2012-12,Savannah,ok,408
+2013-03,Savannah,ok,311
+2013-04,Savannah,ok,276
+2013-07,Savannah,ok,268
+2013-06,Savannah,ok,322
+2013-05,Savannah,ok,322
+2013-08,Savannah,ok,248
+2013-09,Savannah,ok,282
+2014-01,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-02,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-03,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2013-12,Savannah,ok,239
+2014-04,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,20
+2014-05,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-06,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,23
+2013-10,Savannah,ok,347
+2014-07,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,24
+2014-08,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,8
+2014-09,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-10,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-11,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-12,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2010-10,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2013-11,Savannah,ok,395
+2010-11,NY_NJ,ok,173
+2011-02,NY_NJ,ok,240
+2010-12,NY_NJ,ok,275
+2011-01,NY_NJ,ok,312
+2011-04,NY_NJ,ok,171
+2011-08,NY_NJ,ok,301
+2011-07,NY_NJ,ok,333
+2011-10,NY_NJ,ok,334
+2011-09,NY_NJ,ok,418
+2011-11,NY_NJ,ok,238
+2012-01,NY_NJ,ok,213
+2011-12,NY_NJ,ok,332
+2012-02,NY_NJ,ok,261
+2012-03,NY_NJ,ok,284
+2012-04,NY_NJ,ok,268
+2012-05,NY_NJ,ok,336
+2012-06,NY_NJ,ok,436
+2012-08,NY_NJ,ok,322
+2012-07,NY_NJ,ok,409
+2012-09,NY_NJ,ok,321
+2012-11,NY_NJ,ok,300
+2012-12,NY_NJ,ok,324
+2012-10,NY_NJ,ok,442
+2013-01,NY_NJ,ok,315
+2013-02,NY_NJ,ok,293
+2013-04,NY_NJ,ok,253
+2013-03,NY_NJ,ok,401
+2013-05,NY_NJ,ok,414
+2013-06,NY_NJ,ok,422
+2013-07,NY_NJ,ok,434
+2013-08,NY_NJ,ok,509
+2013-09,NY_NJ,ok,523
+2014-01,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,10
+2014-02,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-03,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-04,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-05,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-06,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-07,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-08,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-09,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,22
+2013-11,NY_NJ,ok,376
+2014-10,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-11,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-12,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2013-12,NY_NJ,ok,263
+2013-10,NY_NJ,ok,538
+2010-09,Seattle,ok,322
+2010-12,Seattle,ok,261
+2010-10,Seattle,ok,373
+2010-11,Seattle,ok,341
+2011-01,Seattle,ok,230
+2011-02,Seattle,ok,296
+2011-03,Seattle,ok,344
+2011-04,Seattle,ok,344
+2011-05,Seattle,ok,315
+2011-06,Seattle,ok,369
+2011-07,Seattle,ok,337
+2011-08,Seattle,ok,339
+2011-09,Seattle,ok,395
+2011-10,Seattle,ok,283
+2011-12,Seattle,ok,361
+2012-02,Seattle,ok,224
+2011-11,Seattle,ok,495
+2012-01,Seattle,ok,368
+2012-03,Seattle,ok,323
+2012-04,Seattle,ok,334
+2012-05,Seattle,ok,396
+2012-06,Seattle,ok,411
+2012-07,Seattle,ok,450
+2012-08,Seattle,ok,398
+2012-09,Seattle,ok,424
+2012-10,Seattle,ok,497
+2012-12,Seattle,ok,324
+2012-11,Seattle,ok,422
+2013-02,Seattle,ok,274
+2013-01,Seattle,ok,511
+2013-04,Seattle,ok,424
+2013-03,Seattle,ok,517
+2013-05,Seattle,ok,500
+2013-06,Seattle,ok,467
+2013-07,Seattle,ok,513
+2013-08,Seattle,ok,531
+2013-09,Seattle,ok,506
+2014-01,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-02,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-03,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-04,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-05,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-06,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,31
+2013-10,Seattle,ok,541
+2014-07,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,10
+2014-08,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-09,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-10,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-11,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-12,Seattle,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2013-11,Seattle,ok,534
+2013-12,Seattle,ok,528
+2010-10,Houston,ok,953
+2010-09,Houston,ok,1053
+2010-11,Houston,ok,1066
+2010-12,Houston,ok,1069
+2011-02,Houston,ok,1004
+2011-01,Houston,ok,1203
+2011-04,Houston,ok,1142
+2011-03,Houston,ok,1345
+2011-05,Houston,ok,1173
+2011-06,Houston,ok,1199
+2011-07,Houston,ok,1239
+2011-08,Houston,ok,1387
+2011-10,Houston,ok,2308
+2011-12,Houston,ok,2186
+2011-09,Houston,ok,3516
+2011-11,Houston,ok,3346
+2012-01,Houston,ok,1729
+2012-02,Houston,ok,2254
+2012-03,Houston,ok,2052
+2012-04,Houston,ok,1821
+2012-05,Houston,ok,2315
+2012-09,Houston,ok,1697
+2012-06,Houston,ok,3135
+2012-07,Houston,ok,2999
+2012-08,Houston,ok,3015
+2012-10,Houston,ok,1346
+2012-12,Houston,ok,1360
+2013-01,Houston,ok,1874
+2013-02,Houston,ok,1001
+2012-11,Houston,ok,2292
+2013-03,Houston,ok,1032
+2013-04,Houston,ok,1238
+2013-06,Houston,ok,1254
+2013-05,Houston,ok,1495
+2013-07,Houston,ok,1377
+2013-08,Houston,ok,1326
+2013-09,Houston,ok,1375
+2014-01,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-02,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-03,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-04,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-05,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,8
+2014-06,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-07,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-08,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-09,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-10,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-11,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-12,Houston,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,8
+2013-10,Houston,ok,1465
+2013-11,Houston,ok,1255
+2013-12,Houston,ok,704
+2014-04,LA_Long_Beach,ok,63
+2014-05,LA_Long_Beach,ok,59
+2014-03,LA_Long_Beach,ok,122
+2014-02,LA_Long_Beach,ok,122
+2014-01,LA_Long_Beach,ok,123
+2014-08,LA_Long_Beach,ok,37
+2014-06,LA_Long_Beach,ok,45
+2014-09,LA_Long_Beach,ok,44
+2014-10,LA_Long_Beach,ok,39
+2010-10,Savannah,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,7
+2014-07,LA_Long_Beach,ok,84
+2014-11,LA_Long_Beach,ok,43
+2014-12,LA_Long_Beach,ok,113
+2014-03,Savannah,ok,248
+2014-01,Savannah,ok,285
+2014-02,Savannah,ok,324
+2014-04,Savannah,ok,331
+2014-08,Savannah,ok,84
+2014-07,Savannah,ok,166
+2014-06,Savannah,ok,229
+2014-11,Savannah,ok,30
+2014-10,Savannah,ok,94
+2014-09,Savannah,empty,96
+2010-10,NY_NJ,missing:download failed after 2 tries: HTTP Error 404: The requested content doe,8
+2014-05,Savannah,ok,420
+2014-02,NY_NJ,ok,233
+2014-01,NY_NJ,ok,314
+2014-12,Savannah,ok,377
+2014-03,NY_NJ,ok,336
+2014-06,NY_NJ,ok,227
+2014-05,NY_NJ,ok,362
+2014-04,NY_NJ,ok,488
+2014-08,NY_NJ,ok,184
+2014-11,NY_NJ,ok,21
+2014-07,NY_NJ,ok,368
+2014-09,NY_NJ,ok,238
+2014-10,NY_NJ,ok,187
+2014-01,Seattle,ok,381
+2014-12,NY_NJ,ok,440
+2014-02,Seattle,ok,364
+2014-03,Seattle,ok,491
+2014-04,Seattle,ok,441
+2014-06,Seattle,ok,435
+2014-05,Seattle,ok,563
+2014-07,Seattle,ok,411
+2014-11,Seattle,no_cargo,1
+2014-08,Seattle,ok,509
+2014-09,Seattle,ok,519
+2014-10,Seattle,ok,465
+2014-12,Seattle,ok,568
+2014-01,Houston,ok,1097
+2014-03,Houston,ok,1092
+2014-02,Houston,ok,1264
+2014-04,Houston,ok,1251
+2014-06,Houston,ok,1210
+2014-07,Houston,ok,1209
+2014-08,Houston,ok,1189
+2014-11,Houston,ok,92
+2014-05,Houston,ok,2225
+2014-09,Houston,ok,1185
+2014-10,Houston,ok,1121
+2014-12,Houston,ok,1050

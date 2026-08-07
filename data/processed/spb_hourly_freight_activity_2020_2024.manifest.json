@@ -1,0 +1,19 @@
+{
+  "dataset": "SPB hourly retained cargo/tanker AIS activity, 2020-2024",
+  "created_at_utc": "2026-07-18T19:54:52.544162+00:00",
+  "source_glob": "C:/Users/Jack0/GitHub/global_supply_chain_inflation_analysis/data/interim/national_pings/year=*/month=*/pings_*.parquet",
+  "port_complex_id": "san_pedro_bay",
+  "vessel_type": "NMEA 70-89",
+  "stationary_sog_thresholds_kn": [
+    0.3,
+    0.5,
+    0.7
+  ],
+  "moving_sog_threshold_kn": 3.0,
+  "interval_caps_hours": [
+    1,
+    2
+  ],
+  "rows": 259749,
+  "output_sha256": "8751ba12500c3bffb10d9d5084f94b81a1297c8e0ca3310976e87297285f94e1"
+}
