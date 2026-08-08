@@ -1,0 +1,18 @@
+{
+  "metric": "MeanDwellDays",
+  "ports_used": [
+    "LA_Long_Beach",
+    "NY_NJ",
+    "Houston",
+    "Savannah",
+    "Seattle"
+  ],
+  "n_overlap_months": 201,
+  "overlap": "2009-01..2025-09",
+  "pearson_r_la_raw_vs_gscpi": 0.5328,
+  "pearson_p_la_raw_vs_gscpi": 0.0,
+  "pearson_r_la_detrended_vs_gscpi": 0.4648,
+  "pearson_p_la_detrended_vs_gscpi": 0.0,
+  "pearson_r_composite_vs_gscpi": 0.1876,
+  "pearson_p_composite_vs_gscpi": 0.0076
+}
