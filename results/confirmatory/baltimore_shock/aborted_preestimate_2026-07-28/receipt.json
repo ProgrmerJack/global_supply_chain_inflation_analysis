@@ -1,0 +1,12 @@
+{
+  "status": "aborted_before_b_g2_estimation",
+  "reason": "three preregistered placebo identifiers had no retained census rows, producing empty comparison fleets",
+  "b_g1_receipt_preserved": "../b_g1.json",
+  "b_g2_gate_fired": false,
+  "event_estimate_computed": false,
+  "randomization_distribution_computed": false,
+  "preserved_sha256": {
+    "b_g2_receiver_weights.csv": "78e383210d0fbbca3e1df30ed866e6e6ec737a31c7adcb707d925bc113e55933",
+    "b_g2_placebo_weights.csv": "7fa277363f05e4e8feb0bdfe74f2a345956ed37eb1795a14d4ad4148fa6fb88b"
+  }
+}

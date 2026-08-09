@@ -1,0 +1,44 @@
+{
+  "gate": "B-G2",
+  "status": "fail",
+  "checks": {
+    "randomization": true,
+    "top_four": true,
+    "leave_one_out": true,
+    "negative_control": false
+  },
+  "network_ddd": 8.752905571562756,
+  "one_sided_randomization_p": 0.007399260073992601,
+  "negative_control_ddd": 11.05665247404304,
+  "negative_control_p": 0.000999900009999,
+  "positive_top_four": 4,
+  "leave_one_receiver_out": {
+    "new_york_new_jersey": 8.98633091804196,
+    "savannah_ga": 9.116025899125425,
+    "norfolk_newport_news_va": 8.040710172475322,
+    "charleston_sc": 8.59449580045658,
+    "miami_fl": 8.75593490250359,
+    "philadelphia_pa": 8.716107021762978,
+    "port_everglades_fl": 8.770780602409516,
+    "jacksonville_fl": 8.980801959545838
+  },
+  "linked_fleet_mmsi": 1270,
+  "comparison_fleet_mmsi": {
+    "new_york_new_jersey": 1519,
+    "savannah_ga": 877,
+    "norfolk_newport_news_va": 1071,
+    "charleston_sc": 654,
+    "miami_fl": 247,
+    "philadelphia_pa": 902,
+    "port_everglades_fl": 481,
+    "jacksonville_fl": 331,
+    "san_pedro_bay": 1707,
+    "houston_tx": 2989,
+    "new_orleans_la": 3078,
+    "boston_ma": 230,
+    "mobile_al": 675,
+    "wilmington_nc": 264
+  },
+  "randomization_draws": 10000,
+  "seed": 20260728
+}

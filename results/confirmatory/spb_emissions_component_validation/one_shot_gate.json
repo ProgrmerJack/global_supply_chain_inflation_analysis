@@ -1,0 +1,43 @@
+{
+  "conditions": {
+    "source_hashes_tables_crosswalk": true,
+    "monthly_source_date_coverage_gte_95pct": true,
+    "stationary_freight_hours_abs_error_lte_10pct": false,
+    "resolved_berth_share_abs_error_lte_10pp": false,
+    "stationary_freight_co2e_abs_error_lte_20pct": false,
+    "at_least_five_official_freight_classes": true,
+    "class_stationary_emissions_spearman_gte_0_80": false,
+    "ais_gap_unresolved_share_lte_10pct": true
+  },
+  "overall_pass": false,
+  "metrics": {
+    "official_stationary_freight_vessel_hours": 276305.7,
+    "ais_stationary_freight_vessel_hours": 308706.65388888895,
+    "stationary_hours_error_pct": 11.726487686967356,
+    "official_berth_share_resolved": 0.7250165306036032,
+    "ais_berth_share_resolved": 0.6158573078741387,
+    "berth_share_error_percentage_points": -10.915922272946442,
+    "monthly_source_date_coverage_min": 1.0,
+    "ais_unresolved_stationary_share": 0.005911257245207453,
+    "represented_official_freight_classes": 7,
+    "stationary_freight_co2e_error_pct": null,
+    "class_stationary_emissions_spearman": null
+  },
+  "study": "Prospective SPB freight-OGV emissions component validation",
+  "registration": "https://osf.io/p5vqs/",
+  "status": "FAIL",
+  "fired_at_utc": "2026-07-18T18:57:40.245056+00:00",
+  "gate_fired_once": true,
+  "protected_year": 2018,
+  "class_control_joint_cells_published": false,
+  "class_control_table_heading_candidates": [],
+  "emissions_identifiable": false,
+  "nonidentifiability_is_gate_failure": true,
+  "consequence": "Absolute vessel-emissions claims remain inadmissible; relative activity and explicitly labelled scenarios may remain. Pillar B is unchanged.",
+  "source_sha256": {
+    "pola_2018_inventory": "5af800d5f06e94b674b95ac0a4e62d9399d71a863236951422a2cedfbc823f1f",
+    "polb_2018_inventory": "e829a5609b000c76e7751fb2c688430fbad36b8931f0daa2d1e49937b12fd1a6",
+    "monthly_mode_time": "9821d96ba508c8766096b1147869cbfb89518c5c15e8bd01d4f45d0a3130a855",
+    "month_manifest": "933be4e8061895161fa6a4e727f0618828cc8531c3dadb01e77aea057fa6481e"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "status": "ONE_SHOT_GATE_COMPLETE_IMMUTABLE",
+  "registration": "https://osf.io/p5vqs/",
+  "gate_status": "FAIL",
+  "holdout_executable_sha256": "89747eefd726bde4c18fdb8bacab098e1b523697f9bdf345c8784cc449c77431",
+  "execution_freeze_sha256": "ea98d8a927819f03190ec061d799bf99e8cd49a666409b2144b6ef753a4b72f8",
+  "outputs_sha256": {
+    "ais_2018_monthly_stationary.csv": "40879dcca424ad7cf3f464cbc447b92d6c91b88f1442665e5098b6675bd7e669",
+    "official_2018_class_crosswalk_and_inputs.csv": "40d8c0e22cefd7beffe440c1b452c4412d5ca7dbba66cb7b603417a32e667957",
+    "official_2018_freight_components.csv": "69979e95981e9789dd31d18a40735a84575ce6c0dbdc23e3802d62d61c1645ec",
+    "official_2018_published_total_checks.csv": "ef6713caf72372ecc822fa1175e17b37cab93775e5471e4c9058fc4c95c155a2",
+    "one_shot_gate.json": "4987762d595c0e48d5d04940946f79ecf2504229c969974202e39359a4061da1"
+  }
+}

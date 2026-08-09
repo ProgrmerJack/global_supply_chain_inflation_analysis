@@ -1,0 +1,658 @@
+{
+  "activity_sensitivities": {
+    "radius_0p75_cap_2": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        -0.02568587540829347,
+        1.1420848259119798
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.6824037215092708,
+        "cargo_post": -0.3606059098565561,
+        "offshore": -0.17769160384498503,
+        "tanker": -0.17315060931812187,
+        "tanker_post": 0.17917659414216994
+      },
+      "date_clustered_p": 0.0514631207765669,
+      "date_clustered_se": 0.27715298065274724,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.5826163547245309,
+        "offshore": 0.13654716553494045,
+        "tanker": 0.10234304951046401
+      },
+      "observations": 142107,
+      "post_tanker_response_ppb": 0.006025984824048064,
+      "pre_tanker_response_ppb": -0.17315060931812187,
+      "relative_policy_effect_ppb": 0.5397825039987261,
+      "sites": 8
+    },
+    "radius_1p5_cap_1": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        -0.02846448866985089,
+        1.2224147791320612
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.6774487116266863,
+        "cargo_post": -0.38493128824551626,
+        "offshore": -0.17807843627633801,
+        "tanker": -0.17459605235789108,
+        "tanker_post": 0.20539035045749512
+      },
+      "date_clustered_p": 0.05128799721647836,
+      "date_clustered_se": 0.30287470504579067,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.5800523433781131,
+        "offshore": 0.1364100299411773,
+        "tanker": 0.11319298511198916
+      },
+      "observations": 142107,
+      "post_tanker_response_ppb": 0.030794298099604045,
+      "pre_tanker_response_ppb": -0.17459605235789108,
+      "relative_policy_effect_ppb": 0.5903216387030114,
+      "sites": 8
+    },
+    "radius_2p5_cap_2": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        -0.010439390908436185,
+        1.394129474371283
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.6944745701342814,
+        "cargo_post": -0.44031224417410153,
+        "offshore": -0.17059871421420814,
+        "tanker": -0.18061688718089874,
+        "tanker_post": 0.27146339514127116
+      },
+      "date_clustered_p": 0.030226720477129782,
+      "date_clustered_se": 0.32844513144883003,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.5826163547245309,
+        "offshore": 0.13654716553494045,
+        "tanker": 0.12662145912399247
+      },
+      "observations": 142107,
+      "post_tanker_response_ppb": 0.09084650796037241,
+      "pre_tanker_response_ppb": -0.18061688718089874,
+      "relative_policy_effect_ppb": 0.7117756393153727,
+      "sites": 8
+    }
+  },
+  "compliance_inferred": false,
+  "distribution_layer_authorized": false,
+  "falsifications": {
+    "2024_pseudo_policy_null_and_smaller": true,
+    "activity_sensitivity_sign": false,
+    "future_activity_null_and_smaller": false,
+    "leave_one_site_sign_and_influence": false,
+    "moving_tanker_does_not_reproduce": true,
+    "rotated_plume_null_and_smaller": true,
+    "smoke_sensitivity_sign": false
+  },
+  "future_activity": {
+    "block7_bootstrap_draws_retained": 2000,
+    "block7_ci95": [
+      -0.10494307781312812,
+      1.1858739448676237
+    ],
+    "coefficient_order": [
+      "tanker",
+      "cargo",
+      "offshore",
+      "tanker_post",
+      "cargo_post"
+    ],
+    "coefficients": {
+      "cargo": 0.5048374857137145,
+      "cargo_post": -0.3836620736568068,
+      "offshore": -0.17324294908569376,
+      "tanker": -0.12250804664481667,
+      "tanker_post": 0.19490789874673684
+    },
+    "date_clustered_p": 0.06370134087573266,
+    "date_clustered_se": 0.31202128919718974,
+    "dates": 1089,
+    "exposure_pre_sd_raw_units": {
+      "cargo": 0.5692147180921114,
+      "offshore": 0.1348696194568424,
+      "tanker": 0.11361400571739852
+    },
+    "observations": 142107,
+    "post_tanker_response_ppb": 0.07239985210192017,
+    "pre_tanker_response_ppb": -0.12250804664481667,
+    "relative_policy_effect_ppb": 0.5785699724035437,
+    "sites": 8
+  },
+  "leave_one_site_out": {
+    "06-037-0113": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        -0.1979066846227202,
+        1.2308579648918525
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.7157491584477842,
+        "cargo_post": -0.348236557230868,
+        "offshore": -0.25344626828063876,
+        "tanker": -0.11868737000361376,
+        "tanker_post": 0.17830519466193057
+      },
+      "date_clustered_p": 0.10545671279059375,
+      "date_clustered_se": 0.32523535236049883,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.6106519172227711,
+        "offshore": 0.14353097573136786,
+        "tanker": 0.11925913072302496
+      },
+      "observations": 124235,
+      "post_tanker_response_ppb": 0.059617824658316804,
+      "pre_tanker_response_ppb": -0.11868737000361376,
+      "relative_policy_effect_ppb": 0.5265417518927986,
+      "sites": 7
+    },
+    "06-037-1103": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        -0.06495366907182576,
+        1.1979756793707548
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.6928657069796302,
+        "cargo_post": -0.3803695164220025,
+        "offshore": -0.17285354147543427,
+        "tanker": -0.19706486203699447,
+        "tanker_post": 0.20520691407585737
+      },
+      "date_clustered_p": 0.058329826017602886,
+      "date_clustered_se": 0.3093033242400589,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.6097129371122018,
+        "offshore": 0.1431690378676892,
+        "tanker": 0.11909876533604745
+      },
+      "observations": 124352,
+      "post_tanker_response_ppb": 0.008142052038862896,
+      "pre_tanker_response_ppb": -0.19706486203699447,
+      "relative_policy_effect_ppb": 0.5855764304978599,
+      "sites": 7
+    },
+    "06-037-1302": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        -0.10846767022328625,
+        1.1432379962988257
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.7398093742534445,
+        "cargo_post": -0.3642640177612939,
+        "offshore": -0.15434933512277002,
+        "tanker": -0.17513871153497723,
+        "tanker_post": 0.17596559520107566
+      },
+      "date_clustered_p": 0.08751994035834547,
+      "date_clustered_se": 0.3161774933912584,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.5845784431175162,
+        "offshore": 0.13840445611396218,
+        "tanker": 0.11460253207065815
+      },
+      "observations": 124524,
+      "post_tanker_response_ppb": 0.0008268836660984269,
+      "pre_tanker_response_ppb": -0.17513871153497723,
+      "relative_policy_effect_ppb": 0.5402296129623696,
+      "sites": 7
+    },
+    "06-037-1602": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        0.042955773226677665,
+        1.3494617504676731
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.7715169217467478,
+        "cargo_post": -0.4500536360331186,
+        "offshore": -0.1540227415389066,
+        "tanker": -0.19312523897725728,
+        "tanker_post": 0.22088289285598556
+      },
+      "date_clustered_p": 0.03712446007976918,
+      "date_clustered_se": 0.3218858541029869,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.6097820692459683,
+        "offshore": 0.14268173544648846,
+        "tanker": 0.11907665445939103
+      },
+      "observations": 124561,
+      "post_tanker_response_ppb": 0.027757653878728278,
+      "pre_tanker_response_ppb": -0.19312523897725728,
+      "relative_policy_effect_ppb": 0.6709365288891042,
+      "sites": 7
+    },
+    "06-037-2005": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        -0.09865430801228864,
+        1.2041904866376245
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.7084508286218689,
+        "cargo_post": -0.3672479700344222,
+        "offshore": -0.13120134640484205,
+        "tanker": -0.19197777477724334,
+        "tanker_post": 0.21790012092465016
+      },
+      "date_clustered_p": 0.06639491621191049,
+      "date_clustered_se": 0.3187518383841162,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.6106749762529098,
+        "offshore": 0.143481692320119,
+        "tanker": 0.1192740794152894
+      },
+      "observations": 124247,
+      "post_tanker_response_ppb": 0.025922346147406822,
+      "pre_tanker_response_ppb": -0.19197777477724334,
+      "relative_policy_effect_ppb": 0.5851480909590724,
+      "sites": 7
+    },
+    "06-037-4008": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        -0.23660216229886877,
+        0.8551776044523067
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.4194517150822862,
+        "cargo_post": -0.19882006198826846,
+        "offshore": -0.12432277210156976,
+        "tanker": -0.13548616954026102,
+        "tanker_post": 0.1176122895684841
+      },
+      "date_clustered_p": 0.22543920651077243,
+      "date_clustered_se": 0.26104162156463556,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.5493415669469838,
+        "offshore": 0.13335169191170512,
+        "tanker": 0.10760908817335606
+      },
+      "observations": 124163,
+      "post_tanker_response_ppb": -0.017873879971776918,
+      "pre_tanker_response_ppb": -0.13548616954026102,
+      "relative_policy_effect_ppb": 0.31643235155675253,
+      "sites": 7
+    },
+    "06-037-4009": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        0.04530679333529655,
+        2.310517670761315
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 1.3991610288360576,
+        "cargo_post": -0.747632322548936,
+        "offshore": -0.4594039994238049,
+        "tanker": -0.23271981559183735,
+        "tanker_post": 0.3977958073176583
+      },
+      "date_clustered_p": 0.03515563807079778,
+      "date_clustered_se": 0.543743121201133,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.4420819360568103,
+        "offshore": 0.0950470481997245,
+        "tanker": 0.08093563293606067
+      },
+      "observations": 124420,
+      "post_tanker_response_ppb": 0.16507599172582094,
+      "pre_tanker_response_ppb": -0.23271981559183735,
+      "relative_policy_effect_ppb": 1.1454281298665943,
+      "sites": 7
+    },
+    "06-037-4010": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        -0.0038518877279660833,
+        1.2384070867933288
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.5756349068652614,
+        "cargo_post": -0.4005506503387593,
+        "offshore": -0.17367439518763467,
+        "tanker": -0.18510375903758933,
+        "tanker_post": 0.21559261752824763
+      },
+      "date_clustered_p": 0.042619727274084036,
+      "date_clustered_se": 0.30390546034348104,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.6104832637273916,
+        "offshore": 0.1435785463932548,
+        "tanker": 0.11924276253107266
+      },
+      "observations": 124247,
+      "post_tanker_response_ppb": 0.0304888584906583,
+      "pre_tanker_response_ppb": -0.18510375903758933,
+      "relative_policy_effect_ppb": 0.6161432678670069,
+      "sites": 7
+    }
+  },
+  "moving_tanker": {
+    "block7_bootstrap_draws_retained": 2000,
+    "block7_ci95": [
+      -0.05912704758403936,
+      0.43211937323173655
+    ],
+    "coefficient_order": [
+      "tanker",
+      "cargo",
+      "offshore",
+      "tanker_post",
+      "cargo_post"
+    ],
+    "coefficients": {
+      "cargo": 0.5435176797522105,
+      "cargo_post": -0.1910748995188663,
+      "offshore": -0.16404204138258613,
+      "tanker": 0.03326302318530783,
+      "tanker_post": -0.00997419467709435
+    },
+    "date_clustered_p": 0.14114658854489576,
+    "date_clustered_se": 0.12306927800023407,
+    "dates": 1089,
+    "exposure_pre_sd_raw_units": {
+      "cargo": 0.5826163547245309,
+      "offshore": 0.13654716553494045,
+      "tanker": 0.003964813019249923
+    },
+    "observations": 142107,
+    "post_tanker_response_ppb": 0.023288828508213476,
+    "pre_tanker_response_ppb": 0.03326302318530783,
+    "relative_policy_effect_ppb": 0.18110070484177196,
+    "sites": 8
+  },
+  "outcome": "EPA AQS hourly NO2 (42602), ppb",
+  "placebo_2024": {
+    "block7_bootstrap_draws_retained": 2000,
+    "block7_ci95": [
+      -0.998818373557064,
+      0.7081407940397663
+    ],
+    "coefficient_order": [
+      "tanker",
+      "cargo",
+      "offshore",
+      "tanker_post",
+      "cargo_post"
+    ],
+    "coefficients": {
+      "cargo": 0.7487106955118248,
+      "cargo_post": -0.0958425403605992,
+      "offshore": -0.1816891248350831,
+      "tanker": -0.09031174455543088,
+      "tanker_post": -0.26373970309290323
+    },
+    "date_clustered_p": 0.6517016770193782,
+    "date_clustered_se": 0.3719480858257081,
+    "dates": 728,
+    "exposure_pre_sd_raw_units": {
+      "cargo": 0.5957914066019226,
+      "offshore": 0.12865667151330906,
+      "tanker": 0.11696134499967141
+    },
+    "observations": 95081,
+    "post_tanker_response_ppb": -0.3540514476483341,
+    "pre_tanker_response_ppb": -0.09031174455543088,
+    "relative_policy_effect_ppb": -0.16789716273230404,
+    "sites": 8
+  },
+  "policy_conditions": {
+    "all_falsifications": false,
+    "bootstrap_upper_below_zero": false,
+    "negative_relative_effect": false,
+    "nonnegative_implied_post_tanker_response": true,
+    "positive_pre_tanker_response": false
+  },
+  "port_specific_effect_inferred": false,
+  "primary": {
+    "block7_bootstrap_draws_retained": 2000,
+    "block7_ci95": [
+      -0.06182008109863658,
+      1.2031600665798174
+    ],
+    "coefficient_order": [
+      "tanker",
+      "cargo",
+      "offshore",
+      "tanker_post",
+      "cargo_post"
+    ],
+    "coefficients": {
+      "cargo": 0.687006237429219,
+      "cargo_post": -0.3815119141596835,
+      "offshore": -0.17434296019244416,
+      "tanker": -0.17694915158883728,
+      "tanker_post": 0.20178553553799147
+    },
+    "date_clustered_p": 0.054882781886863276,
+    "date_clustered_se": 0.3038319220676919,
+    "dates": 1089,
+    "exposure_pre_sd_raw_units": {
+      "cargo": 0.5826163547245309,
+      "offshore": 0.13654716553494045,
+      "tanker": 0.11336638271509043
+    },
+    "observations": 142107,
+    "post_tanker_response_ppb": 0.02483638394915419,
+    "pre_tanker_response_ppb": -0.17694915158883728,
+    "relative_policy_effect_ppb": 0.5832974496976749,
+    "sites": 8
+  },
+  "quality": {
+    "all_smoke_site_hours": 3655,
+    "analysis_wind_hours": 18122,
+    "eligible_sites": 8,
+    "medium_heavy_smoke_site_hours": 276,
+    "post_site_hours_before_smoke": 47205,
+    "pre_site_hours_before_smoke": 95178,
+    "source_record_coverage": 0.9854394768856448
+  },
+  "rotated_plume": {
+    "block7_bootstrap_draws_retained": 2000,
+    "block7_ci95": [
+      -0.8033079708599997,
+      0.8788658755641999
+    ],
+    "coefficient_order": [
+      "tanker",
+      "cargo",
+      "offshore",
+      "tanker_post",
+      "cargo_post"
+    ],
+    "coefficients": {
+      "cargo": 0.14829619580962883,
+      "cargo_post": -0.14301678327536665,
+      "offshore": 0.32173938227739696,
+      "tanker": -0.10866982708989023,
+      "tanker_post": -0.01800792037371894
+    },
+    "date_clustered_p": 0.7377188769214424,
+    "date_clustered_se": 0.3732993302870597,
+    "dates": 1089,
+    "exposure_pre_sd_raw_units": {
+      "cargo": 0.36913105571736354,
+      "offshore": 0.11237873141760911,
+      "tanker": 0.0697158634482683
+    },
+    "observations": 142107,
+    "post_tanker_response_ppb": -0.12667774746360916,
+    "pre_tanker_response_ppb": -0.10866982708989023,
+    "relative_policy_effect_ppb": 0.1250088629016477,
+    "sites": 8
+  },
+  "smoke_sensitivities": {
+    "exclude_all": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        -0.0840756725238727,
+        1.230447605091446
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.6800841437603171,
+        "cargo_post": -0.39644981690741304,
+        "offshore": -0.1697662224091793,
+        "tanker": -0.19361681016705076,
+        "tanker_post": 0.22236009930484654
+      },
+      "date_clustered_p": 0.04562387738034014,
+      "date_clustered_se": 0.30958195424643214,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.5804375991477587,
+        "offshore": 0.13631201443328375,
+        "tanker": 0.1132771452971902
+      },
+      "observations": 138728,
+      "post_tanker_response_ppb": 0.02874328913779578,
+      "pre_tanker_response_ppb": -0.19361681016705076,
+      "relative_policy_effect_ppb": 0.6188099162122596,
+      "sites": 8
+    },
+    "full_calendar": {
+      "block7_bootstrap_draws_retained": 2000,
+      "block7_ci95": [
+        -0.0573388310155031,
+        1.1755687855070636
+      ],
+      "coefficient_order": [
+        "tanker",
+        "cargo",
+        "offshore",
+        "tanker_post",
+        "cargo_post"
+      ],
+      "coefficients": {
+        "cargo": 0.6904694043339753,
+        "cargo_post": -0.37868330896863334,
+        "offshore": -0.16970842061002034,
+        "tanker": -0.17695444928180679,
+        "tanker_post": 0.20462033641096286
+      },
+      "date_clustered_p": 0.05478167212273016,
+      "date_clustered_se": 0.30370846744744817,
+      "dates": 1089,
+      "exposure_pre_sd_raw_units": {
+        "cargo": 0.5829157639926926,
+        "offshore": 0.13656315982863898,
+        "tanker": 0.11335368337223534
+      },
+      "observations": 142383,
+      "post_tanker_response_ppb": 0.027665887129156075,
+      "pre_tanker_response_ppb": -0.17695444928180679,
+      "relative_policy_effect_ppb": 0.5833036453795962,
+      "sites": 8
+    }
+  },
+  "status": "fail_inconclusive",
+  "study": "System-level 2025 At-Berth pollution intensity",
+  "support": {
+    "at_least_three_sites": true,
+    "post_concurrent_site_hours_at_least_12000": true,
+    "pre_concurrent_site_hours_at_least_12000": true,
+    "source_record_coverage_at_least_85pct": true,
+    "treated_activity_in_at_least_80pct_weeks": true
+  }
+}

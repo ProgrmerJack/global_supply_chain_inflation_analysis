@@ -1,0 +1,23 @@
+{
+  "study": "System-level 2025 At-Berth pollution intensity",
+  "completed_at_utc": "2026-07-28T10:26:31.0059108Z",
+  "status": "fail_inconclusive",
+  "distribution_layer_authorized": false,
+  "invalid_first_execution_preserved": true,
+  "corrected_execution_hashes": {
+    "decision.json": "b6d4bbfd0ccfc2f07a99a313b6a6aac955499f68946e2b954c9440c377ddcaaf",
+    "primary_analysis_panel.parquet": "ae9015ece21d603b3c009788d1e8d1cc50ab2a5be87e954e667591dcc7333c31",
+    "availability_screen.csv": "bf28b114c33cf8226a0ad66610a46583d6f87078285552b91ea023cb72c4c6e2",
+    "audit.md": "f94010a22441c72784ed7205075e98af20949cdcf2970919b66872e644293221",
+    "posthoc_lag_diagnostics.csv": "051dd3289e04715cffb9603733f100ae6295f3534976a087b1c94eda787ecc7a"
+  },
+  "executable_sha256": "0795f87bd69c23bc43b22dca1aeafa4c840f1a8acbf4ecf7fd864697a5f54747",
+  "corrected_execution_freeze_receipt_sha256": "2a6aa74b6f359ccaa72f9a787785656fa859639c270c55ed1ab36679926e27f7",
+  "verification": {
+    "strict_json": true,
+    "pytest": "215 passed, 10 third-party deprecation warnings",
+    "git_diff_check": "passed; line-ending notices only",
+    "git_modified": false
+  },
+  "programme_stop": "Neither independent intervention passes identification and no observed or bounded environmental response opens distribution."
+}

@@ -1,0 +1,19 @@
+{
+  "gate": "B-G1",
+  "status": "pass",
+  "checks": {
+    "coverage": true,
+    "full_obstruction": true,
+    "deep_draft_reopened": true,
+    "full_channel_restored": true,
+    "crossing_contact_concordance": true
+  },
+  "crossing_ratios": {
+    "full_obstruction": 0.039045553145336226,
+    "deep_draft_reopened": 0.6936170212765957,
+    "full_channel_restored": 0.8327974276527331
+  },
+  "weekly_crossing_contact_spearman": 0.8200516114422743,
+  "crossing_episodes": 6976,
+  "contact_episodes": 3951
+}

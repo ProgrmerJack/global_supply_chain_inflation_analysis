@@ -1,0 +1,78 @@
+{
+  "compliance_validated": false,
+  "conditions": {
+    "all_2017_2025_source_dates_resolved": true,
+    "at_least_five_donors_with_20_visits_each_year": true,
+    "combined_2024_arrival_error_at_most_15pct": true,
+    "complete_2024_visit_share_at_least_95pct": true,
+    "each_port_2024_arrival_error_at_most_25pct": false,
+    "every_month_at_least_95pct": true,
+    "observable_regulatory_length_coverage_at_least_90pct": true,
+    "spb_at_least_50_complete_visits_in_2025": true
+  },
+  "effect_estimation_authorized": false,
+  "emissions_validated": false,
+  "gate": "R-G1 corrected regulatory tanker sea-to-port call measurement",
+  "official_2024_comparator": {
+    "absolute_fractional_error_by_port": {
+      "Long Beach": 0.1079429735234216,
+      "Los Angeles": 0.2937062937062937
+    },
+    "absolute_fractional_error_combined": 0.017350157728706624,
+    "ais_by_terminal_port": {
+      "Long Beach": 438,
+      "Los Angeles": 185
+    },
+    "ais_complete_regulatory_visits": 623,
+    "candidate_visits": 630,
+    "complete_visit_share": 0.9888888888888889,
+    "derived_table_sha256": "da0b6f94e7b3f0b9b3cba5e013a49dfe820215175e9a0b8f0e6b029706db5d17",
+    "measure": "tanker arrivals from sea to berth or anchorage before shifting to berth",
+    "port_totals": {
+      "Port of Long Beach": 491,
+      "Port of Los Angeles": 143
+    },
+    "spb_total": 634,
+    "subtype_rows": 10,
+    "year": 2024
+  },
+  "population": {
+    "nmea_tanker_mmsis": 6966,
+    "observable_rule": "NMEA 80-89 and length >=121.92m",
+    "regulatory_eligible_mmsis": 6489,
+    "regulatory_length_coverage": 0.9674131495836922,
+    "regulatory_length_observed_mmsis": 6739,
+    "unobservable_gt_or_engine_eligibility_imputed": false
+  },
+  "run_once_at_utc": "2026-07-28T07:51:09.438805+00:00",
+  "sample_adequacy": {
+    "eligible_donor_count": 13,
+    "eligible_donors": [
+      "baltimore_md",
+      "boston_ma",
+      "charleston_sc",
+      "houston_tx",
+      "jacksonville_fl",
+      "mobile_al",
+      "new_orleans_la",
+      "new_york_new_jersey",
+      "norfolk_newport_news_va",
+      "philadelphia_pa",
+      "port_everglades_fl",
+      "savannah_ga",
+      "wilmington_nc"
+    ],
+    "spb_complete_visits_2025": 574
+  },
+  "source_coverage": {
+    "all_dates_ok": true,
+    "dates_ok": 3287,
+    "expected_dates": 3287,
+    "minimum_month_coverage": 1.0,
+    "missing_dates": [],
+    "months_below_95pct": [],
+    "prior_non_ok_attempts": 108
+  },
+  "status": "fail",
+  "treatment_effects_opened": false
+}

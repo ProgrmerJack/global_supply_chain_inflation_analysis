@@ -1,0 +1,11 @@
+scope,lag_hours,pre_tanker_response_ppb,relative_policy_effect_ppb,block7_ci_low,block7_ci_high,status
+all,0,-0.177,0.583,0.046,1.105,exploratory_200_draw_audit
+all,1,-0.304,0.569,0.062,1.140,exploratory_200_draw_audit
+all,2,-0.327,0.395,-0.230,0.909,exploratory_200_draw_audit
+all,3,-0.348,0.335,-0.200,0.781,exploratory_200_draw_audit
+all,4,-0.307,0.192,-0.330,0.684,exploratory_200_draw_audit
+near_30km,0,0.054,0.076,-0.698,1.007,exploratory_200_draw_audit
+near_30km,1,-0.046,-0.140,-0.924,0.709,exploratory_200_draw_audit
+near_30km,2,-0.047,-0.282,-1.158,0.561,exploratory_200_draw_audit
+near_30km,3,-0.053,-0.170,-0.962,0.728,exploratory_200_draw_audit
+near_30km,4,-0.052,-0.254,-1.073,0.639,exploratory_200_draw_audit

@@ -1,0 +1,134 @@
+{
+  "study": "San Pedro Bay 2014-2015 disruption spatial-mechanism replication",
+  "registration": "https://osf.io/mbu46/",
+  "correction_status": "registered_pipeline_correction_after_invalid_first_execution",
+  "invalid_first_execution": "../spb_labour_spatial_replication/invalidation_receipt.json",
+  "run_once_at_utc": "2026-07-23T09:07:14.669070+00:00",
+  "coverage": {
+    "artifact_count": 28,
+    "rows": 836736,
+    "presence_hours": 2190553.0,
+    "manifest_sha256": "79f635057240166e96f38d5a2df01e6f5340e39a0dd8b3bfbd05535bc34a66f7",
+    "hashes_valid": true
+  },
+  "primary_log1p_effects": [
+    {
+      "term": "placebo_1",
+      "beta": 0.6832513480999816,
+      "standard_error": 0.13252412600186939,
+      "ci_low": 0.42350883405366946,
+      "ci_high": 0.9429938621462937,
+      "p_value": 2.5271864054597165e-07
+    },
+    {
+      "term": "placebo_2",
+      "beta": 0.44552956319587445,
+      "standard_error": 0.142836580376266,
+      "ci_low": 0.16557500998353242,
+      "ci_high": 0.7254841164082164,
+      "p_value": 0.0018136996544881093
+    },
+    {
+      "term": "disruption",
+      "beta": 0.6549986734967441,
+      "standard_error": 0.20779463044356364,
+      "ci_low": 0.2477286816465491,
+      "ci_high": 1.062268665346939,
+      "p_value": 0.0016207611959942636
+    },
+    {
+      "term": "recovery",
+      "beta": 0.11393847670413298,
+      "standard_error": 0.2724328636023574,
+      "ci_low": -0.42002012416160056,
+      "ci_high": 0.6478970775698665,
+      "p_value": 0.6757819686892099
+    }
+  ],
+  "primary_percent_effect": 92.5139963670239,
+  "speed_specificity_effects": [
+    {
+      "term": "placebo_1",
+      "beta": 1.2890111204568362,
+      "standard_error": 0.2671193791703137,
+      "ci_low": 0.7654667577103227,
+      "ci_high": 1.8125554832033497,
+      "p_value": 1.3958281410492217e-06
+    },
+    {
+      "term": "placebo_2",
+      "beta": 0.8425172532282202,
+      "standard_error": 0.266933094948636,
+      "ci_low": 0.3193380008470831,
+      "ci_high": 1.3656965056093573,
+      "p_value": 0.0015979196625611875
+    },
+    {
+      "term": "disruption",
+      "beta": 1.7774933538866668,
+      "standard_error": 0.4278494973488313,
+      "ci_low": 0.9389237482793922,
+      "ci_high": 2.6160629594939415,
+      "p_value": 3.2602421862085375e-05
+    },
+    {
+      "term": "recovery",
+      "beta": 0.4753617163171827,
+      "standard_error": 0.45435279961754244,
+      "ci_low": -0.41515340720814453,
+      "ci_high": 1.3658768398425098,
+      "p_value": 0.2954506017698355
+    }
+  ],
+  "approach_specificity_effects": [
+    {
+      "term": "placebo_1",
+      "beta": -0.20888442568931903,
+      "standard_error": 0.11410145702543624,
+      "ci_low": -0.4325191720427188,
+      "ci_high": 0.014750320664080718,
+      "p_value": 0.06714678813326622
+    },
+    {
+      "term": "placebo_2",
+      "beta": -0.11360076719242232,
+      "standard_error": 0.11603371755378517,
+      "ci_low": -0.3410226745901343,
+      "ci_high": 0.11382114020528966,
+      "p_value": 0.32756397843390583
+    },
+    {
+      "term": "disruption",
+      "beta": -0.49923051792000595,
+      "standard_error": 0.15506751442708114,
+      "ci_low": -0.8031572613692302,
+      "ci_high": -0.19530377447078168,
+      "p_value": 0.001284413543018979
+    },
+    {
+      "term": "recovery",
+      "beta": -0.6598152227468613,
+      "standard_error": 0.1655186022067135,
+      "ci_low": -0.9842257218434317,
+      "ci_high": -0.33540472365029095,
+      "p_value": 6.709726939190189e-05
+    }
+  ],
+  "disruption_minus_recovery": {
+    "estimate": 0.5410601967926112,
+    "standard_error": 0.1294500610300885,
+    "ci_low": 0.2873427393771258,
+    "ci_high": 0.7947776542080967
+  },
+  "conditions": {
+    "positive_near_low_speed": true,
+    "stronger_than_movement_control": true,
+    "approach_specificity": false,
+    "larger_than_fixed_placebos": false,
+    "recovery_below_disruption": true,
+    "complete_hash_valid_cache": true
+  },
+  "component_status": "fail",
+  "ns_g7_passed": false,
+  "claim_boundary": "At most disruption-associated physical cargo-presence accumulation; not individual waiting, relocation, a policy effect, emissions, exposure, health, or standalone NS-G7 passage."
+}

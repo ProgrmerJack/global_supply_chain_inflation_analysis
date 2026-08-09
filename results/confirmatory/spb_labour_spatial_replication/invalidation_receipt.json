@@ -1,0 +1,15 @@
+{
+  "status": "INVALIDATED_PIPELINE_ERROR",
+  "invalidated_at_utc": "2026-07-23T08:58:45.8205602Z",
+  "registration": "https://osf.io/x96np/",
+  "reason": "The builder assigned string-indexed pivot series to a datetime-indexed output frame. Pandas aligned on index labels, producing NaN for every ring and sector series even though the verified GFW cache contained positive in-ring hours.",
+  "scientific_interpretation_permitted": false,
+  "gate_fired_validly": false,
+  "rerun_policy": "Preserve these files. Correct only the deterministic index alignment and add fail-closed data-integrity checks; freeze and externally register that correction before rerunning to a separate result directory.",
+  "invalid_artifact_sha256": {
+    "decision.json": "0e701661734e0bd52410015be73e71c803fbab9ba78dd6b8abc3c1c68f578c71",
+    "daily_physical_panel.csv": "8e15535e561694c3128c090826c94fa7b6b9a933b52a3729e4e18a7fa5a36204",
+    "period_accounting.csv": "6be84520bc6a7380ff4c854cfbbbeaa13356c7c19bd934eab54d77e859b477a9"
+  },
+  "valid_source_manifest_sha256": "79f635057240166e96f38d5a2df01e6f5340e39a0dd8b3bfbd05535bc34a66f7"
+}
