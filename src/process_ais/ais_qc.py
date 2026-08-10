@@ -21,6 +21,11 @@ import pandas as pd
 import pyarrow.dataset as ds
 import pyarrow.compute as pc
 
+try:
+    from .ping_time import parse_ping_time
+except ImportError:  # run as a script, not a package module
+    from ping_time import parse_ping_time
+
 PORT = "LA_Long_Beach"
 CSV = "data/processed/ais_dwell_census_mode/port_pings"
 FGDB = "data/processed/ais_dwell_census_mode_2009_2014_v2/port_pings_fgdb"
@@ -40,7 +45,7 @@ def _year(dset, y):
                       filter=(pc.field("Port") == PORT) & (pc.field("year") == y)).to_pandas()
     if not len(t):
         return None
-    t["dt"] = pd.to_datetime(t["BaseDateTime"], errors="coerce")
+    t["dt"] = parse_ping_time(t["BaseDateTime"], f"ais_qc {y}")
     t = t.dropna(subset=["dt", "MMSI", "LAT", "LON"]).sort_values(["MMSI", "dt"])
     mmsi = t.MMSI.values
     same = np.r_[False, mmsi[1:] == mmsi[:-1]]

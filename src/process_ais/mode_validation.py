@@ -24,6 +24,33 @@ PORT = "LA_Long_Beach"
 CSV = "data/processed/ais_dwell_census_mode/port_pings"
 FGDB = "data/processed/ais_dwell_census_mode_2009_2014_v2/port_pings_fgdb"
 UTM11 = "EPSG:32611"     # metric CRS for San Pedro Bay (buffering in metres)
+G1_CORRELATION_MIN = 0.80
+G1_PORT_FRACTION_MIN = 0.80
+G1_MACRO_F1_MIN = 0.85
+G1_VALIDATED_COMPLEXES_MIN = 12
+
+
+def evaluate_g1(
+    port_correlations: dict[str, float], *, blind_macro_f1: float, validated_complexes: int
+) -> dict[str, float | int | bool]:
+    """Apply the registered G1 criteria without selecting a preferred metric."""
+    values = np.asarray(list(port_correlations.values()), dtype=float)
+    if not len(values) or not np.isfinite(values).all():
+        raise ValueError("G1 requires at least one finite port correlation")
+    if not np.isfinite(blind_macro_f1) or validated_complexes < 0:
+        raise ValueError("G1 metrics must be finite with a non-negative complex count")
+
+    correlation_fraction = float((values >= G1_CORRELATION_MIN).mean())
+    correlation_gate_passed = correlation_fraction >= G1_PORT_FRACTION_MIN
+    macro_f1_gate_passed = blind_macro_f1 >= G1_MACRO_F1_MIN
+    national_scope_gate_passed = validated_complexes >= G1_VALIDATED_COMPLEXES_MIN
+    return {
+        "correlation_port_fraction": correlation_fraction,
+        "correlation_gate_passed": correlation_gate_passed,
+        "macro_f1_gate_passed": macro_f1_gate_passed,
+        "national_scope_gate_passed": national_scope_gate_passed,
+        "passed": correlation_gate_passed and macro_f1_gate_passed and national_scope_gate_passed,
+    }
 
 
 def speed_thresholds():
@@ -48,7 +75,7 @@ def speed_thresholds():
 
 
 def buffer_sensitivity(sample_per_year=60000):
-    anch = gpd.read_file("config/noaa_anchorages.geojson")
+    anch = gpd.read_file("config/geometry/noaa_anchorages.geojson")
     anch = anch[anch.Port == PORT].to_crs(UTM11)
     frames = []
     for path, years in ((CSV, range(2015, 2026)), (FGDB, range(2009, 2015))):

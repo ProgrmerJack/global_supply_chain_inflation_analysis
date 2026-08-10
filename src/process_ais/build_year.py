@@ -7,9 +7,12 @@ chains the validated pieces:
     raw daily files  --extract_port_observations-->  port observations
                      --compute_dwell_metrics------>  vessel dwell + monthly metrics
 
-and writes outputs in the SAME layout/filenames as the verified 2022 data, so that
-src/index/build_ais_congestion_index.py automatically extends the long monthly
-congestion series.
+and writes outputs in the SAME layout/filenames as the verified 2022 data, so that the
+per-year occupancy/congestion index automatically extends the long monthly series.
+
+SUPERSEDED: that consumer was `src/index/build_ais_congestion_index.py`, which was retired to
+`_archive/legacy_src/index/` on 2026-08-05 along with the per-year `ais_*_analysis/` inputs it read.
+The live congestion measure is the dwell census (`build_dwell_census.py` -> `build_dwell_index.py`).
 
 Example:
     .venv/Scripts/python.exe src/process_ais/build_year.py \
@@ -91,7 +94,7 @@ def build_year(year: int, raw_dir: str, out_dir: str, pattern: str | None, chunk
         pd.DataFrame(failed, columns=["file", "reason"]).to_csv(log, index=False)
         print(f"[{year}] {len(failed)} files skipped; logged -> {log}")
 
-    print(f"[{year}] done. Re-run build_ais_congestion_index.py to extend the series.")
+    print(f"[{year}] done. Rebuild the dwell census to extend the series.")
 
 
 def main() -> None:

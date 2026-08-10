@@ -24,8 +24,11 @@ COLS = ["MMSI", "BaseDateTime", "LAT", "LON", "SOG", "VesselCategory", "VesselTy
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--zones", default="config/port_mode_zones_v2.geojson")
-    ap.add_argument("--out", default="data/processed/ais_dwell_census_mode/monthly_mode_time_v2.csv")
+    ap.add_argument("--zones", default="config/geometry/port_mode_zones_v2.geojson")
+    # Writes beside the canonical product rather than over it: promoting a rebuild is a deliberate
+    # copy, not a side effect of running this tool. (The old default was `monthly_mode_time_v2.csv`,
+    # which read as a data version rather than a scratch rebuild and was byte-identical to canonical.)
+    ap.add_argument("--out", default="data/processed/ais_dwell_census_mode/monthly_mode_time.rebuild.csv")
     ap.add_argument("--pings", default=PINGS)
     args = ap.parse_args()
 

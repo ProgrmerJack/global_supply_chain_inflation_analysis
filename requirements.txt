@@ -2,13 +2,21 @@ duckdb>=1.1.0
 pyarrow>=15.0.0
 pandas>=2.1.0
 numpy>=1.26.0
+geopandas>=0.14.0
+shapely>=2.0.0
 matplotlib>=3.8.0
 statsmodels>=0.14.0
 networkx>=3.3
 snakemake>=8.0.0
 pyyaml>=6.0.1
 scikit-learn>=1.4.0
+scipy>=1.11.0
 pandas-datareader>=0.10.0
 requests>=2.31.0
+pypdf>=5.0.0
+pdfplumber==0.11.9
 openpyxl>=3.1.0
-
+# data/raw/gscpi_raw.xlsx is a legacy OLE2 .xls despite its extension, so openpyxl cannot open it and
+# src/index/build_macro_panel.py must pass engine="xlrd". Without this the Paper A macro chain fails.
+xlrd>=2.0.1
+pytest>=8.0

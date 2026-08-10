@@ -150,7 +150,7 @@ def main() -> None:
     ap.add_argument("--months", default="1-12")
     ap.add_argument("--workers", type=int, default=4, help="concurrent (month,port) downloads")
     ap.add_argument("--out-dir", default="data/processed/ais_dwell_census")
-    ap.add_argument("--mode-zones", default="config/port_mode_zones.geojson")
+    ap.add_argument("--mode-zones", default="config/geometry/port_mode_zones.geojson")
     ap.add_argument("--mode-output", default="monthly_mode_time_2009_2014.csv")
     ap.add_argument("--retain-pings", action="store_true")
     args = ap.parse_args()

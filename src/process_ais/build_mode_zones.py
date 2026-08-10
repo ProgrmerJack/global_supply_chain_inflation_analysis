@@ -5,7 +5,7 @@ The first-pass hand-drawn boxes mislabeled ~36% of hoteling time. Port geometry 
 varied for rectangles. This builds defensible zones per port:
 
   ANCHOR = NOAA charted Anchorage Areas (CFR Title 33), fetched from the NOAA hosted
-           Anchorages FeatureServer (config/noaa_anchorages.geojson), dissolved and
+           Anchorages FeatureServer (config/geometry/noaa_anchorages.geojson), dissolved and
            buffered ~450 m to absorb crisis overflow just outside charted edges.
   BERTH  = grid the retained SOG<0.5 hoteling pings (~150 m cells); occupied cells that
            fall OUTSIDE the anchor zone are the terminal berths, dissolved into polygons.
@@ -13,7 +13,7 @@ varied for rectangles. This builds defensible zones per port:
 Ports with no charted anchorage in-box (e.g. Houston = ship-channel port) get an empty
 anchor zone and all hoteling -> berth, which matches physical reality.
 
-Output: config/port_mode_zones_v2.geojson (Port, zone_type in {anchor,berth}, geometry).
+Output: config/geometry/port_mode_zones_v2.geojson (Port, zone_type in {anchor,berth}, geometry).
 """
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ from shapely.geometry import box
 from shapely.ops import unary_union
 
 PINGS = "data/processed/ais_dwell_census_mode/port_pings"
-NOAA = "config/noaa_anchorages.geojson"
+NOAA = "config/geometry/noaa_anchorages.geojson"
 PORTS = {
     "LA_Long_Beach": (33.62, 33.82, -118.31, -118.09),
     "NY_NJ":         (40.57, 40.77, -74.13, -73.92),
@@ -82,8 +82,8 @@ def main():
         print(f"{port:15s} anchor={'yes' if na else 'NONE'}  berth_cells={len(occ)}", flush=True)
 
     out = gpd.GeoDataFrame(recs, geometry="geometry", crs="EPSG:4326")
-    out.to_file("config/port_mode_zones_v2.geojson", driver="GeoJSON")
-    print("wrote config/port_mode_zones_v2.geojson  rows:", len(out))
+    out.to_file("config/geometry/port_mode_zones_v2.geojson", driver="GeoJSON")
+    print("wrote config/geometry/port_mode_zones_v2.geojson  rows:", len(out))
 
 
 if __name__ == "__main__":

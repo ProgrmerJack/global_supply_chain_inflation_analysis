@@ -36,17 +36,162 @@ import tempfile
 import time
 import zipfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
 
 import pandas as pd
 
 sys.path.insert(0, os.path.dirname(__file__))
 from stream_sample_ais import download, url_for  # noqa: E402
-from extract_port_observations import extract_from_dataframe, _ALIASES  # noqa: E402
+from extract_port_observations import (  # noqa: E402
+    CANONICAL_PING_COLUMNS,
+    REJECTION_COLUMNS,
+    _ALIASES,
+    assign_pings_to_safe_port_areas,
+    deduplicate_pings,
+    extract_from_dataframe,
+    normalise_pings,
+)
 from compute_dwell_metrics import compute_vessel_dwell, aggregate_monthly  # noqa: E402
 from mode_time import assign_mode_labels, compute_mode_intervals, aggregate_monthly_mode_time, load_mode_zones  # noqa: E402
+from source_manifest import build_file_manifest_record_from_counts  # noqa: E402
 
 # every source-column alias we may need for extraction + dwell (lowercase)
 NEEDED = {a for alts in _ALIASES.values() for a in alts}
+
+
+def ingest_filtered_chunks(
+    chunks,
+    *,
+    source_file: str,
+    port_complex_id: str,
+) -> tuple[pd.DataFrame, pd.DataFrame, int]:
+    """Canonicalise already port-filtered chunks without a second source parser."""
+    accepted_parts = []
+    rejected_parts = []
+    raw_row_count = 0
+    for chunk in chunks:
+        accepted, rejected = normalise_pings(
+            chunk,
+            source_file=source_file,
+            port_complex_id=port_complex_id,
+        )
+        if len(rejected):
+            rejected = rejected.copy()
+            rejected["row_number"] = rejected["row_number"] + raw_row_count
+            rejected_parts.append(rejected)
+        if len(accepted):
+            accepted_parts.append(accepted)
+        raw_row_count += len(chunk)
+
+    accepted = (
+        deduplicate_pings(pd.concat(accepted_parts, ignore_index=True))
+        if accepted_parts
+        else pd.DataFrame(columns=CANONICAL_PING_COLUMNS)
+    )
+    rejected = (
+        pd.concat(rejected_parts, ignore_index=True).reindex(columns=REJECTION_COLUMNS)
+        if rejected_parts
+        else pd.DataFrame(columns=REJECTION_COLUMNS)
+    )
+    return accepted, rejected, raw_row_count
+
+
+def ingest_national_chunks(
+    chunks,
+    *,
+    source_file: str,
+    port_areas,
+    assignment_coverage: pd.DataFrame,
+) -> tuple[pd.DataFrame, dict[str, object]]:
+    """Stream one national AIS file into safe port areas with complete parse accounting."""
+    assigned_parts = []
+    raw_row_count = accepted_row_count = rejected_row_count = 0
+    rejection_counts: dict[str, int] = {}
+    first_timestamp = last_timestamp = None
+    for chunk in chunks:
+        accepted, rejected = normalise_pings(
+            chunk,
+            source_file=source_file,
+            port_complex_id="__national_source__",
+        )
+        raw_row_count += len(chunk)
+        accepted_row_count += len(accepted)
+        rejected_row_count += len(rejected)
+        for reason, count in rejected["reason"].value_counts().items():
+            rejection_counts[str(reason)] = rejection_counts.get(str(reason), 0) + int(count)
+        if len(accepted):
+            timestamp_min = accepted["timestamp"].min()
+            timestamp_max = accepted["timestamp"].max()
+            first_timestamp = timestamp_min if first_timestamp is None else min(first_timestamp, timestamp_min)
+            last_timestamp = timestamp_max if last_timestamp is None else max(last_timestamp, timestamp_max)
+            assigned = assign_pings_to_safe_port_areas(accepted, port_areas, assignment_coverage)
+            if len(assigned):
+                assigned_parts.append(assigned)
+
+    if raw_row_count != accepted_row_count + rejected_row_count:
+        raise RuntimeError("national AIS parse accounting does not reconcile source rows")
+    pings = (
+        deduplicate_pings(pd.concat(assigned_parts, ignore_index=True))
+        if assigned_parts
+        else pd.DataFrame(columns=CANONICAL_PING_COLUMNS)
+    )
+    return pings, {
+        "raw_row_count": raw_row_count,
+        "accepted_row_count": accepted_row_count,
+        "rejected_row_count": rejected_row_count,
+        "rejection_counts": dict(sorted(rejection_counts.items())),
+        "first_timestamp": first_timestamp.isoformat() if first_timestamp is not None else None,
+        "last_timestamp": last_timestamp.isoformat() if last_timestamp is not None else None,
+    }
+
+
+def ingest_national_file(
+    raw_path: str | Path,
+    *,
+    source_url: str,
+    retrieved_at: str,
+    port_areas,
+    assignment_coverage: pd.DataFrame,
+    parser_version: str = "national-ais-v1",
+    source_file: str | None = None,
+) -> tuple[pd.DataFrame, dict[str, object]]:
+    """Ingest one retained NOAA source file and bind its stream summary to source provenance."""
+    raw_path = Path(raw_path)
+    source_file = source_file or raw_path.name
+    pings, summary = ingest_national_chunks(
+        _read_chunks(str(raw_path)),
+        source_file=source_file,
+        port_areas=port_areas,
+        assignment_coverage=assignment_coverage,
+    )
+    manifest = build_file_manifest_record_from_counts(
+        raw_path,
+        source_url=source_url,
+        retrieved_at=retrieved_at,
+        parser_version=parser_version,
+        port_complex_id="__national_source__",
+        source_file=source_file,
+        **summary,
+    )
+    return pings, manifest
+
+
+def write_immutable_parquet(pings: pd.DataFrame, destination: str | Path) -> None:
+    """Atomically create one parquet artifact and refuse any replacement."""
+    destination = Path(destination)
+    if destination.exists():
+        raise FileExistsError(f"immutable artifact already exists: {destination}")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, temporary = tempfile.mkstemp(prefix=f".{destination.stem}.", suffix=".tmp", dir=destination.parent)
+    os.close(descriptor)
+    try:
+        pings.to_parquet(temporary, index=False)
+        if destination.exists():
+            raise FileExistsError(f"immutable artifact already exists: {destination}")
+        os.rename(temporary, destination)
+    finally:
+        if os.path.exists(temporary):
+            os.remove(temporary)
 
 
 def _read_chunks(path: str):
@@ -212,7 +357,7 @@ def main() -> None:
     ap.add_argument("--months", default="1-12")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--out-dir", default="data/processed/ais_dwell_census")
-    ap.add_argument("--mode-zones", default="config/port_mode_zones.geojson")
+    ap.add_argument("--mode-zones", default="config/geometry/port_mode_zones.geojson")
     ap.add_argument("--mode-output", default="monthly_mode_time.csv")
     ap.add_argument("--retain-pings", action="store_true", help="write curated in-port pings as partitioned parquet")
     ap.add_argument("--download-retries", type=int, default=8)

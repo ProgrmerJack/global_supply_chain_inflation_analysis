@@ -1,21 +1,90 @@
+# Editor and tool state
+.vscode/
+.idea/
+.DS_Store
+.mypy_cache/
+.pytest_cache/
 
-
-#Ignore vscode AI rules
-_Remove
-_archive
-.mypy_cache
-.remember
-.venv
-manuscript
-docs/superpowers
-PROJECT_FULL_OVERVIEW.md
-DEPOSIT_PACKAGE.md
-upload_parquet_to_zenodo.sh
-.env
-# Python bytecode caches
+# Python bytecode and environments
 __pycache__/
 *.pyc
-prereg
-# national observatory transient downloads
-obs/data/raw/
-docs/port_externalities_phase0
+.venv/
+
+# Credentials
+.env
+
+# Unpublished research material. This repository publishes the code, the
+# derived products the papers cite and the decision records under results/.
+# It does not publish the manuscripts, the planning and review documents, or
+# the registration bundle, which are held outside version control while the
+# papers are under review.
+manuscript/
+docs/
+prereg/
+CATALOG.md
+DEPOSIT_PACKAGE.md
+PROJECT_FULL_OVERVIEW.md
+
+# Superseded trees, retained locally only
+_archive/
+_Remove/
+_REMOVE/
+obs/
+src/obs/
+tests/obs/
+
+# Raw third-party evidence: 1.3 GB of retrieved agency PDFs and bulk monitoring
+# CSVs. Read-only inputs, re-retrievable from their published sources, never
+# derived. The per-file .manifest.json sidecars ARE published (79 files, 106 KB):
+# each carries the SHA-256 and retrieval provenance of one source document, so a
+# reader can re-download the original and verify it is the artifact that was used
+# without this repository carrying the gigabyte.
+data/external/*
+!data/external/README.md
+!data/external/*/
+data/external/*/*
+!data/external/*/*.manifest.json
+
+# Curated AIS ping corpus. Published under its own DOI at Zenodo
+# (10.5281/zenodo.21653033 national, 10.5281/zenodo.21820262 five-port) rather
+# than carried in git history.
+*.parquet
+data/interim/national_pings/
+data/processed/pillar_b_route_a*/
+
+# Interim working data. This is excluded for a governance reason, not a size one:
+# `data/interim` is one of the PROTECTED_ROOTS in src/governance/access.py, the
+# fail-closed lock covering national ingestion and the registered holdouts
+# (nature_recovery, g1_v2, baltimore_shock). Publishing it would defeat the
+# holdout design that Papers C and D rely on. Exactly four frozen evidence files
+# are published, the same four the original tracking policy whitelisted.
+# (For scale: nature_recovery 9.3 GB and national_pings 5.8 GB hold 15.1 of the
+# 16 GB here, but size is not why the rest is withheld.)
+data/interim/*
+!data/interim/pillar_b_benchmark/
+data/interim/pillar_b_benchmark/*
+!data/interim/pillar_b_benchmark/annotator_packet.csv
+!data/interim/pillar_b_benchmark/annotator_packet_freeze.json
+!data/interim/pillar_b_route_a/
+data/interim/pillar_b_route_a/*
+!data/interim/pillar_b_route_a/manifest.json
+!data/interim/pillar_b_route_a/evidence_index.csv
+
+# Transient caches and scratch
+data/interim/duck_tmp/
+data/interim/duckdb_spill/
+
+# Deposit upload helper (reads credentials from .env at run time)
+scripts/upload_parquet_to_zenodo.sh
+
+# Retrieval logs
+*.err.log
+*.out.log
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz

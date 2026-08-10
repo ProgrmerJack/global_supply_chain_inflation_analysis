@@ -22,6 +22,7 @@ from __future__ import annotations
 import argparse
 import os
 
+import geopandas as gpd
 import numpy as np
 import pandas as pd
 
@@ -43,6 +44,26 @@ OUT_COLS = [
     "Length", "Width", "Draft", "Cargo",
 ]
 
+CANONICAL_PING_COLUMNS = [
+    "mmsi",
+    "timestamp",
+    "lon",
+    "lat",
+    "sog",
+    "cog",
+    "vessel_type",
+    "length",     # AIS static: vessel dimensions (emissions size-binning + G1 size-composition validation)
+    "width",
+    "draft",
+    "imo",        # stable vessel identity for external-registry joins (MMSI can change; IMO does not)
+    "status",     # AIS navigation status (independent state-validation label; at-berth / shore-power inference)
+    "source_file",
+    "port_complex_id",
+]
+REJECTION_COLUMNS = ["row_number", "reason", "source_file", "port_complex_id"]
+# dedup identity = position/speed/type at a time & place; NOT the near-constant vessel-static fields
+PING_IDENTITY_COLUMNS = ["mmsi", "timestamp", "lon", "lat", "sog", "cog", "vessel_type", "port_complex_id"]
+
 # canonical -> accepted source names (lowercased match)
 _ALIASES = {
     "MMSI": ["mmsi"],
@@ -50,12 +71,15 @@ _ALIASES = {
     "LAT": ["lat", "latitude", "y"],
     "LON": ["lon", "lng", "longitude", "x"],
     "SOG": ["sog", "speed", "speedoverground"],
+    "COG": ["cog", "courseoverground"],
     "VesselName": ["vesselname", "vessel_name", "name"],
     "VesselType": ["vesseltype", "vessel_type", "shiptype"],
     "Length": ["length", "len"],
     "Width": ["width", "beam"],
     "Draft": ["draft", "draught"],
     "Cargo": ["cargo", "cargotype"],
+    "IMO": ["imo", "imonumber", "imo_number"],
+    "Status": ["status", "navigationalstatus", "navigation_status", "navstatus"],
 }
 REQUIRED_SOURCE = ["MMSI", "BaseDateTime", "LAT", "LON", "VesselType"]
 
@@ -73,7 +97,7 @@ def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
     missing = [c for c in REQUIRED_SOURCE if c not in df.columns]
     if missing:
         raise ValueError(f"file missing required columns {missing}; saw {list(df.columns)[:20]}")
-    for opt in ["SOG", "VesselName", "Length", "Width", "Draft", "Cargo"]:
+    for opt in ["SOG", "COG", "VesselName", "Length", "Width", "Draft", "Cargo", "IMO", "Status"]:
         if opt not in df.columns:
             df[opt] = np.nan
     return df
@@ -84,6 +108,132 @@ def classify_vessel(vt: pd.Series) -> pd.Series:
     cat[(vt >= 70) & (vt <= 79)] = "Cargo"
     cat[(vt >= 80) & (vt <= 89)] = "Tanker"
     return cat
+
+
+def effective_vessel_type(vessel_type: pd.Series, cargo: pd.Series) -> pd.Series:
+    """Return the NMEA vessel type, correcting early AIS service codes from Cargo."""
+    vessel_type = pd.to_numeric(vessel_type, errors="coerce")
+    cargo = pd.to_numeric(cargo, errors="coerce")
+    # 2015-2017: VesselType holds 4-digit AVIS service codes (e.g. 1004), not the
+    # 2-digit NMEA ship type; the raw 2-digit code lives in the Cargo field (per NOAA
+    # Marine Cadastre AIS FAQ). Use VesselType when it is a valid NMEA code (<=99),
+    # else fall back to Cargo. For 2018+ VesselType is already 0-99.
+    return vessel_type.where(vessel_type.le(99), cargo)
+
+
+def normalise_pings(
+    raw: pd.DataFrame,
+    *,
+    source_file: str,
+    port_complex_id: str,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Return canonical AIS pings and an auditable ledger for rejected source rows."""
+    frame = normalize_columns(raw.copy())
+    effective_type = effective_vessel_type(frame["VesselType"], frame["Cargo"])
+    mmsi = pd.to_numeric(frame["MMSI"], errors="coerce")
+    timestamp = pd.to_datetime(frame["BaseDateTime"], errors="coerce", utc=True)
+    lon = pd.to_numeric(frame["LON"], errors="coerce")
+    lat = pd.to_numeric(frame["LAT"], errors="coerce")
+
+    valid_mmsi = mmsi.notna() & mmsi.between(100_000_000, 799_999_999) & mmsi.eq(mmsi.round())
+    valid_timestamp = timestamp.notna()
+    valid_coordinate = lat.between(-90, 90) & lon.between(-180, 180)
+    valid_vessel_type = effective_type.between(VESSEL_TYPE_MIN, VESSEL_TYPE_MAX)
+    accepted_mask = valid_mmsi & valid_timestamp & valid_coordinate & valid_vessel_type
+
+    reason = pd.Series(pd.NA, index=frame.index, dtype="string")
+    for invalid, label in (
+        (~valid_mmsi, "invalid_mmsi"),
+        (~valid_timestamp, "invalid_timestamp"),
+        (~valid_coordinate, "coordinate_out_of_range"),
+        (~valid_vessel_type, "unsupported_vessel_type"),
+    ):
+        reason.loc[reason.isna() & invalid] = label
+
+    canonical = pd.DataFrame(
+        {
+            "mmsi": mmsi.astype("Int64"),
+            "timestamp": timestamp,
+            "lon": lon,
+            "lat": lat,
+            "sog": pd.to_numeric(frame["SOG"], errors="coerce"),
+            "cog": pd.to_numeric(frame.get("COG", np.nan), errors="coerce"),
+            "vessel_type": effective_type,
+            "length": pd.to_numeric(frame["Length"], errors="coerce"),
+            "width": pd.to_numeric(frame["Width"], errors="coerce"),
+            "draft": pd.to_numeric(frame["Draft"], errors="coerce"),
+            "imo": pd.to_numeric(frame["IMO"], errors="coerce").astype("Int64"),
+            "status": pd.to_numeric(frame["Status"], errors="coerce").astype("Int64"),
+            "source_file": source_file,
+            "port_complex_id": port_complex_id,
+        }
+    )
+    rejected = pd.DataFrame(
+        {
+            "row_number": frame.index,
+            "reason": reason,
+            "source_file": source_file,
+            "port_complex_id": port_complex_id,
+        },
+        index=frame.index,
+    ).loc[~accepted_mask]
+    return (
+        canonical.loc[accepted_mask].reset_index(drop=True).reindex(columns=CANONICAL_PING_COLUMNS),
+        rejected.reset_index(drop=True).reindex(columns=REJECTION_COLUMNS),
+    )
+
+
+def deduplicate_pings(pings: pd.DataFrame) -> pd.DataFrame:
+    """Keep one deterministic provenance record for each exact canonical ping."""
+    required = set(PING_IDENTITY_COLUMNS) | {"source_file"}
+    if missing := required - set(pings.columns):
+        raise ValueError(f"canonical pings missing columns: {sorted(missing)}")
+    return (
+        pings.sort_values([*PING_IDENTITY_COLUMNS, "source_file"], kind="stable")
+        .drop_duplicates(subset=PING_IDENTITY_COLUMNS, keep="first")
+        .reset_index(drop=True)
+    )
+
+
+def assign_pings_to_safe_port_areas(
+    pings: pd.DataFrame,
+    port_areas: gpd.GeoDataFrame,
+    assignment_coverage: pd.DataFrame,
+) -> pd.DataFrame:
+    """Assign canonical pings only to port areas approved for unambiguous spatial use."""
+    if missing := set(CANONICAL_PING_COLUMNS) - set(pings.columns):
+        raise ValueError(f"canonical pings missing columns: {sorted(missing)}")
+    if missing := {"port_complex_id", "geometry"} - set(port_areas.columns):
+        raise ValueError(f"port areas missing columns: {sorted(missing)}")
+    if missing := {"port_complex_id", "spatial_assignment_status"} - set(assignment_coverage.columns):
+        raise ValueError(f"port-area assignment coverage missing columns: {sorted(missing)}")
+    if port_areas.port_complex_id.duplicated().any() or assignment_coverage.port_complex_id.duplicated().any():
+        raise ValueError("port-area assignment inputs require unique port_complex_id values")
+
+    safe_ids = assignment_coverage.loc[
+        assignment_coverage.spatial_assignment_status.eq("assignable"), "port_complex_id"
+    ]
+    missing_areas = sorted(set(safe_ids) - set(port_areas.port_complex_id))
+    if missing_areas:
+        raise ValueError(f"assignment coverage references missing port areas: {', '.join(missing_areas)}")
+    if not len(safe_ids):
+        return pings.iloc[0:0].reindex(columns=CANONICAL_PING_COLUMNS).copy()
+
+    points = gpd.GeoDataFrame(
+        pings.reindex(columns=CANONICAL_PING_COLUMNS).copy(),
+        geometry=gpd.points_from_xy(pings.lon, pings.lat),
+        crs="EPSG:4326",
+    )
+    points["_source_row"] = range(len(points))
+    safe_areas = port_areas.loc[port_areas.port_complex_id.isin(safe_ids), ["port_complex_id", "geometry"]].rename(
+        columns={"port_complex_id": "_assigned_port_complex_id"}
+    )
+    joined = gpd.sjoin(points, safe_areas.to_crs("EPSG:4326"), how="inner", predicate="within")
+    if joined["_source_row"].duplicated().any():
+        raise ValueError("assignment-approved port areas overlap; refusing ambiguous ping assignment")
+    joined = joined.sort_values("_source_row", kind="stable")
+    joined["port_complex_id"] = joined["_assigned_port_complex_id"]
+    return pd.DataFrame(joined.reindex(columns=CANONICAL_PING_COLUMNS)).reset_index(drop=True)
 
 
 def _assign_port(lat: pd.Series, lon: pd.Series) -> pd.Series:
@@ -103,14 +253,7 @@ def extract_from_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """Filter one (chunk of a) daily AIS frame to in-port cargo/tanker observations."""
     df = normalize_columns(df)
 
-    vt = pd.to_numeric(df["VesselType"], errors="coerce")
-    cargo = pd.to_numeric(df["Cargo"], errors="coerce")
-    # 2015-2017: VesselType holds 4-digit AVIS service codes (e.g. 1004), not the
-    # 2-digit NMEA ship type; the raw 2-digit code lives in the Cargo field (per NOAA
-    # Marine Cadastre AIS FAQ). Use VesselType when it is a valid NMEA code (<=99),
-    # else fall back to Cargo. For 2018+ vt is already 0-99 so this is a no-op there
-    # (keeps the verified 2022 build unchanged).
-    eff = vt.where(vt.le(99), cargo)
+    eff = effective_vessel_type(df["VesselType"], df["Cargo"])
     keep = eff.between(VESSEL_TYPE_MIN, VESSEL_TYPE_MAX)
     df = df[keep].copy()
     if df.empty:

@@ -1,10 +1,13 @@
 """
 Spatial credibility figure for Paper A: the LA/LB port box, NOAA charted anchorage areas, data-driven
 berth zones, and where cargo/tanker vessels actually anchored during the Oct-2021 peak. Also states the
-terrestrial-AIS limitation: the post-Nov-2021 offshore queue (>150 nm) lies outside the frame.
+terrestrial-AIS limitation: the reform's instructed offshore operating area lies outside the frame.
 
-Run: python src/process_ais/port_map.py   ->  outputs/figures/paperA_fig_map.png
+Run: python src/process_ais/port_map.py   ->  manuscript/paper_A_CEE/figures/paperA_map.png
 """
+import os
+import sys
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -13,14 +16,17 @@ import geopandas as gpd
 import pyarrow.dataset as ds
 import pyarrow.compute as pc
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+from figsave import save_figure  # noqa: E402
+
 BOX = {"lat_min": 33.65, "lat_max": 33.85, "lon_min": -118.30, "lon_max": -118.10}
 PINGS = "data/processed/ais_dwell_census_mode/port_pings"
 
 
 def main():
-    zones = gpd.read_file("config/port_mode_zones_v2.geojson")
+    zones = gpd.read_file("config/geometry/port_mode_zones_v2.geojson")
     zones = zones[zones.Port == "LA_Long_Beach"]
-    anch = gpd.read_file("config/noaa_anchorages.geojson")
+    anch = gpd.read_file("config/geometry/noaa_anchorages.geojson")
     anch = anch[anch.Port == "LA_Long_Beach"]
 
     # actual anchored cargo/tanker pings at the Oct-2021 peak
@@ -61,12 +67,13 @@ def main():
     ax.set_ylim(BOX["lat_min"] - 0.02, BOX["lat_max"] + 0.02)
     ax.set_xlabel("longitude"); ax.set_ylabel("latitude")
     ax.set_title("Los Angeles/Long Beach: charted anchorages, berth zones, and the Oct-2021 anchor cluster")
-    ax.annotate("Post-Nov-2021 queuing moved waiting vessels to loiter >150 nm offshore,\n"
-                "outside this terrestrial-AIS box (near-port decline is a lower bound on avoided emissions).",
+    ax.annotate("The post-Nov-2021 process instructed some vessels to remain offshore,\n"
+                "outside this terrestrial-AIS box; the map cannot measure net relocation or avoided emissions.",
                 xy=(0.5, -0.13), xycoords="axes fraction", ha="center", fontsize=8, style="italic")
     fig.tight_layout()
-    fig.savefig("outputs/figures/paperA_fig_map.png", dpi=150, bbox_inches="tight")
-    print(f"wrote outputs/figures/paperA_fig_map.png ({len(t)} anchor pings plotted)")
+    out = "manuscript/paper_A_CEE/figures/paperA_map.png"
+    save_figure(fig, out, close=False)
+    print(f"wrote {out} ({len(t)} anchor pings plotted)")
 
 
 if __name__ == "__main__":

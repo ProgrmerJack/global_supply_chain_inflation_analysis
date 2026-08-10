@@ -17,6 +17,11 @@ import pandas as pd
 import pyarrow.dataset as ds
 import pyarrow.compute as pc
 
+try:
+    from .ping_time import parse_ping_time
+except ImportError:  # run as a script, not a package module
+    from ping_time import parse_ping_time
+
 PORTS = ["LA_Long_Beach", "NY_NJ", "Houston", "Savannah", "Seattle"]
 THRESH_H = [12, 24, 48]
 CSV = "data/processed/ais_dwell_census_mode/port_pings"
@@ -28,7 +33,7 @@ def _month_rows(dset, port, year):
                       filter=(pc.field("Port") == port) & (pc.field("year") == year)).to_pandas()
     if not len(t):
         return []
-    t["dt"] = pd.to_datetime(t["BaseDateTime"], errors="coerce")
+    t["dt"] = parse_ping_time(t["BaseDateTime"], f"dwell_segmentation_sensitivity {port} {year}")
     t = t.dropna(subset=["dt", "MMSI"]).sort_values(["MMSI", "dt"])
     g = t.groupby("MMSI", sort=False)["dt"]
     gap_h = g.diff().dt.total_seconds() / 3600.0
