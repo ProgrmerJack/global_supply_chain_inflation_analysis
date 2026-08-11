@@ -5,18 +5,22 @@ Treated = LA_Long_Beach; controls = the other 4 ports. Outcome = monthly anchor 
 (and anchor ship-days), log-scaled. We estimate:
   (1) DiD: (LA post-pre) - (controls post-pre) around Nov-2021, windows +/-12 months.
   (2) Event study: LA minus mean(control), indexed to Oct-2021, by month.
-HONEST CAVEAT: the reform relocated waiting ships to loiter >150 nm offshore (outside our
-near-port box), so a decline here measures reduced NEAR-PORT anchoring — a mix of genuine
-backlog clearance AND offshore relocation. We report it as near-port anchorage change, not
-net global reduction. Confounded with the 2022 demand-surge unwinding (controls absorb the
-common component).
+HONEST CAVEAT: the reform instructed some vessels to remain offshore, but the registered aggregate
+measurement gate did not validate a contemporaneous operational relocation series. A decline here measures
+reduced NEAR-PORT anchoring only; it cannot separate clearance, offshore change or network diversion and is
+confounded with the 2022 demand-surge unwinding.
 """
 import os
 import numpy as np
 import pandas as pd
+import sys
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+from figsave import save_figure  # noqa: E402
 
 REFORM = "2021-11"
 CONTROLS = ["NY_NJ", "Houston", "Savannah", "Seattle"]
@@ -65,9 +69,9 @@ def main():
     ax.set_ylabel("LA anchor CO2 vs controls (%, rel. Oct-2021)")
     ax.set_title("Near-port anchorage emissions around the LA/LB queuing reform (DiD-style)")
     ax.legend(); fig.tight_layout()
-    os.makedirs("outputs/figures", exist_ok=True)
-    fig.savefig("outputs/figures/reform_event_study.png", dpi=140)
-    print("\nwrote outputs/figures/reform_event_study.png")
+    out = "manuscript/paper_A_CEE/figures/paperA_reform_event_study.png"
+    save_figure(fig, out, close=False)
+    print(f"\nwrote {out}")
     print("post-reform near-port anchorage (LA vs controls) by month, % vs Oct-2021:")
     for ym in ["2021-10", "2021-12", "2022-02", "2022-04", "2022-06", "2022-09"]:
         if ym in rel.index:

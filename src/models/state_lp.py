@@ -67,12 +67,18 @@ def _interaction_lp(d, resp, F, h=H):
                 p_bD=res.pvalues["Fx"], p_bL=res.pvalues["shock"], p_bH=p_H, n=len(reg))
 
 
-def fig_irf(outpath="outputs/figures/paperA_fig_irf.png"):
+def fig_irf(outpath="manuscript/paper_A_CEE/figures/paperA_irf.png"):
     """State-dependent sectoral IRF: goods high- vs low-congestion regime (with HAC bands) + services,
     to horizon 12. Faithful render of the interaction LP behind the Paper A coupling result."""
+    import os
+    import sys
+
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
+
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+    from figsave import save_figure
     d = _prep(); Fmed = (d.clevel > d.clevel.median())
     hs = list(range(0, 13))
     G = [_interaction_lp(d, "cpi_goods", Fmed, h) for h in hs]
@@ -90,7 +96,7 @@ def fig_irf(outpath="outputs/figures/paperA_fig_irf.png"):
         ax.set_title(t); ax.legend(fontsize=8)
     axg.set_ylabel("cumulative % response")
     fig.suptitle("State-dependent sectoral price response (interaction LP; goods $\\gg$ services)")
-    fig.tight_layout(); fig.savefig(outpath, dpi=140); plt.close(fig)
+    fig.tight_layout(); save_figure(fig, outpath)
     print(f"wrote {outpath}")
 
 

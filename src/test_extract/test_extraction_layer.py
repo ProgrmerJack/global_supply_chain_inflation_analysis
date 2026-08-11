@@ -9,7 +9,7 @@ import tempfile
 
 import pandas as pd
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from process_ais.extract_port_observations import extract_file, extract_from_dataframe
 from process_ais.compute_dwell_metrics import process_port_observations
 

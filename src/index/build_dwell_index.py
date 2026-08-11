@@ -12,14 +12,16 @@ near-flat for dwell) and standardize the residual. Headline shock = LA/Long Beac
 only port that tracks GSCPI); a cross-port composite and per-port series are kept for the
 heterogeneity/robustness panel.
 
+Stage 2 of the Paper A macro chain; run `src/index/build_macro_panel.py` (stage 1) first.
+
 Inputs
     data/processed/ais_dwell_census/monthly_dwell.csv            (2015-2025)
-    data/processed/ais_dwell_census/monthly_dwell_2009_2014.csv  (optional, 2009-2014)
-    data/processed/analysis_dataset.csv                          (FRED macro + gscpi)
+    data/processed/ais_dwell_census/monthly_dwell_2009_2014.csv  (2009-2014)
+    data/processed/analysis_dataset.csv                          (FRED macro + real GSCPI)
 
 Outputs
-    data/processed/analysis_dataset_dwell.csv
-    outputs/figures/dwell_vs_gscpi.png
+    data/processed/analysis_dataset_dwell.csv    read by every price and concentration guard
+    outputs/diagnostics/dwell_vs_gscpi.png
     outputs/dwell_validation.json
 """
 
@@ -37,12 +39,17 @@ import pandas as pd
 import statsmodels.api as sm
 from scipy import stats
 
+# The canonical dwell census, written by build_dwell_census.py and build_dwell_census_fgdb.py
+# (both default to --out-dir data/processed/ais_dwell_census). The CSV era (2015-2025) and the
+# FGDB era (2009-2014) land in the same directory and are stacked into one 2009-2025 series.
+# Do NOT repoint this at ais_dwell_census_mode/: that is the mode-annotated variant used by the
+# emissions and segmentation guards, and swapping it changes the dwell measure itself.
 CENSUS_DIR = "data/processed/ais_dwell_census"
 MONTHLY = os.path.join(CENSUS_DIR, "monthly_dwell.csv")
 MONTHLY_FGDB = os.path.join(CENSUS_DIR, "monthly_dwell_2009_2014.csv")
 MACRO = "data/processed/analysis_dataset.csv"
 OUT_CSV = "data/processed/analysis_dataset_dwell.csv"
-OUT_FIG = "outputs/figures/dwell_vs_gscpi.png"
+OUT_FIG = "outputs/diagnostics/dwell_vs_gscpi.png"
 OUT_JSON = "outputs/dwell_validation.json"
 PORTS = ["LA_Long_Beach", "NY_NJ", "Houston", "Savannah", "Seattle"]
 REF_PORT = "LA_Long_Beach"

@@ -12,8 +12,8 @@ Intensities per effective ship-day at anchor:
          band [24,69]: lo = Vukic & Lai 2022 generic-fleet inventory (~24, omits reefer), mid = CARB-
          empirical, hi = Zhang 2024 all-source ceiling (Oct-peak OGV = 79% of 2,001 t/day). CARB is central.
 Decomposition caveat: at the 2021 peak, in-box ~29 ships x 54 ~= V&L 86 (incl. offshore) x 24 ~= Zhang
-2,001 -> the peak TOTAL is robust but the count x intensity split is not; our terrestrial box undercounts
-the offshore queue so 2021 is a lower bound. The BASELINE/17-yr absolute is the most method-exposed (~2x
+2,001 -> the apparent peak agreement is not validation because the populations and system boundaries differ;
+the terrestrial box has incomplete offshore coverage. The BASELINE/17-yr absolute is the most method-exposed (~2x
 lower at the V&L intensity). Relative change is an activity ratio (intensity cancels) -> robust; LEAD with it.
 
 Caveat: intensity is anchored to CARB's 2021 (0.1%-S, partial-shore-power, mixed-NOx-tier) fleet and
@@ -73,7 +73,7 @@ BASELINE_YEARS = range(2016, 2020)       # normal-year baseline = the four pre-p
 # ambiguous: our in-box ~29 ships x 54 ~= V&L's 86 (anchor+offshore) x 24 ~= Zhang 2,001 -> similar peak
 # TOTAL, different count x intensity. The BASELINE/17-yr absolute is the most method-exposed (in-box count
 # x intensity; ~2x lower if the V&L intensity is right). Relative change cancels intensity -> robust.
-XCHECK_CO2_PER_SD = 24.0                  # V&L generic-fleet empirical lower bound (t CO2/ship-day)
+XCHECK_CO2_PER_SD = 24.0                  # V&L generic-fleet low-end cross-check (t CO2/ship-day)
 
 
 def _vtype_lookup():

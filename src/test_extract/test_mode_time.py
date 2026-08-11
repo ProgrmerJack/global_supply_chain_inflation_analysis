@@ -5,12 +5,13 @@ import geopandas as gpd
 import pandas as pd
 from shapely.geometry import Polygon
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 from src.process_ais.mode_time import (  # noqa: E402
     aggregate_monthly_mode_time,
     assign_mode_labels,
+    assign_state_labels,
     compute_mode_intervals,
     load_mode_zones,
 )
@@ -68,8 +69,83 @@ def test_compute_mode_intervals_caps_gaps_and_aggregates_monthly():
     assert row["total_mode_hours"] == 4.0
 
 
+def test_compute_mode_intervals_splits_months_without_linking_different_ports():
+    """A capped interval conserves hours across a month seam and never spans ports."""
+    obs = pd.DataFrame(
+        {
+            "MMSI": [1, 1, 2, 2],
+            "Port": ["A", "A", "B", "C"],
+            "BaseDateTime": pd.to_datetime(
+                ["2021-01-31 23:00:00", "2021-02-01 01:00:00", "2021-01-31 23:30:00", "2021-02-01 00:30:00"]
+            ),
+            "mode": ["anchor", "anchor", "berth", "berth"],
+        }
+    )
+
+    intervals = compute_mode_intervals(obs, gap_cap_hours=2.0)
+
+    assert intervals.loc[intervals["Port"] == "A", ["YearMonth", "interval_hours"]].values.tolist() == [
+        ["2021-01", 1.0],
+        ["2021-02", 1.0],
+    ]
+    assert set(intervals["Port"]) == {"A"}
+
+
+def test_assign_state_labels_resolves_overlap_and_speed_thresholds():
+    """Zone priority is explicit while 0.5/1.0/3.0-knot boundaries stay testable."""
+    zones = gpd.GeoDataFrame(
+        {"Port": ["A", "A"], "zone_type": ["official_anchorage", "berth"]},
+        geometry=[
+            Polygon([(-118.30, 33.70), (-118.20, 33.70), (-118.20, 33.80), (-118.30, 33.80)]),
+            Polygon([(-118.28, 33.72), (-118.18, 33.72), (-118.18, 33.78), (-118.28, 33.78)]),
+        ],
+        crs="EPSG:4326",
+    )
+    obs = pd.DataFrame(
+        {
+            "Port": ["A"] * 4,
+            "LAT": [33.75] * 4,
+            "LON": [-118.25] * 4,
+            "SOG": [0.0, 0.5, 1.0, 3.0],
+        }
+    )
+
+    development = assign_state_labels(
+        obs,
+        zones,
+        zone_priority=("berth", "official_anchorage"),
+    )
+    epa_sensitivity = assign_state_labels(
+        obs,
+        zones,
+        zone_priority=("berth", "official_anchorage"),
+        transit_knots=1.0,
+    )
+
+    assert development["state"].tolist() == ["berth", "manoeuvre", "manoeuvre", "transit"]
+    assert epa_sensitivity["state"].tolist() == ["berth", "manoeuvre", "transit", "transit"]
+
+
+def test_assign_state_labels_never_uses_an_overlapping_zone_from_another_port():
+    """Spatial overlap cannot override the declared port-complex identity."""
+    geometry = Polygon([(-118.30, 33.70), (-118.20, 33.70), (-118.20, 33.80), (-118.30, 33.80)])
+    zones = gpd.GeoDataFrame(
+        {"Port": ["A", "B"], "zone_type": ["official_anchorage", "berth"]},
+        geometry=[geometry, geometry],
+        crs="EPSG:4326",
+    )
+    obs = pd.DataFrame({"Port": ["A"], "LAT": [33.75], "LON": [-118.25], "SOG": [0.0]})
+
+    states = assign_state_labels(obs, zones, zone_priority=("berth", "official_anchorage"))
+
+    assert states.state.tolist() == ["official_anchorage"]
+
+
 def test_repository_mode_zone_file_loads():
-    zones = load_mode_zones("config/port_mode_zones.geojson")
-    assert set(zones["Port"]) == {"LA_Long_Beach", "NY_NJ", "Houston", "Savannah", "Seattle"}
+    zones = load_mode_zones("config/geometry/port_mode_zones.geojson")
+    ports = {"LA_Long_Beach", "NY_NJ", "Houston", "Savannah", "Seattle"}
+    assert set(zones["Port"]) == ports
     assert set(zones["zone_type"]) == {"anchor", "berth"}
-    assert len(zones) == 10
+    assert set(zones.loc[zones["zone_type"] == "berth", "Port"]) == ports
+    assert set(zones.loc[zones["zone_type"] == "anchor", "Port"]) == ports - {"Houston"}
+    assert len(zones) == 9
