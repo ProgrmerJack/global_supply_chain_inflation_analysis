@@ -110,10 +110,18 @@ act, not a tidy-up. See the "Why the directory layout cannot be reorganised" sec
 
 | Record | Version | Contents |
 |---|---|---|
-| [10.5281/zenodo.21653033](https://doi.org/10.5281/zenodo.21653033) | 1.0.0 | national 15-complex census — 20 files, 4,752,450,838 bytes, 11 annual archives 2015–2025 |
+| [10.5281/zenodo.21936231](https://doi.org/10.5281/zenodo.21936231) | 1.1.0 | national 15-complex census — 20 files, 4,763,492,927 bytes, 11 annual archives 2015–2025, plus the complete code snapshot |
 | [10.5281/zenodo.21820262](https://doi.org/10.5281/zenodo.21820262) | 2.0.0 | five-port corpus — 13 files, 2,869,894,549 bytes |
 
-Cite the **version** DOIs above. Version 1.0.0 of the five-port record
-(`10.5281/zenodo.21203605`) predates the recovery of four mode-census months and reproduces 17-year totals
-about 2% lower; concept DOIs always resolve to the latest version and are not stable reproduction pins.
+Cite the **version** DOIs above; concept DOIs always resolve to the latest version and are not stable
+reproduction pins. The two records' predecessors differ in opposite ways, so the reason to prefer the
+current version is not the same in each case:
+
+- Five-port 1.0.0 (`10.5281/zenodo.21203605`) predates the recovery of four mode-census months and
+  reproduces 17-year totals about 2% lower. **The data differ** — use 2.0.0.
+- National 1.0.0 (`10.5281/zenodo.21653033`) has **byte-identical data** to 1.1.0. It differs only in the
+  record README, whose reproduction commands were wrong, and in the code archive, which covered
+  `src/process_ais` alone. Either reproduces every number; 1.1.0 is cited because its code and
+  documentation are complete.
+
 Both records re-verified against the Zenodo API on 2026-08-14.

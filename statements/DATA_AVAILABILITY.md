@@ -17,10 +17,17 @@ they were. `src/models/price_robustness.py` uses four public FRED series — `IR
 control file can be rebuilt by hand.
 
 The distinct 15-complex 2015--2025 national census described in Paper B is published at Zenodo DOI
-**10.5281/zenodo.21653033** (version 1.0.0, published open access, 20 files, 4,752,450,838 bytes, of which
+**10.5281/zenodo.21936231** (version 1.1.0, published open access, 20 files, 4,763,492,927 bytes, of which
 eleven are the annual AIS archives 2015--2025 with no year missing; confirmed the latest version via the
 Zenodo API on 2026-08-14). Its concept DOI is `10.5281/zenodo.21653032`. It requires no reviewer
 credentials.
+
+Version 1.0.0 of that record (`10.5281/zenodo.21653033`) remains public and its **data files are
+byte-identical** to 1.1.0 — the seventeen data artifacts carry the same checksums. The two differ only in
+the record README, whose reproduction commands were wrong in 1.0.0, and in `code_and_protocols.zip`, which
+in 1.0.0 covered `src/process_ais` alone and in 1.1.0 covers the whole pipeline. Either version reproduces
+every reported number; cite 1.1.0 because its documentation and code are complete. This is unlike the
+five-port record above, where 1.0.0 and 2.0.0 genuinely differ in data.
 
 Underlying public sources:
 

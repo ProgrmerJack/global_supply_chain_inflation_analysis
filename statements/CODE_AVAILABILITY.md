@@ -2,16 +2,26 @@
 
 All code for the AIS dwell/mode census, emissions calibration, and analysis is public at
 <https://github.com/ProgrmerJack/global_supply_chain_inflation_analysis> under the MIT license (`LICENSE`),
-which is the source of record. Neither deposit carries the full pipeline. The five-port deposit
-(DOI 10.5281/zenodo.21820262, version 2.0.0) ships the data together with `emission_factors.py` only. The
-national deposit (DOI 10.5281/zenodo.21653033) ships `code_and_protocols.zip`, a fixed snapshot of the
-AIS-processing subtree — `src/process_ais`, both `scripts/` entry points, `requirements.txt`, the spatial
-config and the Paper B claim table — but not `src/emissions`, `src/models` or `src/index`. That snapshot
-predates the 2026-08-06 config reorganisation, so it carries the flat `config/` layout and is internally
-consistent with it; repository paths differ.
+which is the development source. The citable frozen copy is `code_and_protocols.zip` in the national
+deposit, **DOI 10.5281/zenodo.21936231 (version 1.1.0)**: 321 files covering the whole of `src/`
+(acquire, process_ais, emissions, models, index, analysis, governance), `scripts/`, the `tests/` suite,
+the `config/` tree, the decision records under `results/`, `requirements.txt`, `LICENSE` and the Paper B
+claim table.
+
+The five-port deposit (DOI 10.5281/zenodo.21820262, version 2.0.0) ships the data together with
+`emission_factors.py` only, so reproducing Paper A takes two records: its data from 21820262 and the code
+from 21936231.
+
+Version 1.0.0 of the national deposit (`10.5281/zenodo.21653033`) carried a much smaller snapshot —
+`src/process_ais` only, under the pre-2026-08-06 flat `config/` layout — and did not contain
+`src/emissions`, `src/models` or `src/index`. Use 1.1.0 for code.
 
 Dependencies are pinned in `requirements.txt`; the released results were produced and re-verified with
-CPython 3.14.
+CPython 3.14. Extracting the 1.1.0 archive and running the focused test set behind the national release
+(`tests/test_national_panel.py`, `test_ais_ingest.py`, `test_vessel_characteristics.py`,
+`test_national_state_zones.py`, `test_g1.py`) gives 46 passed, 0 failed with no other files needed; the
+full suite from the archive alone gives 211 passed, 22 failed, 3 skipped, the failures being assertions
+against the unpublished preregistration bundle and manuscript sources.
 
 Ten standing, assert-guarded scripts fail loudly on regression and regenerate every headline. Nine read only
 deposited files; `price_robustness.py` additionally uses four public FRED series (`IR`, `PCU483111483111`,

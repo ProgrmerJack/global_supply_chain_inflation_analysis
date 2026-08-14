@@ -98,8 +98,10 @@ tests/         pytest suite
 The five-port package is public at Zenodo DOI **10.5281/zenodo.21820262** (version 2.0.0). Cite that version
 DOI, not v1.0.0 `10.5281/zenodo.21203605` — v1 predates the four-month mode-census recovery and reproduces
 17-year totals ~2% lower. The 15-complex national census is a separate product published at DOI
-**10.5281/zenodo.21653033** (v1.0.0, open access, latest version). Both verified against the Zenodo API
-on 2026-08-12.
+**10.5281/zenodo.21936231** (v1.1.0, open access, latest version), which also carries the citable frozen
+snapshot of this code. Its v1.0.0 `10.5281/zenodo.21653033` stays public with byte-identical data and
+differs only in the record README and the code archive. Both records verified against the Zenodo API
+on 2026-08-14.
 
 Sources: NOAA Marine Cadastre AIS (public domain), NY Fed GSCPI, US BLS CPI, Federal Reserve IndPro and
 oil, Port of Los Angeles TEU, CARB congestion inventory.
