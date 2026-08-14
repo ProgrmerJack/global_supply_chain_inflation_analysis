@@ -1,10 +1,17 @@
 # Code availability
 
-All code for the AIS dwell/mode census, emissions calibration, and analysis is available at
-<https://github.com/ProgrmerJack/global_supply_chain_inflation_analysis> and archived with the dataset at
-the Zenodo dataset (DOI 10.5281/zenodo.21820262, version 2.0.0), under the MIT license. The versioned national
-extractor/protocol snapshot is published in DOI 10.5281/zenodo.21653033. The code runs on Python >= 3.10 with the
-dependencies pinned in `requirements.txt`.
+All code for the AIS dwell/mode census, emissions calibration, and analysis is public at
+<https://github.com/ProgrmerJack/global_supply_chain_inflation_analysis> under the MIT license (`LICENSE`),
+which is the source of record. Neither deposit carries the full pipeline. The five-port deposit
+(DOI 10.5281/zenodo.21820262, version 2.0.0) ships the data together with `emission_factors.py` only. The
+national deposit (DOI 10.5281/zenodo.21653033) ships `code_and_protocols.zip`, a fixed snapshot of the
+AIS-processing subtree — `src/process_ais`, both `scripts/` entry points, `requirements.txt`, the spatial
+config and the Paper B claim table — but not `src/emissions`, `src/models` or `src/index`. That snapshot
+predates the 2026-08-06 config reorganisation, so it carries the flat `config/` layout and is internally
+consistent with it; repository paths differ.
+
+Dependencies are pinned in `requirements.txt`; the released results were produced and re-verified with
+CPython 3.14.
 
 Ten standing, assert-guarded scripts fail loudly on regression and regenerate every headline. Nine read only
 deposited files; `price_robustness.py` additionally uses four public FRED series (`IR`, `PCU483111483111`,

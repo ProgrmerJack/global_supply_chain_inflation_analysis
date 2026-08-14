@@ -104,6 +104,12 @@ on 2026-08-12.
 Sources: NOAA Marine Cadastre AIS (public domain), NY Fed GSCPI, US BLS CPI, Federal Reserve IndPro and
 oil, Port of Los Angeles TEU, CARB congestion inventory.
 
+## Licence
+
+Code in this repository is MIT (`LICENSE`). The data products at Zenodo are CC BY 4.0, not MIT; NOAA Marine
+Cadastre source records are US Government data. Neither deposit carries the full pipeline — see
+`statements/CODE_AVAILABILITY.md` for exactly what each one ships.
+
 ## Why the directory layout cannot be reorganised
 
 Three mechanisms key on **exact paths**, so moving a file is a scientific act, not a tidy-up:
