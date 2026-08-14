@@ -30,6 +30,12 @@ def test_every_pinned_path_resolves() -> None:
                 # named as a future requirement, not an existing artifact; the guard asserts the
                 # converse (that it has NOT quietly appeared) — see test below
                 continue
+            if path in guard.RETIRED:
+                # named by an amendment only in order to record its removal; the converse (that it
+                # has NOT reappeared) is asserted below
+                assert (ROOT / guard.RETIRED[path][0]).is_file(), (
+                    f"retired path {path} cites a missing amendment: {guard.RETIRED[path][0]}")
+                continue
             if path in guard.RELOCATIONS:
                 assert guard.check_relocation(path) is None, f"declared relocation broken: {path}"
                 continue
@@ -48,6 +54,19 @@ def test_prospective_paths_have_not_silently_appeared() -> None:
     assert not appeared, (
         f"these are listed as prospective but now exist: {appeared}. "
         "Remove them from PROSPECTIVE so they are checked as ordinary pins.")
+
+
+def test_retired_paths_have_not_silently_reappeared() -> None:
+    """A retired path that exists again must be checked as a real pin, not left unchecked.
+
+    Symmetric to the prospective test: without this, RETIRED would be a place to permanently hide a
+    file that was deleted by accident and later restored with different bytes.
+    """
+    guard = _guard()
+    reappeared = [p for p in guard.RETIRED if (ROOT / p).exists()]
+    assert not reappeared, (
+        f"these are listed as retired but now exist: {reappeared}. "
+        "Remove them from RETIRED so they are checked as ordinary pins.")
 
 
 def test_governance_roots_are_directories_when_present() -> None:

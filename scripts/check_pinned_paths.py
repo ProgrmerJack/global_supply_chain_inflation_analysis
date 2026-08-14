@@ -269,9 +269,14 @@ PREREG_MOVES: dict[str, tuple[str, str]] = {
     "prereg/spb_labour_spatial_replication_freeze_receipt.json":
         ("prereg/studies/spb_labour/spb_labour_spatial_replication_freeze_receipt.json",
          "fa0e7a59a0aef2ed499abf02083e9e893623c824c7647538a253c608c95e4341"),
+    # Re-pinned 2026-08-14. The move itself is unchanged; the receipt's own bytes changed because
+    # prereg/amendments/2026-08-14_queue_boundary_executable_repin.md updated its
+    # sha256.analysis_executable to match the path-literal edit the 2026-08-09 subfoldering made to
+    # src/analysis/queue_boundary_reanalysis.py. Superseded receipt hash:
+    # 3581b95afcfa4a7299f55136b6c1dabb68fe5f25a0b5684f65d18b712a7f8837
     "prereg/spb_queue_boundary_reanalysis_freeze_receipt.json":
         ("prereg/studies/spb_queue_boundary/spb_queue_boundary_reanalysis_freeze_receipt.json",
-         "3581b95afcfa4a7299f55136b6c1dabb68fe5f25a0b5684f65d18b712a7f8837"),
+         "6dc4102b1a9ab43ebd9150b4b8646dd55c825cda7074bda071386bf94244b858"),
 }
 
 RELOCATIONS.update(
@@ -291,6 +296,26 @@ PROSPECTIVE: dict[str, str] = {
     # src/governance/access.py::assert_g1_v2_unlocked.
     "prereg/amendments/g1_v2_manifest.csv":
         "G1-v2 is unexecuted; required at first run by access.py::assert_g1_v2_unlocked",
+}
+
+
+# Paths that a registration names only in order to RECORD THEIR REMOVAL. An amendment that deletes a
+# file has to name the file, and this checker reads amendments -- so without this list the act of
+# documenting a deletion would itself manufacture a broken pin. The mirror image of PROSPECTIVE:
+# there the record says "this will exist", here it says "this deliberately does not".
+#
+# Each entry names the amendment that authorises the removal and records the removed file's SHA-256,
+# and the amendment must exist. A file listed here that reappears is a failure, exactly as a
+# prospective file that appears is: the entry has to be removed so the path is checked normally.
+# This cannot become a place to hide a file that went missing by accident, because an accidental
+# deletion has no amendment to point at.
+RETIRED: dict[str, tuple[str, str]] = {
+    "docs/historical_plans/plans/2026-06-29-mode-resolved-reprocessing.md":
+        ("prereg/amendments/2026-08-14_historical_plans_orphan_removal.md",
+         "6465f32f554eb5d3006b2df37180a6c142d4326da0b85b522b45b293293cc0a3"),
+    "docs/historical_plans/plans/2026-07-12-national-port-externalities-master-implementation-plan.md":
+        ("prereg/amendments/2026-08-14_historical_plans_orphan_removal.md",
+         "de2459c2b36b9a89912032018949dbea2e92210e113ab67cfe64fdc093b95a5a"),
 }
 
 
@@ -414,11 +439,30 @@ def main() -> int:
 
     relocated = 0
     prospective = 0
+    retired = 0
     for label, pins in (("prereg record", prereg_pins()), ("claim ledger", ledger_pins())):
         for path in sorted(pins):
             if path.startswith(EXPECTED_ABSENT):
                 continue
             checked += 1
+            if path in RETIRED:
+                amendment, removed_sha = RETIRED[path]
+                if not (ROOT / amendment).is_file():
+                    failures.append(
+                        f"  MISSING AMENDMENT  {amendment}\n"
+                        f"           authorises the removal of {path}")
+                elif (ROOT / path).exists():
+                    actual = _sha256(ROOT / path)
+                    failures.append(
+                        f"  NOW EXISTS  {path}\n"
+                        f"           listed as retired by {amendment}"
+                        f" (removed at {removed_sha[:16]}..., found {actual[:16]}...);\n"
+                        f"           remove it from RETIRED so it is checked as a real pin")
+                else:
+                    retired += 1
+                    if args.verbose:
+                        print(f"  ..  {path} (retired by {amendment})")
+                continue
             if path in PROSPECTIVE:
                 if (ROOT / path).exists():
                     failures.append(
@@ -462,6 +506,7 @@ def main() -> int:
     print(f"all {checked} pinned paths resolve "
           f"({relocated} via declared relocation with hash re-verified; "
           f"{prospective} prospective, not yet created; "
+          f"{retired} retired by amendment; "
           f"{len(governance_roots())} governance roots checked)")
     return 0
 
