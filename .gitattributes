@@ -1,0 +1,22 @@
+# Line endings are load-bearing in this repository, so git converts nothing by default.
+#
+# scripts/check_pinned_paths.py verifies freeze receipts by RAW SHA-256 of exact bytes at exact paths,
+# and several of those receipts are externally timestamped or OSF-registered. Raw bytes are the point of
+# an attestation: normalising them would let two different byte sequences satisfy one record. But git's
+# default end-of-line conversion (core.autocrlf) makes the working tree differ between platforms, which
+# silently invalidates those digests -- a Linux checkout reported HASH CHANGED on four pinned files whose
+# content was character-for-character identical, which reads like data corruption.
+#
+# The rule below removes the ambiguity: every file is stored and checked out exactly as committed, so a
+# receipt written on one machine verifies on any other. Twelve prereg receipts genuinely contain CRLF in
+# their committed bytes; a blanket `text=auto eol=lf` would rewrite those and break them.
+* -text
+
+# These three registries were attested while the working tree held CRLF, so their receipts record the
+# CRLF digest, while their blobs are LF. They must therefore be materialised as CRLF for the recorded
+# hash to verify. This is not a formatting preference -- it reproduces the exact bytes the receipt
+# attests. Do not "tidy" them to LF without a dated amendment in prereg/amendments/ that re-verifies
+# each digest.
+config/protocol/national_state_zone_provenance.json  text eol=crlf
+config/registries/national_state_zone_coverage.csv   text eol=crlf
+config/registries/port_complex_crosswalk.csv         text eol=crlf
