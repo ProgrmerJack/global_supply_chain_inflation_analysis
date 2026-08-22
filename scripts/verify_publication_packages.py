@@ -25,6 +25,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import time
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +41,55 @@ PAPERS: dict[str, dict] = {
           "abstract_limit": 250, "highlights": True},
 }
 REQUIRED = {"claim_id", "status", "claim", "evidence_path", "evidence_sha256", "generator_path", "test_paths", "check"}
+
+# Inputs the guard scripts read, with where each comes from. Checked before --run-guards so a missing
+# download fails in one clear line naming the file and its source, instead of a pandas stack trace six
+# guards deep. Guards use paths relative to the repository root, so they are always run with cwd=ROOT.
+GUARD_INPUTS: dict[str, str] = {
+    "data/processed/analysis_dataset_dwell.csv":
+        "built locally: run src/index/build_macro_panel.py, THEN src/index/build_dwell_index.py (in that order)",
+    "data/processed/ais_dwell_census/monthly_dwell.csv":
+        "five-port dwell census: Zenodo 10.5281/zenodo.21820262 version 2.0.0",
+    "data/processed/ais_dwell_census_mode/monthly_mode_time.csv":
+        "five-port mode census: Zenodo 10.5281/zenodo.21820262 version 2.0.0",
+}
+# Guards that stream the raw ping corpus rather than a monthly summary, so they take minutes rather than
+# seconds. Named here so a long silence reads as expected rather than as a hang. run_guard prints the
+# measured elapsed time for each, which is the number to trust -- these labels are only a warning that
+# the guard is I/O bound.
+SLOW_GUARDS: dict[str, str] = {
+    "src/process_ais/ais_qc.py": "minutes: streams 107M LA/LB pings",
+    "src/process_ais/port_call_segmentation.py": "minutes: re-segments the raw pings",
+    "src/process_ais/mode_validation.py": "minutes: re-runs mode classification",
+}
+
+# Cross-document references are hard-coded numbers ("SI~S7", "Supplementary Table~S11") because the
+# manuscript and its SI compile as separate documents, so LaTeX cannot link them and a \ref would break.
+# Consequence: inserting a section or table in the SI silently renumbers every later target and turns a
+# correct citation into a confidently wrong one. This table is the missing link. It records, for each
+# literal number the main text uses, which SI item that number must name; reordering the SI then fails
+# here instead of misdirecting a reader. Every literal in the main text must appear, so adding one is
+# a deliberate act.
+SI_CROSSREFS: dict[str, dict] = {
+    "A": {
+        "si": "paper_A_CEE_SI.tex",
+        # "SI~SN"  ->  a distinctive phrase that must occur in the title of SI section N
+        "sections": {
+            1: "CARB calibration",
+            4: "regime-definition grid",
+            6: "difference-in-differences",
+            7: "Era-boundary validation",
+            8: "standing guard scripts",
+            9: "Port-call segmentation",
+            10: "robustness battery",
+            11: "Social-cost derivation",
+        },
+        # "Supplementary Table~SN"  ->  the SI label that must carry number N
+        "tables": {11: "tab:ed_summary"},
+        # "Supplementary Fig.~SN"   ->  the SI label that must carry number N
+        "figures": {1: "fig:reform"},
+    },
+}
 DECLARATIONS = (
     "Independent Researcher, Tashkent, Uzbekistan",
     "Jack00040008@outlook.com",
@@ -51,11 +101,35 @@ DECLARATIONS = (
 )
 
 
+# Evidence is hashed by CONTENT, not by line endings. See sha256() for why.
+TEXT_EVIDENCE = {".csv", ".json", ".md", ".txt", ".tex", ".bib", ".geojson"}
+
+
 def sha256(path: Path) -> str:
+    """Hash evidence content with newlines normalised, so one digest is right on every platform.
+
+    These digests were raw file hashes until 2026-08-22, which made them platform-dependent: git checks
+    text out with CRLF on Windows and LF everywhere else, so on Linux 28 of the 41 claims reported
+    "evidence hash changed" while not one byte of content differed. That reads like data corruption and
+    stops a reproducer dead on the first command. Text evidence is therefore hashed with CRLF collapsed
+    to LF; anything else is hashed as-is. Streaming keeps a one-byte carry so a CRLF straddling two
+    blocks still normalises.
+    """
     digest = hashlib.sha256()
+    normalise = path.suffix.lower() in TEXT_EVIDENCE
+    carry = b""
     with path.open("rb") as stream:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(block)
+            if not normalise:
+                digest.update(block)
+                continue
+            block = carry + block
+            carry = b"\r" if block.endswith(b"\r") else b""
+            if carry:
+                block = block[:-1]
+            digest.update(block.replace(b"\r\n", b"\n"))
+    if carry:
+        digest.update(carry)
     return digest.hexdigest()
 
 
@@ -106,6 +180,8 @@ def static_manuscript_check(paper: str, spec: dict) -> None:
         if not raster.is_file() or not vector.is_file():
             raise FileNotFoundError(f"{path.name}: missing PNG/PDF figure pair for {stem}")
 
+    si_crossref_check(paper, spec, text)
+
     abstract = re.search(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", text, flags=re.DOTALL)
     if not abstract:
         raise AssertionError(f"{path.name}: missing abstract")
@@ -136,6 +212,69 @@ def static_manuscript_check(paper: str, spec: dict) -> None:
         lines = [line.strip() for line in highlights.read_text(encoding="utf-8").splitlines() if line.strip()]
         if not 3 <= len(lines) <= 5 or any(len(line) > 85 for line in lines):
             raise AssertionError(f"{spec['bundle']}/highlights.txt: require 3--5 lines of at most 85 characters")
+
+
+def si_crossref_check(paper: str, spec: dict, text: str) -> None:
+    """Resolve the main text's hard-coded SI references against the SI's actual numbering.
+
+    LaTeX numbers sections, tables and figures by order of appearance, so the SI source is the authority.
+    We rebuild that order and check both directions: every registered number still names the item it is
+    supposed to name, and every literal used in the main text is registered.
+    """
+    spec_refs = SI_CROSSREFS.get(paper)
+    if not spec_refs:
+        return
+    si_path = bundle(spec) / spec_refs["si"]
+    si = si_path.read_text(encoding="utf-8")
+
+    titles = re.findall(r"^\\section\{(.+?)\}", si, flags=re.MULTILINE)
+    tables = re.findall(r"\\label\{(tab:[^}]+)\}", si)
+    figures = re.findall(r"\\label\{(fig:[^}]+)\}", si)
+
+    for number, phrase in spec_refs["sections"].items():
+        if number > len(titles):
+            raise AssertionError(f"{spec['tex']}: cites SI~S{number} but {si_path.name} has "
+                                 f"{len(titles)} sections")
+        if phrase.lower() not in titles[number - 1].lower():
+            raise AssertionError(
+                f"{spec['tex']}: SI~S{number} should name a section about {phrase!r}, but section S{number} "
+                f"of {si_path.name} is {titles[number - 1]!r} -- the SI was reordered; re-check every "
+                "hard-coded SI reference in the main text and update SI_CROSSREFS")
+    for kind, found, wanted, word in (
+        ("Supplementary Table", tables, spec_refs["tables"], "table"),
+        ("Supplementary Fig.", figures, spec_refs["figures"], "figure"),
+    ):
+        for number, label in wanted.items():
+            if number > len(found):
+                raise AssertionError(f"{spec['tex']}: cites {kind}~S{number} but {si_path.name} has "
+                                     f"{len(found)} {word}s")
+            if found[number - 1] != label:
+                raise AssertionError(
+                    f"{spec['tex']}: {kind}~S{number} should be {label}, but it is {found[number - 1]} "
+                    f"in {si_path.name} -- the SI was reordered; update the main text and SI_CROSSREFS")
+
+    # The other direction: an unregistered literal is a reference that nothing is checking.
+    for pattern, registered, kind in (
+        (r"SI~S(\d+)", spec_refs["sections"], "SI~S"),
+        (r"Supplementary Table~S(\d+)", spec_refs["tables"], "Supplementary Table~S"),
+        (r"Supplementary Fig\.~S(\d+)", spec_refs["figures"], "Supplementary Fig.~S"),
+    ):
+        unregistered = sorted({int(n) for n in re.findall(pattern, text)} - set(registered))
+        if unregistered:
+            raise AssertionError(
+                f"{spec['tex']}: {kind}{unregistered} used in the main text but absent from "
+                "SI_CROSSREFS -- register it so the reference is checked, or remove it")
+
+
+def check_guard_inputs() -> None:
+    """Fail once, clearly, if a guard input is absent -- not six guards deep in a stack trace."""
+    missing = [(rel, src) for rel, src in GUARD_INPUTS.items() if not (ROOT / rel).is_file()]
+    if missing:
+        lines = [f"  {rel}\n      {src}" for rel, src in missing]
+        raise FileNotFoundError(
+            "cannot run the guards; these inputs are absent:\n" + "\n".join(lines)
+            + "\n  (the two build_* stages must run in the order given, and the Zenodo files extract "
+              "into data/processed/)")
 
 
 def deep_check(name: str) -> None:
@@ -170,13 +309,24 @@ def deep_check(name: str) -> None:
         raise AssertionError(f"{name}: expected {expected}, got {actual}")
 
 
-def run_guard(rel: str) -> None:
-    """Guard scripts assert their own headline numbers and exit non-zero on regression."""
+def run_guard(rel: str, index: int = 0, total: int = 0) -> float:
+    """Guard scripts assert their own headline numbers and exit non-zero on regression.
+
+    Progress is printed before each guard rather than after, because three of them stream the raw ping
+    corpus for minutes; without a line first, a correct run is indistinguishable from a hang.
+    """
+    note = SLOW_GUARDS.get(rel, "")
+    counter = f"[{index}/{total}] " if total else ""
+    print(f"  {counter}{rel}{f'  ({note})' if note else ''}", flush=True)
+    start = time.monotonic()
     proc = subprocess.run([sys.executable, rel], cwd=ROOT, capture_output=True, text=True,
                           encoding="utf-8", errors="replace")
+    elapsed = time.monotonic() - start
     if proc.returncode != 0:
         tail = (proc.stderr or proc.stdout or "").strip().splitlines()[-6:]
-        raise AssertionError(f"guard failed: {rel}\n" + "\n".join(tail))
+        raise AssertionError(f"guard failed after {elapsed:.0f}s: {rel}\n" + "\n".join(tail))
+    print(f"      pass ({elapsed:.0f}s)", flush=True)
+    return elapsed
 
 
 def verify(papers: list[str], run_tests: bool, deep: bool, run_guards: bool) -> None:
@@ -206,8 +356,10 @@ def verify(papers: list[str], run_tests: bool, deep: bool, run_guards: bool) -> 
         for check in sorted(checks):
             deep_check(check)
     if run_guards:
-        for guard in guards:
-            run_guard(guard)
+        check_guard_inputs()
+        print(f"running {len(guards)} guard scripts (each asserts its own headline numbers):", flush=True)
+        spent = sum(run_guard(guard, i, len(guards)) for i, guard in enumerate(guards, 1))
+        print(f"all {len(guards)} guards passed in {spent:.0f}s", flush=True)
     if run_tests and tests:
         subprocess.run([sys.executable, "-m", "pytest", "-q", *sorted(tests)], cwd=ROOT, check=True)
     print(f"verified {claims} claims across {len(papers)} paper(s): {', '.join(papers)}; "
@@ -215,6 +367,13 @@ def verify(papers: list[str], run_tests: bool, deep: bool, run_guards: bool) -> 
 
 
 def main() -> None:
+    # Guard output is ASCII, but a Windows console can still be on a code page that cannot encode a
+    # replacement character echoed back from a failing guard. Ask for UTF-8 and carry on if unavailable.
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8")
+        except (AttributeError, ValueError):
+            pass
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--paper", choices=[*PAPERS, "all"], default="all")

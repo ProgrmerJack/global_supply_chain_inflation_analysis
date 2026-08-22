@@ -149,7 +149,7 @@ def main() -> int:
     if args.check:
         current = CATALOG.read_text(encoding="utf-8") if CATALOG.is_file() else ""
         if current != wanted:
-            print("prereg/CATALOG.md is stale — run: python scripts/build_prereg_catalog.py")
+            print("prereg/CATALOG.md is stale - run: python scripts/build_prereg_catalog.py")
             return 1
         print("prereg/CATALOG.md is current")
         return 0

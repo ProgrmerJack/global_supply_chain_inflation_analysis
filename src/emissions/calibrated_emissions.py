@@ -37,10 +37,19 @@ ZHANG_PEAK_TPD = 2001.0
 #   at anchor the boiler is ~10-15% of hoteling energy, which lifts the aux-dominated blend from ~45
 #   to ~50 (mid). The bottom-up model's own ratio (~122) is NOT used: its NOx is the term that failed
 #   CARB validation, so CARB-NOx is the anchor and only the RATIO comes from EF physics.
-# Zhang's all-source peak is a LOOSE CEILING (OGV < all-source): OGV CO2 at the Oct peak must be < 2,001
-# t/day, i.e. ratio < ~62. NOTE: Zhang's EXCESS is landside-dominated (trucks dominate excess CO2), so OGV
-# is a MINORITY of 2,001 -- this bounds the top, it is NOT an "~80% subset". CARB-central sits ABOVE
-# generic fleet-avg OGV because of LA/LB reefer load (van Duin 2019); we lead with relative change.
+# Zhang's all-source figure is a LOOSE CEILING (OGV <= all-source): OGV CO2 at the Oct peak must be
+# < 2,001 t/day, i.e. ratio < ~62. Three caveats, checked against the source (ERL 19:114023, 2024):
+#   - 2,001 t/day is an EXCESS over a counterfactual baseline, whereas the quantity compared against it
+#     here is a TOTAL. Not like-for-like; the mismatch errs toward a TIGHTER cap, so it is conservative.
+#   - Zhang does NOT report an OGV share of that excess. It reports that trucks lead among the LAND-BASED
+#     sources (trucks vs locomotives vs cargo-handling equipment), which is a different statement. Do not
+#     restate this as "OGV is a minority of 2,001" -- that claim is not in the source, and it was removed
+#     from the manuscript for exactly that reason.
+#   - our central estimate is ~79% of it, which is high. If the true OGV share of the peak excess is
+#     materially lower, the implication runs AGAINST the CARB-central intensity at the peak. The
+#     manuscript flags this rather than resolving it.
+# CARB-central sits ABOVE generic fleet-avg OGV because of LA/LB reefer load (van Duin 2019); we lead
+# with relative change.
 # NOTE: the CO2 band below reflects RATIO uncertainty only; CARB's NOx (and hence all three pollutants)
 # is a single modelled point estimate whose own uncertainty would scale all pollutants proportionally.
 CO2_NOX_RATIO = (45.0, 50.0, 62.0)       # (lo, mid, hi) physical aux+boiler CO2/NOx at anchor

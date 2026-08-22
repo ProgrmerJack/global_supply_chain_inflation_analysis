@@ -198,7 +198,7 @@ def concentration_difference():
     # revision wants the word "concentrates" back, this assertion is what must pass first.
     others = {p: r[p] for p in ports[1:]}
     assert max(abs(v) for v in others.values()) < 0.20, (
-        f"a non-LA port now shows a non-trivial GSCPI correlation ({others}) — the "
+        f"a non-LA port now shows a non-trivial GSCPI correlation ({others}) - the "
         "'only LA/LB responds' framing no longer holds.")
     assert all(r["LA_Long_Beach"] - v > 0 for v in others.values()), (
         f"a non-LA port now out-correlates LA/LB ({others}).")
@@ -256,6 +256,19 @@ def reform_did_inference():
     # in-time placebo: fake reform 2 yrs earlier at LA
     fake = did("LA_Long_Beach", "2019-11")
     print(f"  in-time placebo (fake reform 2019-11 at LA): DiD = {fake:+.3f} log ({(np.exp(fake)-1)*100:+.0f}%)")
+
+    # All three numbers are quoted in Paper A, so pin them here. Until 2026-08-15 none was asserted and
+    # none was bound by a row in the claim ledger, so when the four-month census recovery moved the
+    # in-time placebo from +11% to +5% nothing caught it: the evidence hashes still matched and the whole
+    # suite still passed, because no check ever looked at this number. Tolerances are loose enough for
+    # rounding, tight enough to catch a vintage change of that size.
+    assert abs(real - (-0.206)) < 0.02, (
+        f"reform DiD moved to {real:+.3f} log ({(np.exp(real)-1)*100:+.0f}%); Paper A reports -0.206 log "
+        "= -19%. Update the manuscript before relaxing this bar.")
+    assert rank == 1, f"LA/LB is no longer the largest decliner (rank {rank}/5); Paper A reports rank 1/5."
+    assert abs(fake - 0.047) < 0.02, (
+        f"in-time placebo moved to {fake:+.3f} log ({(np.exp(fake)-1)*100:+.0f}%); Paper A reports +0.047 "
+        "log = +5%. Update the manuscript before relaxing this bar.")
 
 
 if __name__ == "__main__":

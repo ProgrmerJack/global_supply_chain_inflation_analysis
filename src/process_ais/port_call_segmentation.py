@@ -237,7 +237,10 @@ def main():
         r = np.corrcoef(_detrend(d[th].values), d["gscpi"].values)[0, 1]
         shrink = (d["ftl"].mean() - d[th].mean()) / d["ftl"].mean() * 100
         rs[th] = r
-        print(f"  segmented @ {th:>2}h gap: r = {r:+.3f}   mean dwell {shrink:+.0f}% vs first-to-last, "
+        # Print the SIGNED CHANGE, not the shrink magnitude: `shrink` is a reduction, so printing it as
+        # "+36%" reads as an increase and has been misread as a sign error against the SI table, which
+        # correctly reports -36%.
+        print(f"  segmented @ {th:>2}h gap: r = {r:+.3f}   mean dwell {-shrink:+.0f}% vs first-to-last, "
               f"peak {d[th].max():.1f} d")
     # The registered claim is about the STANDARD 24-hour port-call gap, which is also what the paper
     # reports. The 12-hour gap over-segments by construction -- a single anchorage wait punctuated by

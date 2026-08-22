@@ -97,7 +97,7 @@ def analyse() -> None:
     df.to_csv(OUT / "aq_activity_interaction.csv", index=False, lineterminator="\n")
     print(f"n monitor-months: {n} | mean downwind-upwind gap: {df.gap.mean():.2f} ppb")
     print(f"beta(gap on congestion), site+month FE: {b:+.3f} ppb per 1000 anchor-hrs   (Pearson r={r:+.2f})")
-    print(f"FALSIFICATION beta(gap on FUTURE congestion +3mo): {bl:+.3f} (r={rl:+.2f}) — should be ~0/weaker")
+    print(f"FALSIFICATION beta(gap on FUTURE congestion +3mo): {bl:+.3f} (r={rl:+.2f}) - should be ~0/weaker")
     verdict = ("PORT SIGNAL SURVIVES: downwind gap widens with congestion, future does not"
                if b > 0 and abs(b) > abs(bl) else
                "NOT RESCUED: gap does not rise with congestion net of confounds")

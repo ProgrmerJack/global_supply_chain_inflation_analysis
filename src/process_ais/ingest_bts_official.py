@@ -116,7 +116,7 @@ def ingest(out_official_dir: Path | None = None) -> pd.DataFrame:
     for complex_id in COMPLEX_TO_BTS_TEU:
         series = merged_teu_series(complex_id)
         if not len(series):
-            print(f"  ! {complex_id}: no BTS columns — skipped")
+            print(f"  ! {complex_id}: no BTS columns - skipped")
             continue
         raw = tmp / f"{complex_id}__container_teu_total__bts.csv"
         series.to_csv(raw, index=False, lineterminator="\n")
@@ -182,7 +182,7 @@ def ingest_annual_calls(out_dir: Path = ANNUAL_OFFICIAL_DIR) -> pd.DataFrame:
     for complex_id in sorted(set(PORT_NAME_TO_COMPLEX.values())):
         series = annual_container_calls(df, complex_id)
         if not len(series):
-            print(f"  ! {complex_id}: no annual container calls — skipped")
+            print(f"  ! {complex_id}: no annual container calls - skipped")
             continue
         dest = out_dir / f"{complex_id}__container_vessel_calls__annual.csv"
         series.to_csv(dest, index=False, lineterminator="\n")

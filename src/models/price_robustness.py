@@ -152,6 +152,12 @@ def main():
     banc, panc, _ = interaction_bD(d, "cpi_goods", anc_shock, la_reg, base_ctrl)
     assert bpc > 0 and ppc < 0.10, "goods bD does not survive import-price/freight controls"
     assert banc > 0 and panc < 0.10, "goods bD does not survive the anchor-ship-day shock"
+    # Pin the MAGNITUDE, not just sign and significance. This is the exchange test Paper A leans on for
+    # the coupling claim, and it drifted from +1.11% to +0.96% with the four-month census recovery
+    # without anything noticing, because only the sign and significance were ever asserted.
+    assert abs(banc - 0.96) < 0.12, (
+        f"anchor-ship-day bD moved to {banc:+.2f}% (Paper A reports +0.96%); update the manuscript "
+        "before relaxing this bar.")
     assert bonf < 0.10, "goods bD peak is a multiple-horizon artifact (Bonferroni fails)"
     assert npos == 0, "a placebo port reproduced LA's positive state-dependence"
     print("PASS: state-dependence survives import-price/freight controls AND the anchor-ship-day shock,")

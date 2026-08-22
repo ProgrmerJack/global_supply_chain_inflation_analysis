@@ -1,6 +1,9 @@
 from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
 import re
+import tempfile
+
+import pytest
 
 
 def _load_verifier(root: Path):
@@ -53,6 +56,65 @@ def test_each_bundle_is_self_sufficient() -> None:
             figure = home / "figures" / stem
             raster = figure if figure.suffix else figure.with_suffix(".png")
             assert raster.is_file(), f"{paper}: {stem} not inside the bundle"
+
+
+def test_si_crossreferences_resolve_and_the_check_actually_fires() -> None:
+    """The main text hard-codes SI numbers ("SI~S7", "Supplementary Table~S11") because the two documents
+    compile separately and a \\ref cannot cross them. Inserting anything into the SI renumbers every later
+    target, turning a correct citation into a confidently wrong one. Both failure modes must raise."""
+    root = Path(__file__).resolve().parents[1]
+    module = _load_verifier(root)
+    spec = module.PAPERS["A"]
+    text = (root / "manuscript" / spec["bundle"] / spec["tex"]).read_text(encoding="utf-8")
+
+    module.si_crossref_check("A", spec, text)   # the real manuscript resolves
+
+    # 1. An unregistered literal is caught. This is the class of defect that had the era-seam battery
+    #    cited as "Supplementary Table S9", which is in fact the social-cost table.
+    with pytest.raises(AssertionError, match="absent from"):
+        module.si_crossref_check("A", spec, text + "\nsee Supplementary Table~S9 for the era seam.\n")
+
+    # 2. A reference aimed at the wrong item is caught: table S1 is tab:xsource, not tab:ed_summary.
+    original = module.SI_CROSSREFS["A"]["tables"]
+    module.SI_CROSSREFS["A"]["tables"] = {1: "tab:ed_summary"}
+    try:
+        with pytest.raises(AssertionError, match="should be tab:ed_summary"):
+            module.si_crossref_check(
+                "A", spec, text.replace("Supplementary Table~S11", "Supplementary Table~S1"))
+    finally:
+        module.SI_CROSSREFS["A"]["tables"] = original
+
+
+def test_evidence_digests_do_not_depend_on_line_endings() -> None:
+    """A ledger digest must mean "this content", not "this content as checked out on my platform".
+
+    Until 2026-08-22 these were raw file hashes, so a Linux checkout (LF) failed 28 of 41 claims that a
+    Windows checkout (CRLF) passed, with no byte of content differing. That reads as data corruption and
+    stops reproduction at the first command. Every evidence file must now hash identically either way.
+    """
+    root = Path(__file__).resolve().parents[1]
+    module = _load_verifier(root)
+    import csv
+
+    checked = 0
+    for spec in module.PAPERS.values():
+        ledger = root / "manuscript" / spec["bundle"] / "claims.csv"
+        with ledger.open(encoding="utf-8", newline="") as stream:
+            for row in csv.DictReader(stream):
+                source = root / row["evidence_path"]
+                lf = source.read_bytes().replace(b"\r\n", b"\n")
+                for variant in (lf, lf.replace(b"\n", b"\r\n")):
+                    with tempfile.NamedTemporaryFile(suffix=source.suffix, delete=False) as fh:
+                        fh.write(variant)
+                        temp = Path(fh.name)
+                    try:
+                        assert module.sha256(temp) == row["evidence_sha256"], (
+                            f"{row['claim_id']}: {row['evidence_path']} hashes differently with "
+                            "LF vs CRLF line endings")
+                    finally:
+                        temp.unlink()
+                checked += 1
+    assert checked == 41, f"expected 41 claims across the four ledgers, found {checked}"
 
 
 def test_equity_baseline_reproduces_reported_values() -> None:

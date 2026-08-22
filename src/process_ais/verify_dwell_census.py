@@ -73,7 +73,7 @@ def main() -> None:
         if complete:
             asserted += 1
     if asserted == 0:
-        print("\n[WARN] no gold-complete month asserted — pick months from Jan/Feb/Mar")
+        print("\n[WARN] no gold-complete month asserted - pick months from Jan/Feb/Mar")
     print("\n[PASS] census reproduces 2022 ground truth on all complete months" if ok_all
           else "\n[FAIL] census diverges on a gold-complete month — inspect before full run")
     sys.exit(0 if ok_all else 1)
